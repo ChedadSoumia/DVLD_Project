@@ -1,0 +1,9 @@
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\obj\Debug\DVDL_business.csproj.AssemblyReference.cache
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\obj\Debug\DVDL_business.csproj.CoreCompileInputs.cache
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\bin\Debug\DVDL_business.dll
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\bin\Debug\DVDL_business.pdb
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\bin\Debug\DVLD_DataAccess.dll
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\bin\Debug\DVLD_DataAccess.pdb
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\obj\Debug\DVDL_bus.98374C14.Up2Date
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\obj\Debug\DVDL_business.dll
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL_business\obj\Debug\DVDL_business.pdb

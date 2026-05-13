@@ -1,0 +1,209 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\global classes\\clsutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:global classes\\clsutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31FBA893-7F6C-4B55-808E-21C8F71D06B0}|..\\DVDL_business\\DVDL_business.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl_business\\clsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\people\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmshowpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ctrlPersonCard.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\Controls\\ctrlPersonCard.cs",
+              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCard.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\Controls\\ctrlPersonCard.cs",
+              "RelativeToolTip": "People\\Controls\\ctrlPersonCard.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T06:51:53.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsPerson.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsPerson.cs",
+              "RelativeDocumentMoniker": "..\\DVDL_business\\clsPerson.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsPerson.cs",
+              "RelativeToolTip": "..\\DVDL_business\\clsPerson.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAADgv54AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T09:48:43.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmPeopleList.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
+              "RelativeDocumentMoniker": "People\\frmPeopleList.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs [Design]",
+              "RelativeToolTip": "People\\frmPeopleList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T10:02:23.428Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsUtil.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\clsUtil.cs",
+              "RelativeDocumentMoniker": "Global Classes\\clsUtil.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\clsUtil.cs",
+              "RelativeToolTip": "Global Classes\\clsUtil.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAvwDwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T06:17:55.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmAddUpdatePerson.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmAddUpdatePerson.cs",
+              "RelativeDocumentMoniker": "People\\frmAddUpdatePerson.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmAddUpdatePerson.cs [Design]",
+              "RelativeToolTip": "People\\frmAddUpdatePerson.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T21:40:28.363Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmAddUpdatePerson.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmAddUpdatePerson.cs",
+              "RelativeDocumentMoniker": "People\\frmAddUpdatePerson.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmAddUpdatePerson.cs",
+              "RelativeToolTip": "People\\frmAddUpdatePerson.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAD4v8UAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T09:44:21.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ctrlPersonCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\Controls\\ctrlPersonCard.cs",
+              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCard.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\Controls\\ctrlPersonCard.cs [Design]",
+              "RelativeToolTip": "People\\Controls\\ctrlPersonCard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T21:37:54.965Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmPeopleList.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
+              "RelativeDocumentMoniker": "People\\frmPeopleList.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
+              "RelativeToolTip": "People\\frmPeopleList.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAD4v7wAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T09:44:05.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmShowPersonInfo.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmShowPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\frmShowPersonInfo.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmShowPersonInfo.cs",
+              "RelativeToolTip": "People\\frmShowPersonInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T06:13:34.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmShowPersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmShowPersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\frmShowPersonInfo.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmShowPersonInfo.cs [Design]",
+              "RelativeToolTip": "People\\frmShowPersonInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T22:28:54.753Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T22:29:42.629Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
