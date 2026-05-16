@@ -130,7 +130,6 @@ namespace DVDL.People.Controls
             _FillPersonInfo();
 
         }
-
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_PersonID);

@@ -1,4 +1,5 @@
-﻿using DVDL.People;
+﻿using DVDL.Global_Classes;
+using DVDL.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace DVDL
         public frmMain()
         {
             InitializeComponent();
+            Design.MenuStripDesign(menuStrip1);
         }
 
         private void frmMain_Load(object sender, EventArgs e)

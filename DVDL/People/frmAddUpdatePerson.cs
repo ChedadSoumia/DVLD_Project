@@ -18,6 +18,10 @@ namespace DVDL.People
     public partial class frmAddUpdatePerson : Form
     {
 
+        public delegate void DataBackEventHendler(object sender , int PersonID);
+
+        public event DataBackEventHendler DataBack;
+        
         enum enMode { AddNew = 0,Update=1}
         enum enGendor { Male = 0, Female = 1}
 
@@ -206,21 +210,20 @@ namespace DVDL.People
                     }
                     catch (IOException)
                     {     }
+                }
+                if (pbPersonImage.ImageLocation != null)
+                {
+                    string SourceImageFile = pbPersonImage.ImageLocation.ToString();
 
-                    if(pbPersonImage.ImageLocation != null)
+                    if (clsUtil.CopyImageToProjectImagesFolder(ref SourceImageFile))
                     {
-                        string SourceImageFile = pbPersonImage.ImageLocation.ToString();
-
-                        if (clsUtil.CopyImageToProjectImagesFolder(ref SourceImageFile))
-                        {
-                            pbPersonImage.ImageLocation = SourceImageFile;
-                            return true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
-                        }
+                        pbPersonImage.ImageLocation = SourceImageFile;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                 }
             }
@@ -324,9 +327,50 @@ namespace DVDL.People
 
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                DataBack?.Invoke(this, _Person.PersonID);
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtEmail.Text.Trim() == "")
+                return;
+
+            if (!clsValidation.ValidateEmail(txtEmail.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtEmail, "Invalid Email Address Format!");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, null);
+            }            ;
+        }
+
+        private void txtPhone_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtPhone, "This field is required!");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtPhone, null);
+            }
+            if (!clsValidation.ValidatePhoneNumber(txtPhone.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtPhone, "Invalid Phone Format!");
+            }
+            else
+            {
+                errorProvider1.SetError(txtPhone, null);
+            }
+
         }
     }
 }

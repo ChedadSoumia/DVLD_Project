@@ -93,6 +93,16 @@ namespace DVDL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PersonSearch {
+            get {
+                object obj = ResourceManager.GetObject("PersonSearch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Woman {
             get {
                 object obj = ResourceManager.GetObject("Woman", resourceCulture);

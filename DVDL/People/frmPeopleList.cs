@@ -16,7 +16,7 @@ namespace DVDL.People
     {
         private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
 
-        private static DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
                                                        "GendorCaption", "DateOfBirth", "CountryName",
                                                        "Phone", "Email");
@@ -183,6 +183,71 @@ namespace DVDL.People
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ShowPersonDetails = new frmShowPersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
+            ShowPersonDetails.ShowDialog();
+            _RefreshPeopleList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmFindPerson findAPerson = new frmFindPerson();
+            findAPerson.ShowDialog();
+        }
+
+        private void twtFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+
+            if (comboBox1.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void frmPeopleList_Load(object sender, EventArgs e)
+        {
+            if (dgvAllPeople.Rows.Count > 0)
+            {
+
+                dgvAllPeople.Columns[0].HeaderText = "Person ID";
+                dgvAllPeople.Columns[0].Width = 110;
+
+                dgvAllPeople.Columns[1].HeaderText = "National No.";
+                dgvAllPeople.Columns[1].Width = 120;
+
+
+                dgvAllPeople.Columns[2].HeaderText = "First Name";
+                dgvAllPeople.Columns[2].Width = 120;
+
+                dgvAllPeople.Columns[3].HeaderText = "Second Name";
+                dgvAllPeople.Columns[3].Width = 140;
+
+
+                dgvAllPeople.Columns[4].HeaderText = "Third Name";
+                dgvAllPeople.Columns[4].Width = 120;
+
+                dgvAllPeople.Columns[5].HeaderText = "Last Name";
+                dgvAllPeople.Columns[5].Width = 120;
+
+                dgvAllPeople.Columns[6].HeaderText = "Gendor";
+                dgvAllPeople.Columns[6].Width = 120;
+
+                dgvAllPeople.Columns[7].HeaderText = "Date Of Birth";
+                dgvAllPeople.Columns[7].Width = 140;
+
+                dgvAllPeople.Columns[8].HeaderText = "Nationality";
+                dgvAllPeople.Columns[8].Width = 120;
+
+
+                dgvAllPeople.Columns[9].HeaderText = "Phone";
+                dgvAllPeople.Columns[9].Width = 120;
+
+
+                dgvAllPeople.Columns[10].HeaderText = "Email";
+                dgvAllPeople.Columns[10].Width = 170;
+            }
+        }
+
+        private void dgvAllPeople_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Form ShowPersonDetails = new frmShowPersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
             ShowPersonDetails.ShowDialog();

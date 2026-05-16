@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPeopleList));
-            this.dgvAllPeople = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -47,22 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvAllPeople = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvAllPeople
-            // 
-            this.dgvAllPeople.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvAllPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllPeople.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvAllPeople.Location = new System.Drawing.Point(36, 168);
-            this.dgvAllPeople.Name = "dgvAllPeople";
-            this.dgvAllPeople.RowHeadersWidth = 51;
-            this.dgvAllPeople.RowTemplate.Height = 26;
-            this.dgvAllPeople.Size = new System.Drawing.Size(1374, 450);
-            this.dgvAllPeople.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
@@ -77,56 +65,56 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 188);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 160);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // twtFilter
@@ -137,6 +125,7 @@
             this.twtFilter.Size = new System.Drawing.Size(232, 31);
             this.twtFilter.TabIndex = 2;
             this.twtFilter.TextChanged += new System.EventHandler(this.twtFilter_TextChanged);
+            this.twtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.twtFilter_KeyPress);
             // 
             // comboBox1
             // 
@@ -175,7 +164,7 @@
             this.btnAddPerson.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddPerson.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddPerson.Location = new System.Drawing.Point(1371, 131);
+            this.btnAddPerson.Location = new System.Drawing.Point(1728, 131);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(37, 31);
             this.btnAddPerson.TabIndex = 1;
@@ -194,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 634);
+            this.label2.Location = new System.Drawing.Point(29, 713);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 6;
@@ -208,12 +197,36 @@
             this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
             this.lblRecordsCount.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(708, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvAllPeople
+            // 
+            this.dgvAllPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllPeople.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvAllPeople.Location = new System.Drawing.Point(49, 178);
+            this.dgvAllPeople.Name = "dgvAllPeople";
+            this.dgvAllPeople.RowHeadersWidth = 51;
+            this.dgvAllPeople.RowTemplate.Height = 26;
+            this.dgvAllPeople.Size = new System.Drawing.Size(1628, 532);
+            this.dgvAllPeople.TabIndex = 0;
+            this.dgvAllPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllPeople_CellContentClick);
+            // 
             // frmPeopleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1417, 669);
+            this.ClientSize = new System.Drawing.Size(1882, 753);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -225,16 +238,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPeopleList";
             this.Text = "People List";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).EndInit();
+            this.Load += new System.EventHandler(this.frmPeopleList_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvAllPeople;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.TextBox twtFilter;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -251,5 +263,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvAllPeople;
     }
 }

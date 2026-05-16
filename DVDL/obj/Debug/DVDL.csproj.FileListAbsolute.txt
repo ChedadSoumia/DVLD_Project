@@ -17,3 +17,5 @@ C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Peopl
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.frmAddUpdatePerson.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.Controls.ctrlPersonCard.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.frmShowPersonInfo.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.Controls.ctrlPersonCardWithFilter.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.frmFindPerson.resources

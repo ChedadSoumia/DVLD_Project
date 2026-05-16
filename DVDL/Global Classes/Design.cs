@@ -68,6 +68,13 @@ namespace DVDL.Global_Classes
         }
 
 
+        public static void MenuStripDesign(MenuStrip menuStrip1)
+        {
+            menuStrip1.BackColor = ColorTranslator.FromHtml("#1E2A38");
+            menuStrip1.ForeColor = Color.White;
+            menuStrip1.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+        }
         public static void DataButtonDesign(Button button1)
         {
             button1.BackColor = ColorTranslator.FromHtml("#004a77");
