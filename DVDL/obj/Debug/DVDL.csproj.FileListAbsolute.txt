@@ -19,3 +19,9 @@ C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Peopl
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.frmShowPersonInfo.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.Controls.ctrlPersonCardWithFilter.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.People.frmFindPerson.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmUserList.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.ctrlUserCard.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmUserInfo.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmAddEditUser.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmChangePassword.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Login.frmLogin.resources

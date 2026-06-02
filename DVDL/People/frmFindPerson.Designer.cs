@@ -45,7 +45,9 @@
             // 
             // ctrlPersonCardWithFilter1
             // 
+            this.ctrlPersonCardWithFilter1.AddShowPerson = true;
             this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.ctrlPersonCardWithFilter1.FilterEnable = true;
             this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(60, 94);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(850, 422);
@@ -59,6 +61,7 @@
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 

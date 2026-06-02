@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbFilterList = new System.Windows.Forms.ComboBox();
             this.txtFilter = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbFilters = new System.Windows.Forms.GroupBox();
             this.btAddPerson = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ctrlPersonCard1 = new DVDL.People.Controls.ctrlPersonCard();
-            this.groupBox1.SuspendLayout();
+            this.gbFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,6 @@
             this.cbFilterList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFilterList.FormattingEnabled = true;
             this.cbFilterList.Items.AddRange(new object[] {
-            "None",
             "Person ID",
             "National No."});
             this.cbFilterList.Location = new System.Drawing.Point(129, 38);
@@ -66,7 +65,6 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.Enabled = false;
             this.txtFilter.Location = new System.Drawing.Point(354, 38);
             this.txtFilter.Multiline = true;
             this.txtFilter.Name = "txtFilter";
@@ -75,19 +73,19 @@
             this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilter_KeyPress);
             this.txtFilter.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilter_Validating);
             // 
-            // groupBox1
+            // gbFilters
             // 
-            this.groupBox1.Controls.Add(this.btAddPerson);
-            this.groupBox1.Controls.Add(this.btnFilter);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtFilter);
-            this.groupBox1.Controls.Add(this.cbFilterList);
-            this.groupBox1.Location = new System.Drawing.Point(0, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(815, 89);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
+            this.gbFilters.Controls.Add(this.btAddPerson);
+            this.gbFilters.Controls.Add(this.btnFilter);
+            this.gbFilters.Controls.Add(this.label1);
+            this.gbFilters.Controls.Add(this.txtFilter);
+            this.gbFilters.Controls.Add(this.cbFilterList);
+            this.gbFilters.Location = new System.Drawing.Point(0, 3);
+            this.gbFilters.Name = "gbFilters";
+            this.gbFilters.Size = new System.Drawing.Size(815, 89);
+            this.gbFilters.TabIndex = 9;
+            this.gbFilters.TabStop = false;
+            this.gbFilters.Text = "Filter";
             // 
             // btAddPerson
             // 
@@ -131,12 +129,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.ctrlPersonCard1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbFilters);
             this.Name = "ctrlPersonCardWithFilter";
             this.Size = new System.Drawing.Size(834, 422);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbFilters.ResumeLayout(false);
+            this.gbFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -147,7 +145,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbFilterList;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbFilters;
         private System.Windows.Forms.Button btAddPerson;
         private System.Windows.Forms.Button btnFilter;
         private ctrlPersonCard ctrlPersonCard1;

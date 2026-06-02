@@ -15,8 +15,48 @@ namespace DVDL.People.Controls
     public partial class ctrlPersonCardWithFilter : UserControl
     {
 
+        public event Action<int> OnPersonSelected;
+        protected virtual void PersonSelected(int personId)
+        {
+            Action<int> handler = OnPersonSelected;
+            if (handler != null)
+            {
+                handler(personId);
+            }
+        }
+
+        private bool _FilterEnable = true;
+        public bool FilterEnable
+        {
+            get { return _FilterEnable; }
+            set { 
+                _FilterEnable = value;
+                gbFilters.Enabled = _FilterEnable;
+            }
+        }
+
+        private bool _AddShowPerson = true; 
+        public bool AddShowPerson
+        {
+            get { return _AddShowPerson; }
+            set
+            {
+                _AddShowPerson = value;
+                btAddPerson.Enabled = _AddShowPerson;
+            }
+        }
+
+        private int _PersonID = -1;
+        public int PersonID
+        {
+            get { return ctrlPersonCard1.PersonID; }
+        }
+
         private clsPerson _Person;
-        
+        public clsPerson Person
+        {
+            get { return ctrlPersonCard1.SelectedPersonInfo; }
+        }
 
         public ctrlPersonCardWithFilter()
         {
@@ -58,7 +98,14 @@ namespace DVDL.People.Controls
             switch (cbFilterList.Text)
             {
                 case "Person ID":
-                    ctrlPersonCard1.LoadPersonInfo(int.Parse(txtFilter.Text));
+                    if (int.TryParse(txtFilter.Text, out int ToPersonID))
+                    {
+                        ctrlPersonCard1.LoadPersonInfo(ToPersonID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid Person ID");
+                    }
                     break;
                 case "National No.":
                     ctrlPersonCard1.LoadPersonInfo(txtFilter.Text);
@@ -67,8 +114,21 @@ namespace DVDL.People.Controls
                     break;
             }
             
+            if(OnPersonSelected != null  && FilterEnable)
+            {
+                OnPersonSelected(ctrlPersonCard1.PersonID);
+            }
 
         }
+
+        public void LoadPersonInfo(int PersonID)
+        {
+            cbFilterList.SelectedIndex = 0;
+            txtFilter.Text = PersonID.ToString();
+            _FindNow();
+
+        }
+
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -84,34 +144,33 @@ namespace DVDL.People.Controls
 
         private void cbFilterList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbFilterList.SelectedIndex == 0) {
-                txtFilter.Enabled = false;
-            }
-            else
-            {
-                txtFilter.Enabled = true;
-            }
+            txtFilter.Text = "";
+            txtFilter.Focus();
         }
 
 
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar ==(char)13)
+            if (e.KeyChar == (char)13)
             {
+
                 btnFilter.PerformClick();
             }
 
-            if(cbFilterList.Text == "Person ID")
+            if (cbFilterList.Text == "Person ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
             cbFilterList.SelectedIndex = 0;
-            txtFilter.Enabled = false;
+            txtFilter.Focus();
         }
 
-
+        public void FilterFocus()
+        {
+            txtFilter.Focus();
+        }
 
 
     }

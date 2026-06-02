@@ -1,5 +1,8 @@
 ﻿using DVDL.Global_Classes;
+using DVDL.Login;
 using DVDL.People;
+using DVDL.User;
+using DVDL_business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +17,12 @@ namespace DVDL
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        frmLogin _frmLogin;
+        public frmMain(frmLogin frm)
         {
             InitializeComponent();
             Design.MenuStripDesign(menuStrip1);
+            _frmLogin = frm;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -29,6 +34,36 @@ namespace DVDL
         {
             frmPeopleList PeopleList = new frmPeopleList();
             PeopleList.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserList UsersList = new frmUserList();
+            UsersList.ShowDialog();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword changePassword = new frmChangePassword(clsGlobal.CurrentUser.UserID);
+            changePassword.ShowDialog();
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to signout? ", "Confirm signOut", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+            {
+                clsGlobal.CurrentUser = null;
+                _frmLogin.Show();
+                this.Close();
+               
+            }
+        }
+
+        private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserInfo CurrentUserInfo = new frmUserInfo(clsGlobal.CurrentUser.UserID);
+            CurrentUserInfo.ShowDialog();
         }
     }
 }

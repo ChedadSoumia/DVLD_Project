@@ -82,7 +82,7 @@ namespace DVDL.People.Controls
             lblGendor.Text = (_Person.Gendor == 0) ? "Male" : "Female" ;
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;
-            lblNationalID.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+            lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
             lblAddress.Text = _Person.Address;
             _LoadPersonImage();
@@ -104,6 +104,7 @@ namespace DVDL.People.Controls
         }
         public void LoadPersonInfo(int PersonID)
         {
+            _PersonID = PersonID;
             _Person = clsPerson.Find(PersonID);
 
             if (_Person == null)

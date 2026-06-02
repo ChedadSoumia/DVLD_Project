@@ -17,6 +17,14 @@ namespace DVDL.Global_Classes
         {
             InitializeComponent();
         }
+        public static void lblLoginStyle(Label lblLogin)
+        {
+            lblLogin.Text = "Login";
+            lblLogin.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            lblLogin.ForeColor = ColorTranslator.FromHtml("#004a77");
+            lblLogin.AutoSize = true;
+            lblLogin.TextAlign = ContentAlignment.MiddleCenter;
+        }
         public static void LinkLabelStyle(LinkLabel linkLabel1)
         {
             linkLabel1.LinkColor = ColorTranslator.FromHtml("#004a77");
