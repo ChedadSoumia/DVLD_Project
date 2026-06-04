@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Application Type\frmApplicationTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Application Type\frmApplicationTypeList.Designer.cs">
+      <DependentUpon>frmApplicationTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Application Type\frmEditApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Application Type\frmEditApplicationType.Designer.cs">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     <Compile Include="User\frmUserList.Designer.cs">
       <DependentUpon>frmUserList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Application\Application Type\frmApplicationTypeList.resx">
+      <DependentUpon>frmApplicationTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Application Type\frmEditApplicationType.resx">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

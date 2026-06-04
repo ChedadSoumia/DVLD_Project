@@ -25,3 +25,5 @@ C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmAddEditUser.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.frmChangePassword.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Login.frmLogin.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.frmApplicationTypeList.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.Application_Type.frmEditApplicationType.resources

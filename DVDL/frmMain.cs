@@ -1,4 +1,5 @@
-﻿using DVDL.Global_Classes;
+﻿using DVDL.Application;
+using DVDL.Global_Classes;
 using DVDL.Login;
 using DVDL.People;
 using DVDL.User;
@@ -64,6 +65,12 @@ namespace DVDL
         {
             frmUserInfo CurrentUserInfo = new frmUserInfo(clsGlobal.CurrentUser.UserID);
             CurrentUserInfo.ShowDialog();
+        }
+
+        private void applicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmApplicationTypeList ApplicationTypeList = new frmApplicationTypeList();
+            ApplicationTypeList.ShowDialog();
         }
     }
 }

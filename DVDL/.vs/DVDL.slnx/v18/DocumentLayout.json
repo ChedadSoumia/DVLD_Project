@@ -3,47 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\application\\application type\\frmeditapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:application\\application type\\frmeditapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\application\\application type\\frmeditapplicationtype.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:application\\application type\\frmeditapplicationtype.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\application\\application type\\frmeditapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:application\\application type\\frmeditapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\application\\application type\\frmapplicationtypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:application\\application type\\frmapplicationtypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl\\login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\application\\application type\\frmapplicationtypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:application\\application type\\frmapplicationtypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5841E4D6-42B2-4A93-A495-1536A35B3B37}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvld_dataaccess\\clsapplicationtypedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31FBA893-7F6C-4B55-808E-21C8F71D06B0}|..\\DVDL_business\\DVDL_business.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl_business\\clsapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31FBA893-7F6C-4B55-808E-21C8F71D06B0}|..\\DVDL_business\\DVDL_business.csproj|c:\\users\\soumaia\\desktop\\projects_desktop\\dvld_project\\dvdl_business\\clsuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\global classes\\design.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:global classes\\design.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\global classes\\design.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:global classes\\design.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\user\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:user\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:people\\frmpeoplelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\user\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{372F1C47-04A5-43FC-9160-C511B5E11CFA}|DVDL.csproj|solutionrelative:user\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,7 +48,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,136 +60,121 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Login\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Login\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Login\\frmLogin.cs",
-              "RelativeToolTip": "Login\\frmLogin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmEditApplicationType.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.cs",
+              "RelativeDocumentMoniker": "Application\\Application Type\\frmEditApplicationType.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.cs",
+              "RelativeToolTip": "Application\\Application Type\\frmEditApplicationType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T10:52:26.21Z",
+              "WhenOpened": "2026-06-03T14:35:29.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "frmEditApplicationType.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.cs",
+              "RelativeDocumentMoniker": "Application\\Application Type\\frmEditApplicationType.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.cs [Design]",
+              "RelativeToolTip": "Application\\Application Type\\frmEditApplicationType.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T13:47:28.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmEditApplicationType.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.Designer.cs",
+              "RelativeDocumentMoniker": "Application\\Application Type\\frmEditApplicationType.Designer.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmEditApplicationType.Designer.cs",
+              "RelativeToolTip": "Application\\Application Type\\frmEditApplicationType.Designer.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAkwIcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T14:35:45.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T13:27:44.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmApplicationTypeList.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmApplicationTypeList.cs",
+              "RelativeDocumentMoniker": "Application\\Application Type\\frmApplicationTypeList.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmApplicationTypeList.cs [Design]",
+              "RelativeToolTip": "Application\\Application Type\\frmApplicationTypeList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T11:02:29.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmApplicationTypeList.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmApplicationTypeList.cs",
+              "RelativeDocumentMoniker": "Application\\Application Type\\frmApplicationTypeList.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Application\\Application Type\\frmApplicationTypeList.cs",
+              "RelativeToolTip": "Application\\Application Type\\frmApplicationTypeList.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAADwvygAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T11:06:43.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs [Design]",
               "RelativeToolTip": "frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T10:46:10.592Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-06-03T13:27:41.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\frmMain.cs",
-              "RelativeToolTip": "frmMain.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAASwB0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "clsApplicationType.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsApplicationType.cs",
+              "RelativeDocumentMoniker": "..\\DVDL_business\\clsApplicationType.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsApplicationType.cs",
+              "RelativeToolTip": "..\\DVDL_business\\clsApplicationType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T10:46:36.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T09:37:26.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "clsApplicationTypeData.cs",
+              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVLD_DataAccess\\clsApplicationTypeData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsApplicationTypeData.cs",
+              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVLD_DataAccess\\clsApplicationTypeData.cs",
+              "RelativeToolTip": "..\\DVLD_DataAccess\\clsApplicationTypeData.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCcAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T09:27:36.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T11:07:06.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Design.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\Design.cs",
-              "RelativeDocumentMoniker": "Global Classes\\Design.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\Design.cs [Design]",
-              "RelativeToolTip": "Global Classes\\Design.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T12:07:31.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "clsUser.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsUser.cs",
-              "RelativeDocumentMoniker": "..\\DVDL_business\\clsUser.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL_business\\clsUser.cs",
-              "RelativeToolTip": "..\\DVDL_business\\clsUser.cs",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAAAKMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T12:17:31.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Design.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\Design.cs",
-              "RelativeDocumentMoniker": "Global Classes\\Design.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\Global Classes\\Design.cs",
-              "RelativeToolTip": "Global Classes\\Design.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T12:07:36.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmChangePassword.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\User\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "User\\frmChangePassword.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\User\\frmChangePassword.cs [Design]",
-              "RelativeToolTip": "User\\frmChangePassword.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T10:38:56.092Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "frmAddEditUser.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\User\\frmAddEditUser.cs",
-              "RelativeDocumentMoniker": "User\\frmAddEditUser.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\User\\frmAddEditUser.cs",
-              "RelativeToolTip": "User\\frmAddEditUser.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAWwLcAAAB/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T05:05:19.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmPeopleList.cs",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
-              "RelativeDocumentMoniker": "People\\frmPeopleList.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
-              "RelativeToolTip": "People\\frmPeopleList.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAIAwwKcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T10:35:42.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmPeopleList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs",
-              "RelativeDocumentMoniker": "People\\frmPeopleList.cs",
-              "ToolTip": "C:\\Users\\soumaia\\Desktop\\Projects_Desktop\\DVLD_Project\\DVDL\\People\\frmPeopleList.cs [Design]",
-              "RelativeToolTip": "People\\frmPeopleList.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T10:35:41.593Z"
+              "WhenOpened": "2026-05-30T11:07:06.05Z"
             }
           ]
         }
