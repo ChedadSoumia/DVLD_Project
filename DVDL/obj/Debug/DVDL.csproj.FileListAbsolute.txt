@@ -27,3 +27,5 @@ C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.User.
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Login.frmLogin.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.frmApplicationTypeList.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.Application_Type.frmEditApplicationType.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Test.frmTestTypesList.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Test.TestType.frmEditTestType.resources

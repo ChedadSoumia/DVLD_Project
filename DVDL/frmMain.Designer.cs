@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,8 +39,8 @@
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageTestTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.applicationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,12 +64,20 @@
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.applicationTypeToolStripMenuItem});
+            this.applicationTypeToolStripMenuItem,
+            this.manageTestTypeToolStripMenuItem});
             this.applicationsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(116, 34);
             this.applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // applicationTypeToolStripMenuItem
+            // 
+            this.applicationTypeToolStripMenuItem.Name = "applicationTypeToolStripMenuItem";
+            this.applicationTypeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.applicationTypeToolStripMenuItem.Text = "Application Type";
+            this.applicationTypeToolStripMenuItem.Click += new System.EventHandler(this.applicationTypeToolStripMenuItem_Click);
             // 
             // peopleToolStripMenuItem
             // 
@@ -134,6 +143,13 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
+            // manageTestTypeToolStripMenuItem
+            // 
+            this.manageTestTypeToolStripMenuItem.Name = "manageTestTypeToolStripMenuItem";
+            this.manageTestTypeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageTestTypeToolStripMenuItem.Text = "Manage test Type";
+            this.manageTestTypeToolStripMenuItem.Click += new System.EventHandler(this.manageTestTypeToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -144,13 +160,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // applicationTypeToolStripMenuItem
-            // 
-            this.applicationTypeToolStripMenuItem.Name = "applicationTypeToolStripMenuItem";
-            this.applicationTypeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.applicationTypeToolStripMenuItem.Text = "Application Type";
-            this.applicationTypeToolStripMenuItem.Click += new System.EventHandler(this.applicationTypeToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -189,6 +198,7 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applicationTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageTestTypeToolStripMenuItem;
     }
 }
 

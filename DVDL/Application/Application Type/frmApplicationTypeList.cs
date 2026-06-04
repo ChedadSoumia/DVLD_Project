@@ -68,5 +68,15 @@ namespace DVDL.Application
             EditAppType.ShowDialog();
             frmApplicationTypeList_Load(null, null);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMainTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

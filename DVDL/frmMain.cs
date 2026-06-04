@@ -2,6 +2,7 @@
 using DVDL.Global_Classes;
 using DVDL.Login;
 using DVDL.People;
+using DVDL.Test;
 using DVDL.User;
 using DVDL_business;
 using System;
@@ -71,6 +72,12 @@ namespace DVDL
         {
             frmApplicationTypeList ApplicationTypeList = new frmApplicationTypeList();
             ApplicationTypeList.ShowDialog();
+        }
+
+        private void manageTestTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTestTypesList testTypesList = new frmTestTypesList();
+            testTypesList.ShowDialog();
         }
     }
 }

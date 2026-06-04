@@ -25,7 +25,7 @@ namespace DVDL_business
         public static clsApplicationType Find(int applicationTypeID)
         {
             string applicationTypeTitle = "";
-            float applicationTypeFees = 0.0f;
+            float applicationTypeFees = 0;
 
             bool isFound = clsApplicationTypeData.GetAppliactionTypeByID(applicationTypeID, ref applicationTypeTitle, ref applicationTypeFees);
             if (isFound) {

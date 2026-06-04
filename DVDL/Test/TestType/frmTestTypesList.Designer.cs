@@ -1,6 +1,6 @@
-﻿namespace DVDL.Application
+﻿namespace DVDL.Test
 {
-    partial class frmApplicationTypeList
+    partial class frmTestTypesList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,63 +29,73 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApplicationTypeList));
-            this.lblMainTitle = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTestTypesList));
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvApplicationTypes = new System.Windows.Forms.DataGridView();
+            this.lblMainTitle = new System.Windows.Forms.Label();
+            this.dgvTestTypes = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblRecordsCount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 520);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 20;
             // 
             // lblMainTitle
             // 
             this.lblMainTitle.AutoSize = true;
-            this.lblMainTitle.Location = new System.Drawing.Point(63, 69);
+            this.lblMainTitle.Location = new System.Drawing.Point(40, 42);
             this.lblMainTitle.Name = "lblMainTitle";
-            this.lblMainTitle.Size = new System.Drawing.Size(159, 17);
-            this.lblMainTitle.TabIndex = 5;
-            this.lblMainTitle.Text = "Manage Application Type";
-            this.lblMainTitle.Click += new System.EventHandler(this.lblMainTitle_Click);
+            this.lblMainTitle.Size = new System.Drawing.Size(126, 17);
+            this.lblMainTitle.TabIndex = 19;
+            this.lblMainTitle.Text = "Manage Test Types";
+            // 
+            // dgvTestTypes
+            // 
+            this.dgvTestTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTestTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestTypes.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvTestTypes.Location = new System.Drawing.Point(43, 94);
+            this.dgvTestTypes.Name = "dgvTestTypes";
+            this.dgvTestTypes.RowHeadersWidth = 51;
+            this.dgvTestTypes.RowTemplate.Height = 26;
+            this.dgvTestTypes.Size = new System.Drawing.Size(705, 409);
+            this.dgvTestTypes.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 583);
+            this.panel2.Location = new System.Drawing.Point(0, 546);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 10);
-            this.panel2.TabIndex = 17;
+            this.panel2.Size = new System.Drawing.Size(780, 10);
+            this.panel2.TabIndex = 22;
             // 
-            // label2
+            // lblRecordsCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 553);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "#Records:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.Location = new System.Drawing.Point(123, 518);
+            this.lblRecordsCount.Name = "lblRecordsCount";
+            this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
+            this.lblRecordsCount.TabIndex = 24;
             // 
-            // dgvApplicationTypes
+            // label1
             // 
-            this.dgvApplicationTypes.AllowUserToAddRows = false;
-            this.dgvApplicationTypes.AllowUserToDeleteRows = false;
-            this.dgvApplicationTypes.AllowUserToOrderColumns = true;
-            this.dgvApplicationTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvApplicationTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApplicationTypes.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvApplicationTypes.Location = new System.Drawing.Point(66, 145);
-            this.dgvApplicationTypes.Name = "dgvApplicationTypes";
-            this.dgvApplicationTypes.ReadOnly = true;
-            this.dgvApplicationTypes.RowHeadersWidth = 51;
-            this.dgvApplicationTypes.RowTemplate.Height = 26;
-            this.dgvApplicationTypes.Size = new System.Drawing.Size(671, 405);
-            this.dgvApplicationTypes.TabIndex = 19;
-            this.dgvApplicationTypes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApplicationTypes_CellContentClick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 516);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "#Records:";
             // 
             // contextMenuStrip1
             // 
@@ -102,30 +112,25 @@
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
-            // lblRecordsCount
-            // 
-            this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(106, 553);
-            this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
-            this.lblRecordsCount.TabIndex = 20;
-            // 
-            // frmApplicationTypeList
+            // frmTestTypesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(764, 593);
+            this.ClientSize = new System.Drawing.Size(780, 556);
             this.Controls.Add(this.lblRecordsCount);
-            this.Controls.Add(this.dgvApplicationTypes);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dgvTestTypes);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmApplicationTypeList";
-            this.Text = "Application Type";
-            this.Load += new System.EventHandler(this.frmApplicationTypeList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();
+            this.Name = "frmTestTypesList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Test Types List";
+            this.Load += new System.EventHandler(this.frmTestTypesList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,11 +139,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblMainTitle;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvApplicationTypes;
+        private System.Windows.Forms.Label lblMainTitle;
+        private System.Windows.Forms.DataGridView dgvTestTypes;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblRecordsCount;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     }

@@ -6,23 +6,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DVDL_business.clsPerson;
 
-namespace DVDL.Application.Application_Type
+namespace DVDL.Test.TestType
 {
-    public partial class frmEditApplicationType : Form
+    public partial class frmEditTestType : Form
     {
-        private int _ApplicationTypeID = -1;
-        private clsApplicationType _ApplicationType;
-        public frmEditApplicationType(int ApplicationTypeID)
+        private clsTestTypes.enTestType _TestTypeID = clsTestTypes.enTestType.VisionTest;
+        private clsTestTypes _TestType;
+        public frmEditTestType(clsTestTypes.enTestType TestTypeID)
         {
             InitializeComponent();
             _LoadDesign();
-            _ApplicationTypeID = ApplicationTypeID;
+            _TestTypeID = TestTypeID; ;
+
         }
         private void _LoadDesign()
         {
@@ -33,24 +32,21 @@ namespace DVDL.Application.Application_Type
             Design.NormallabelDesign(label3);
             Design.NormallabelDesign(label4);
         }
-       
 
         private void _LoadData()
         {
-            _ApplicationType = clsApplicationType.Find(_ApplicationTypeID);
+            _TestType = clsTestTypes.Find(_TestTypeID);
 
-            if (_ApplicationType != null)
+            if (_TestType != null)
             {
-                lblAppID.Text = _ApplicationType.ApplicationTypeID.ToString();
-                txtTitle.Text = _ApplicationType.ApplicationTypeTitle;
-                txtFees.Text = _ApplicationType.ApplicationTypeFees.ToString();
+                lblAppID.Text = ((int)_TestType.TestTypeID).ToString();
+                txtTitle.Text = _TestType.TestTypeTitle;
+                txtDescription.Text = _TestType.TestTypeDescription;
+                txtFees.Text = _TestType.TestTypeFees.ToString();
             }
-
-            
-
         }
 
-        private void frmEditApplicationType_Load(object sender, EventArgs e)
+        private void frmEditTestType_Load(object sender, EventArgs e)
         {
             _LoadData();
         }
@@ -65,30 +61,31 @@ namespace DVDL.Application.Application_Type
 
             }
 
-            _ApplicationType.ApplicationTypeTitle = txtTitle.Text.Trim();
-            _ApplicationType.ApplicationTypeFees = Convert.ToSingle(txtFees.Text.Trim());
+            _TestType.TestTypeTitle = txtTitle.Text.Trim(); 
+            _TestType.TestTypeDescription = txtDescription.Text.Trim(); 
+            _TestType.TestTypeFees = Convert.ToSingle(txtFees.Text.Trim());
 
-            if (_ApplicationType.Save())
+            if (_TestType.Save())
             {
                 MessageBox.Show("Data Updated Successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
-        private void txtTitle_Validating(object sender, CancelEventArgs e)
+        private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTitle.Text.Trim()))
+            TextBox temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(temp.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtTitle, "This field is required!");
+                errorProvider1.SetError(temp, "This field is required!");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(txtTitle, null);
+                errorProvider1.SetError(temp, "");
             }
         }
 
@@ -117,10 +114,5 @@ namespace DVDL.Application.Application_Type
                 errorProvider1.SetError(txtFees, null);
             }
         }
-
-        
-
-
-
     }
 }
