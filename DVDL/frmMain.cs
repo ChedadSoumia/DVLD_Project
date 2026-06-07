@@ -79,5 +79,11 @@ namespace DVDL
             frmTestTypesList testTypesList = new frmTestTypesList();
             testTypesList.ShowDialog();
         }
+
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalDrivingLicenseApplications localDrivingLicenseApplications = new frmLocalDrivingLicenseApplications();
+            localDrivingLicenseApplications.ShowDialog();
+        }
     }
 }

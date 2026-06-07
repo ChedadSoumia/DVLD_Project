@@ -253,5 +253,7 @@ namespace DVDL.People
             ShowPersonDetails.ShowDialog();
             _RefreshPeopleList();
         }
+
+       
     }
 }

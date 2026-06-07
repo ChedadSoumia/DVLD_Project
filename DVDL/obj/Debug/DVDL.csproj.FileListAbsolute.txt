@@ -29,3 +29,4 @@ C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Appli
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.Application_Type.frmEditApplicationType.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Test.frmTestTypesList.resources
 C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Test.TestType.frmEditTestType.resources
+C:\Users\soumaia\Desktop\Projects_Desktop\DVLD_Project\DVDL\obj\Debug\DVDL.Application.frmLocalDrivingLicenseApplications.resources
