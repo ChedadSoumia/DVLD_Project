@@ -1,6 +1,8 @@
-*/.vs
-*/bin
-*/obj
-DVDL_business/DVDL_business.csproj
-DVLD_DataAccess/DVLD_DataAccess.csproj
-*/*.user
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/*/.vs
+/*/bin
+/*/obj
+

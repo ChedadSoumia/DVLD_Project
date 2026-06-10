@@ -193,7 +193,7 @@
             // lblRecordsCount
             // 
             this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(121, 678);
+            this.lblRecordsCount.Location = new System.Drawing.Point(108, 715);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
             this.lblRecordsCount.TabIndex = 7;
