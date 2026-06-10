@@ -1,0 +1,6 @@
+*/.vs
+*/bin
+*/obj
+DVDL_business/DVDL_business.csproj
+DVLD_DataAccess/DVLD_DataAccess.csproj
+*/*.user
