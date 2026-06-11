@@ -151,6 +151,7 @@ namespace DVLD_DataAccess
 
 
             }
+            
 
             catch (Exception ex)
             {
@@ -261,7 +262,7 @@ namespace DVLD_DataAccess
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@UserID", Application);
+            command.Parameters.AddWithValue("@Application", Application);
 
             try
             {
