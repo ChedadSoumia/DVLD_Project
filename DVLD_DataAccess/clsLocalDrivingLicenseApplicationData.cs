@@ -132,7 +132,7 @@ namespace DVLD_DataAccess
             {
                 connection.Open();
                 object result = command.ExecuteScalar();
-                if (result != null && int.TryParse(result.Tostring(), out int InsertedID)) {
+                if (result != null && int.TryParse(result.ToString(), out int InsertedID)) {
                     localAppID = InsertedID;
                 }
 

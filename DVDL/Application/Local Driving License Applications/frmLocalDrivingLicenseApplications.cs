@@ -1,4 +1,7 @@
-﻿using DVDL.Global_Classes;
+﻿using DVDL.Application.Local_Driving_License_Applications;
+using DVDL.Global_Classes;
+using DVDL_business;
+using DVLD_Buisness;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using DVLD_Buisness;
-using DVDL_business;
 
 namespace DVDL.Application
 {
@@ -45,6 +45,12 @@ namespace DVDL.Application
 
             dgvAllLocalApplications.DataSource = _AllLocalApplications;
             lblRecordsCount.Text = dgvAllLocalApplications.Rows.Count.ToString();
+        }
+
+        private void btnAddApplication_Click(object sender, EventArgs e)
+        {
+            frmNewLocalDrivingLicenseApplications NewLocalDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplications();
+            NewLocalDrivingLicenseApplication.ShowDialog();
         }
     }
 }

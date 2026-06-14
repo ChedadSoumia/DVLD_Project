@@ -34,8 +34,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
-            this.ctrlPersonCardWithFilter1 = new DVDL.People.Controls.ctrlPersonCardWithFilter();
             this.tpApplicationInfo = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.lblApplicationFees = new System.Windows.Forms.Label();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.ctrlPersonCardWithFilter1 = new DVDL.People.Controls.ctrlPersonCardWithFilter();
             this.tabControl1.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
             this.tpApplicationInfo.SuspendLayout();
@@ -103,16 +103,6 @@
             this.btnNext.Text = "Next -->";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.AddShowPerson = true;
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ctrlPersonCardWithFilter1.FilterEnable = true;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(76, 40);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(834, 422);
-            this.ctrlPersonCardWithFilter1.TabIndex = 0;
-            // 
             // tpApplicationInfo
             // 
             this.tpApplicationInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
@@ -124,6 +114,15 @@
             this.tpApplicationInfo.Size = new System.Drawing.Size(930, 522);
             this.tpApplicationInfo.TabIndex = 1;
             this.tpApplicationInfo.Text = "Application Info";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(760, 448);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(148, 50);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -237,14 +236,15 @@
             this.comboBox1.Size = new System.Drawing.Size(212, 24);
             this.comboBox1.TabIndex = 9;
             // 
-            // btnSave
+            // ctrlPersonCardWithFilter1
             // 
-            this.btnSave.Location = new System.Drawing.Point(651, 410);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(148, 50);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.ctrlPersonCardWithFilter1.AddShowPerson = true;
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.ctrlPersonCardWithFilter1.FilterEnable = true;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(76, 40);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(834, 422);
+            this.ctrlPersonCardWithFilter1.TabIndex = 0;
             // 
             // frmNewLocalDrivingLicenseApplications
             // 
@@ -259,6 +259,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNewLocalDrivingLicenseApplications";
             this.Text = "New Local Driving License Applications";
+            this.Load += new System.EventHandler(this.frmNewLocalDrivingLicenseApplications_Load);
             this.tabControl1.ResumeLayout(false);
             this.tpPersonInfo.ResumeLayout(false);
             this.tpApplicationInfo.ResumeLayout(false);

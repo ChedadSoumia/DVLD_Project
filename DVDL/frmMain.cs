@@ -1,4 +1,5 @@
 ﻿using DVDL.Application;
+using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Global_Classes;
 using DVDL.Login;
 using DVDL.People;
@@ -84,6 +85,12 @@ namespace DVDL
         {
             frmLocalDrivingLicenseApplications localDrivingLicenseApplications = new frmLocalDrivingLicenseApplications();
             localDrivingLicenseApplications.ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewLocalDrivingLicenseApplications NewLocalDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplications();
+            NewLocalDrivingLicenseApplication.ShowDialog();
         }
     }
 }

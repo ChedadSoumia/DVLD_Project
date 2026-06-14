@@ -112,13 +112,14 @@
             // btnAddApplication
             // 
             this.btnAddApplication.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddApplication.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
+            this.btnAddApplication.BackgroundImage = global::DVDL.Properties.Resources.add_notes_24dp_FFF_FILL0_wght400_GRAD0_opsz24;
             this.btnAddApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddApplication.Location = new System.Drawing.Point(1294, 92);
             this.btnAddApplication.Name = "btnAddApplication";
             this.btnAddApplication.Size = new System.Drawing.Size(37, 31);
             this.btnAddApplication.TabIndex = 24;
             this.btnAddApplication.UseVisualStyleBackColor = true;
+            this.btnAddApplication.Click += new System.EventHandler(this.btnAddApplication_Click);
             // 
             // lblRecordsCount
             // 
