@@ -10,8 +10,8 @@ namespace DVDL_business
 {
     public class clsApplication
     {
-        enum enMode { eAddNew = 0, eUpdate = 1 }
-        enMode _Mode = enMode.eAddNew;
+        public enum enMode { eAddNew = 0, eUpdate = 1 }
+        public enMode Mode = enMode.eAddNew;
         public enum enApplicationType {eNewDrivingLicense= 1, eRenewDrivingLicense= 2 , eReplaceLostDrivingLicense = 3,
             eReplaceDamagedDrivingLicense = 4, eReleaseDetainedDrivingLicense=5, eNewInternationalLicense=6,eRetakeTest=7
         };
@@ -70,7 +70,7 @@ namespace DVDL_business
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
             this.CreatedByUserInfo = clsUser.Find(CreatedByUserID);
-            _Mode = enMode.eAddNew;
+            Mode = enMode.eAddNew;
         }
         private clsApplication(int applicationID,int applicantPersonId,DateTime applicationDate,int applicationTypeID,
             enApplicationStatus applicationStatus,DateTime lastStatusDate,float paidFees,int createdByUserID)
@@ -86,10 +86,10 @@ namespace DVDL_business
             this.PaidFees = paidFees;
             this.CreatedByUserID = createdByUserID;
 
-            _Mode = enMode.eUpdate;
+            Mode = enMode.eUpdate;
         }
 
-        public clsApplication Find(int ApplicationId)
+        public static clsApplication FindBaseApplication(int ApplicationId)
         {
          int applicantPersonID = -1;
             DateTime applicationDate = DateTime.Now, LastStatusDate = DateTime.Now;
@@ -143,12 +143,12 @@ namespace DVDL_business
 
         public bool Save()
         {
-            switch (_Mode)
+            switch (Mode)
             {
                 case enMode.eAddNew:
                     if (_AddNewApplication())
                     {
-                        _Mode = enMode.eUpdate;
+                        Mode = enMode.eUpdate;
                         return true;
                     }
                     else

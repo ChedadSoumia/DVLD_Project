@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ namespace DVLD_DataAccess
     public class clsLocalDrivingLicenseApplicationData
     {
 
-        public static bool GetLocalDrivingLicenseApplication(int LocalAppID, ref int ApplicationID,ref int LisenceClassID)
+        public static bool GetLocalDrivingLicenseApplicationID(int LocalAppID, ref int ApplicationID,ref int LisenceClassID)
         {
             bool isFound = false;
 
@@ -61,7 +63,57 @@ namespace DVLD_DataAccess
 
         }
 
-        public int AddNewLocalApplication(int ApplicationID, int LisenceClassID)
+        public static bool GetLocalDrivingLicenseByApplicationID(int ApplicationID , ref int LocalAppID, ref int LisenceClassID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM LocalDrivingLicenseApplications WHERE ApplicationID = @ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    LocalAppID = (int)reader["LocalAppID"];
+                    LisenceClassID = (int)reader["LisenceClassID"];
+
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+
+        }
+
+        public static int AddNewLocalApplication(int ApplicationID, int LisenceClassID)
         {
             int localAppID = -1;
 
@@ -176,7 +228,7 @@ namespace DVLD_DataAccess
 
         }
 
-        public static bool UpdateApplication(int LocalDrivingLicenseApplicationID,int ApplicationID,int LicenseClassID)
+        public static bool UpdateLocalDrivingLicenseApplications(int LocalDrivingLicenseApplicationID,int ApplicationID,int LicenseClassID)
         {
 
             int rowsAffected = 0;

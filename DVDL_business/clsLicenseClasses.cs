@@ -16,7 +16,6 @@ namespace DVDL_business
         public byte MinimumAllowedAge { get; set; }
         public byte DefaultValidityLength { get; set; }
         public float ClassFees { get; set; }
-
         private clsLicenseClasses(int licenseClassID, string className,string classDescription,byte minimumAllowedAge,
             byte defaultValidityLength, float classFees) {
             this.LicenseClassID = licenseClassID;
@@ -26,7 +25,6 @@ namespace DVDL_business
             this.DefaultValidityLength = defaultValidityLength;
             this.ClassFees = classFees;
         }
-
         public static clsLicenseClasses Find(int licenseClassID)
         {
             string className = "", classDescription = "";
@@ -45,11 +43,33 @@ namespace DVDL_business
                 return null;
             }
         }
+        public static clsLicenseClasses Find(string className)
+        {
+            int licenseClassID = -1;
+            string classDescription = "";
+            byte minimumAllowedAge = 0, defaultValidityLength = 0;
+            float classFees = 0;
 
 
+            bool isFound = clsLicenseClassesData.GetLicenseClassByName(ref licenseClassID, className, ref classDescription, ref minimumAllowedAge,
+            ref defaultValidityLength, ref classFees);
+            if (isFound)
+            {
+                return new clsLicenseClasses(licenseClassID, className, classDescription, minimumAllowedAge,
+            defaultValidityLength, classFees);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static DataTable GetAllLicenseClasses()
         {
             return clsLicenseClassesData.GetAllLicenseClasses();
         }
+
+
+
     }
 }
+
