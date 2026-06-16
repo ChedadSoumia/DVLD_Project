@@ -79,10 +79,10 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     ClassName = (string)reader["ClassName"];
-                    DescriptionClass = (string)reader["DescriptionClass"];
+                    DescriptionClass = (string)reader["ClassDescription"];
                     MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     DefaultValidityLength = (byte)reader["DefaultValidityLength"];
-                    ClassFees = (float)reader["ClassFees"];
+                    ClassFees = Convert.ToSingle(reader["ClassFees"]);
                     
 
                 }
@@ -132,10 +132,10 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     LicenseClassID = (int)reader["LicenseClassID"];
-                    DescriptionClass = (string)reader["DescriptionClass"];
+                    DescriptionClass = (string)reader["ClassDescription"];
                     MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     DefaultValidityLength = (byte)reader["DefaultValidityLength"];
-                    ClassFees = (float)reader["ClassFees"];
+                    ClassFees = Convert.ToSingle(reader["ClassFees"]);
 
 
                 }
@@ -206,6 +206,9 @@ namespace DVLD_DataAccess
 
             return (rowsAffected > 0);
         }
+
+
+
 
     }
 }

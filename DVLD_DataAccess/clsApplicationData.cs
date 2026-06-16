@@ -41,10 +41,10 @@ namespace DVLD_DataAccess
                     ApplicantPersonID = (int)reader["ApplicantPersonID"];
                     ApplicationDate = (DateTime)reader["ApplicationDate"];
                     ApplicationTypeID = (int)reader["ApplicationTypeID"];
-                    AppliactionStatus = (byte)reader["AppliactionStatus"];
+                    AppliactionStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (byte)reader["PaidFees"];
-                    CreatedByUser = (int)reader["CreatedByUser"];
+                    PaidFees = Convert.ToSingle(reader["PaidFees"]);
+                    CreatedByUser = (int)reader["CreatedByUserID"];
 
                }
                 else
@@ -80,10 +80,10 @@ namespace DVLD_DataAccess
                             set ApplicantPersonID = @ApplicantPersonID,
                                 ApplicationDate = @ApplicationDate,
                                 ApplicationTypeID = @ApplicationTypeID,
-                                AppliactionStatus = @AppliactionStatus,
+                                ApplicationStatus = @ApplicationStatus,
                                 LastStatusDate = @LastStatusDate,
                                 PaidFees = @PaidFees,
-                                CreatedByUser = @CreatedByUser
+                                CreatedByUserID = @CreatedByUserID
                                 where ApplicationID = @ApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -91,10 +91,10 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
             command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
             command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            command.Parameters.AddWithValue("@AppliactionStatus", AppliactionStatus);
+            command.Parameters.AddWithValue("@ApplicationStatus", AppliactionStatus);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUser);
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
 
@@ -175,8 +175,8 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Applicatios (ApplicantPersonID, ApplicationDate,ApplicatioTypeID, AppliactionStatus,LastStatusDate,PaidFees,CreatedByUser)
-                             VALUES (@ApplicantPersonID, @ApplicationDate,@ApplicatioTypeID, @AppliactionStatus,@LastStatusDate,@PaidFees,@CreatedByUser);
+            string query = @"INSERT INTO Applications (ApplicantPersonID, ApplicationDate,ApplicationTypeID, ApplicationStatus,LastStatusDate,PaidFees,CreatedByUserID)
+                             VALUES (@ApplicantPersonID, @ApplicationDate,@ApplicationTypeID, @AppliactionStatus,@LastStatusDate,@PaidFees,@CreatedByUser);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -184,7 +184,7 @@ namespace DVLD_DataAccess
             
             command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
             command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
-            command.Parameters.AddWithValue("@ApplicatioTypeID", ApplicatioTypeID);
+            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicatioTypeID);
             command.Parameters.AddWithValue("@AppliactionStatus", AppliactionStatus);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
@@ -361,5 +361,49 @@ namespace DVLD_DataAccess
             return (rowsAffected > 0);
         }
 
+        public static int PersonHasALicenseClassApplication(int PersonID, int ApplicationTypeID, int LicenseClassID)
+        {
+            int ActiveApplicationID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT ActiveApplicationID=Applications.ApplicationID  
+                            From
+                            Applications INNER JOIN
+                            LocalDrivingLicenseApplications ON Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+                            WHERE ApplicantPersonID = @ApplicantPersonID 
+                            and ApplicationTypeID=@ApplicationTypeID 
+							and LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID
+                            and ApplicationStatus=1";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicantPersonID", PersonID);
+            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+
+                if (result != null && int.TryParse(result.ToString(), out int AppID))
+                {
+                    ActiveApplicationID = AppID;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return ActiveApplicationID;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return ActiveApplicationID;
+
+        }
     }
 }

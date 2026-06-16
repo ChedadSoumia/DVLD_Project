@@ -52,5 +52,12 @@ namespace DVDL.Application
             frmNewLocalDrivingLicenseApplications NewLocalDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplications();
             NewLocalDrivingLicenseApplication.ShowDialog();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            frmNewLocalDrivingLicenseApplications UpdateLocalApplication = new frmNewLocalDrivingLicenseApplications((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
+            UpdateLocalApplication.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+        }
     }
 }

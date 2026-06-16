@@ -36,7 +36,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     ApplicationID = (int)reader["ApplicationID"];
-                    LisenceClassID = (int)reader["LisenceClassID"];
+                    LisenceClassID = (int)reader["LicenseClassID"];
                     
 
                 }
@@ -119,15 +119,15 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Applicatios (ApplicationID, LisenceClassID)
-                             VALUES (@ApplicationID, @LisenceClassID);
+            string query = @"INSERT INTO LocalDrivingLicenseApplications (ApplicationID, LicenseClassID)
+                             VALUES (@ApplicationID, @LicenseClassID);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
 
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-            command.Parameters.AddWithValue("@LisenceClassID", LisenceClassID);
+            command.Parameters.AddWithValue("@LicenseClassID", LisenceClassID);
             try
             {
                 connection.Open();
@@ -266,6 +266,8 @@ namespace DVLD_DataAccess
             return (rowsAffected > 0);
         }
 
+
+        
 
     }
 
