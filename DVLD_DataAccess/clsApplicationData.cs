@@ -250,7 +250,7 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static bool DeleteApplication(int Application)
+        public static bool DeleteApplication(int ApplicationID)
         {
 
             int rowsAffected = 0;
@@ -258,11 +258,11 @@ namespace DVLD_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Delete Applications 
-                                where Application = @Application";
+                                where ApplicationID = @ApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@Application", Application);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
             try
             {
@@ -329,13 +329,13 @@ namespace DVLD_DataAccess
 
             string query = @"Update  Applications  
                             set 
-                                AppliactionStatus = @AppliactionStatus,
+                                ApplicationStatus = @ApplicationStatus,
                                 LastStatusDate = @LastStatusDate
                                 where ApplicationID = @ApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@AppliactionStatus", NewStatus);
+            command.Parameters.AddWithValue("@ApplicationStatus", NewStatus);
             command.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 

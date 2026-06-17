@@ -121,7 +121,20 @@ namespace DVDL_business
         }
 
         
+        public bool Delete()
+        {
+            bool IsLocalDrivingApplicationDeleted = false;
+            bool IsBaseApplicationDeleted = false;
 
+            IsLocalDrivingApplicationDeleted = clsLocalDrivingLicenseApplicationData.DeleteLocalDrivingLicenseApplication(this.LocalDrivingLicenceApplicationID);
+
+            if (!IsLocalDrivingApplicationDeleted)
+                return false;
+
+            IsBaseApplicationDeleted = base.Delete();
+
+            return IsBaseApplicationDeleted;
+        }
 
         public bool Save()
         {
