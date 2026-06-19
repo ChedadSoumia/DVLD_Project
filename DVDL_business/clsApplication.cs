@@ -86,6 +86,7 @@ namespace DVDL_business
             this.LastStatusDate = lastStatusDate;
             this.PaidFees = paidFees;
             this.CreatedByUserID = createdByUserID;
+            this.CreatedByUserInfo = clsUser.Find(createdByUserID);
 
             Mode = enMode.eUpdate;
         }

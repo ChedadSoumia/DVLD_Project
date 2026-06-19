@@ -155,7 +155,7 @@ namespace DVDL.Application
             {
                 if (localDrivingLicenseApplication.Cancel())
                 {
-                    MessageBox.Show("Application Canceled Successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Application Canceled Successfully.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //refresh the form again.
                     frmLocalDrivingLicenseApplications_Load(null, null);
                 }
@@ -166,6 +166,27 @@ namespace DVDL.Application
             }
             
 
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+            int LocalDrivingLicenseApplicationID = (int)dgvAllLocalApplications.CurrentRow.Cells[0].Value;
+            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication =
+                    clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID
+                                                    (LocalDrivingLicenseApplicationID);
+
+
+            deleteToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
+
+
+        }
+
+        private void showApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDrivingLicenseApplicationInfo drivingLicenseApplicationInfo =new frmDrivingLicenseApplicationInfo((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
+            drivingLicenseApplicationInfo.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
         }
     }
 }
