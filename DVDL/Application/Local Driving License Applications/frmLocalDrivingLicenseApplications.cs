@@ -1,5 +1,6 @@
 ﻿using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Global_Classes;
+using DVDL.Test;
 using DVDL_business;
 using DVLD_Buisness;
 using System;
@@ -186,6 +187,27 @@ namespace DVDL.Application
         {
             frmDrivingLicenseApplicationInfo drivingLicenseApplicationInfo =new frmDrivingLicenseApplicationInfo((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
             drivingLicenseApplicationInfo.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+        }
+
+        private void sechduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTestAppointments TestLists = new frmTestAppointments(frmTestAppointments.enTestTypes.eVisionType);
+            TestLists.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+        }
+
+        private void sechduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTestAppointments TestLists = new frmTestAppointments(frmTestAppointments.enTestTypes.eWrittenType);
+            TestLists.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+        }
+
+        private void sechduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTestAppointments TestLists = new frmTestAppointments((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value,frmTestAppointments.enTestTypes.eStreetType);
+            TestLists.ShowDialog();
             frmLocalDrivingLicenseApplications_Load(null, null);
         }
     }

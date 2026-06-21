@@ -13,7 +13,7 @@ namespace DVDL.Application.Local_Driving_License_Applications
 {
     public partial class frmDrivingLicenseApplicationInfo : Form
     {
-
+        int _LocalDrivingLicenseApplicationID = -1;
 
         void _LoadDesign()
         {
@@ -24,7 +24,8 @@ namespace DVDL.Application.Local_Driving_License_Applications
         {
             InitializeComponent();
             _LoadDesign();
-            ctrlDrivingLicenseApplicationInfo1.LoadLocalLicenseDrivingAppliactionInfo(LocalLicenseDrivingApplicationID);
+            _LocalDrivingLicenseApplicationID=LocalLicenseDrivingApplicationID;
+            
 
         }
 
@@ -33,6 +34,11 @@ namespace DVDL.Application.Local_Driving_License_Applications
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmDrivingLicenseApplicationInfo_Load(object sender, EventArgs e)
+        {
+            ctrlDrivingLicenseApplicationInfo1.LoadLocalLicenseDrivingAppliactionInfo(_LocalDrivingLicenseApplicationID);
         }
     }
 }

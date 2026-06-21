@@ -71,6 +71,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "frmDrivingLicenseApplicationInfo";
             this.Text = "frmDrivingLicenseApplicationInfo";
+            this.Load += new System.EventHandler(this.frmDrivingLicenseApplicationInfo_Load);
             this.ResumeLayout(false);
 
         }
