@@ -166,5 +166,11 @@ namespace DVDL_business
         }
 
 
+        public bool DoesPassTheTest(int TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationData.DoesPassTheTest(this.LocalDrivingLicenceApplicationID, TestTypeID);
+        }
+
+
     }
 }

@@ -47,6 +47,10 @@ namespace DVDL.Application.Local_Driving_License_Applications
             foreach(DataRow row in dtLicenseClasses.Rows)
             {
                 comboBox1.Items.Add(row["ClassName"]);
+                //if((_LocalDrivingLicenseApplication.PersonInfo.DateOfBirth - DateTime.Now). < row["MinimumAllowedAge"] )
+                //{
+
+                //}
             }
             
 

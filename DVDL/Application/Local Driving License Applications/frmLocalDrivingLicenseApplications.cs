@@ -178,9 +178,21 @@ namespace DVDL.Application
                                                     (LocalDrivingLicenseApplicationID);
 
 
-            deleteToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
+            deleteToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eCompleted);
+            editToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
 
 
+            bool PassVisionTest = LocalDrivingLicenseApplication.DoesPassTheTest(1);
+            bool PassWrittenTest = LocalDrivingLicenseApplication.DoesPassTheTest(2);
+            bool PassStreetTest = LocalDrivingLicenseApplication.DoesPassTheTest(3);
+
+            sechduleVisionTestToolStripMenuItem.Enabled = (!PassVisionTest ) ;
+            sechduleWrittenTestToolStripMenuItem.Enabled = (!PassWrittenTest && PassVisionTest);
+            sechduleStreetTestToolStripMenuItem.Enabled = (!PassStreetTest && PassWrittenTest && PassVisionTest);
+
+            sechduleTestsToolStripMenuItem.Enabled = !(LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eNew);
+
+            cancelApplicationToolStripMenuItem.Enabled = !(LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eNew);
         }
 
         private void showApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,14 +204,14 @@ namespace DVDL.Application
 
         private void sechduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTestAppointments TestLists = new frmTestAppointments(frmTestAppointments.enTestTypes.eVisionType);
+            frmTestAppointments TestLists = new frmTestAppointments((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value,frmTestAppointments.enTestTypes.eVisionType);
             TestLists.ShowDialog();
             frmLocalDrivingLicenseApplications_Load(null, null);
         }
 
         private void sechduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTestAppointments TestLists = new frmTestAppointments(frmTestAppointments.enTestTypes.eWrittenType);
+            frmTestAppointments TestLists = new frmTestAppointments((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value, frmTestAppointments.enTestTypes.eWrittenType);
             TestLists.ShowDialog();
             frmLocalDrivingLicenseApplications_Load(null, null);
         }

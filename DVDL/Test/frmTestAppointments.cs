@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVDL_business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +17,11 @@ namespace DVDL.Test
         public enTestTypes TestType = enTestTypes.eVisionType;
 
         int _LocalDrivingLicenseApplicationID = -1;
+        int _TestAppointmentID = -1;
+        clsTestAppointments testAppointmentInfo;
 
-        int Test
+
+
 
 
 
@@ -26,6 +30,7 @@ namespace DVDL.Test
             InitializeComponent();
             TestType = testType;
             _LocalDrivingLicenseApplicationID=localDrivingLicenseApplicationID;
+            dataGridView1.DataSource = clsTestAppointments.GetAppointments(localDrivingLicenseApplicationID, (clsTestAppointments.enTestTypes)testType);
         }
 
 
