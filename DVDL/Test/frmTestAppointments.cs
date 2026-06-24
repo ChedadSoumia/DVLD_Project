@@ -30,7 +30,7 @@ namespace DVDL.Test
             InitializeComponent();
             TestType = testType;
             _LocalDrivingLicenseApplicationID=localDrivingLicenseApplicationID;
-            dataGridView1.DataSource = clsTestAppointments.GetAppointments(localDrivingLicenseApplicationID, (clsTestAppointments.enTestTypes)testType);
+            dataGridView1.DataSource = clsTestAppointments.GetAppointments(localDrivingLicenseApplicationID, (clsTestTypes.enTestType)testType);
         }
 
 
