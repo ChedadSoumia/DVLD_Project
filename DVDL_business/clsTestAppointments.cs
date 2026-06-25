@@ -48,6 +48,7 @@ namespace DVDL_business
             this.IsLocked = isLocked;
             this.RetakeTestApplicationID= retakeTestApplicationID;
             this.RetakeTestAppInfo = clsApplication.FindBaseApplication(retakeTestApplicationID);
+            Mode = enMode.eUpdate;
         }
 
 
@@ -81,11 +82,7 @@ namespace DVDL_business
             return clsTestAppointmentsData.GetTestAppointmentsPerTestType(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public bool IsTestAppointmentActive()
-        {
-            return clsTestAppointmentsData.IsTestAppointmentActive(this.LocalDrivingLicenseApplicationID,(int)this.TestTypeID);
-        }
-
+      
         private bool _AddTestAppointment()
         {
             this.TestAppointmentID = clsTestAppointmentsData.AddNewTestAppointment((int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,

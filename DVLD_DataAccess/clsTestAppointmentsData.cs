@@ -35,7 +35,7 @@ namespace DVLD_DataAccess
                     // The record was found
                     isFound = true;
 
-                    TestTypeId = (int)reader["TestTeypeId"];
+                    TestTypeId = (int)reader["TestTypeID"];
                     LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
                     AppointmentDate = (DateTime)reader["AppointmentDate"];
                     PaidFees = Convert.ToSingle(reader["PaidFees"]);
@@ -50,7 +50,6 @@ namespace DVLD_DataAccess
                     {
                         RetakeTestApplicationID = -1;
                     }
-                    RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
 
                 }
                 else
@@ -151,8 +150,8 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID,AppointmentDate,PaidFees,CreatedByUser,IsLocked,RetakeTestApplicationID)
-                             VALUES (@TestTypeID, @LocalDrivingLicenseApplicationID,@AppointmentDate, @PaidFees,@LastStatusDate,@PaidFees,@CreatedByUser,0,@RetakeTestApplicationID);
+            string query = @"INSERT INTO TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID,AppointmentDate,PaidFees,CreatedByUserID,IsLocked,RetakeTestApplicationID)
+                             VALUES (@TestTypeID, @LocalDrivingLicenseApplicationID,@AppointmentDate, @PaidFees,@CreatedByUser,0,@RetakeTestApplicationID);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -163,7 +162,12 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
-            command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+
+            if (RetakeTestApplicationID != -1)
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+            else
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", System.DBNull.Value);
+
 
             try
             {
@@ -341,46 +345,7 @@ namespace DVLD_DataAccess
             return dt;
 
         }   
-        public static bool IsTestAppointmentActive(int LocalDrivingLicenseApplicationID,int TestTypeID)
-        {
-            bool isFound = false;
-
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string query = @"SELECT Found = 1
-                             FROM TestAppointments 
-                                    JOIN LocalDrivingLicenseApplications
-                                        ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
-                                        WHERE TestAppointments.IsLocked = 0
-                                        AND TestAppointments.TestTypeID = @TestTypeID
-                                        AND TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
-
-            try
-            {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                isFound = reader.HasRows;
-
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                //Console.WriteLine("Error: " + ex.Message);
-                isFound = false;
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return isFound;
-        }
+        
        public static bool DoesPassTheTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
             bool isFound = false;

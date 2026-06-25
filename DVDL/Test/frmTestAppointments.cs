@@ -1,10 +1,12 @@
-﻿using DVDL_business;
+﻿using DVDL.Global_Classes;
+using DVDL_business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,25 +19,39 @@ namespace DVDL.Test
         public enTestTypes TestType = enTestTypes.eVisionType;
 
         int _LocalDrivingLicenseApplicationID = -1;
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplicationInfo;
         int _TestAppointmentID = -1;
         clsTestAppointments testAppointmentInfo;
 
 
-
+        private void _LoadDesign()
+        {
+            Design.MainLabelTitleDesign(lblMainTitle);
+            Design.DataButtonDesign(btnAddNew);
+            Design.DataGridViewDesign(dgvAllAppointments);
+            
+           
+        }
 
 
 
         public frmTestAppointments(int localDrivingLicenseApplicationID,enTestTypes testType)
         {
             InitializeComponent();
+            _LoadDesign();
             TestType = testType;
             _LocalDrivingLicenseApplicationID=localDrivingLicenseApplicationID;
-            dataGridView1.DataSource = clsTestAppointments.GetAppointments(localDrivingLicenseApplicationID, (clsTestTypes.enTestType)testType);
+            _LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(localDrivingLicenseApplicationID);
+            
         }
 
 
         private void _LoadData()
         {
+
+            dgvAllAppointments.DataSource = clsTestAppointments.GetAppointments(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)TestType);
+
+            ctrlDrivingLicenseApplicationInfo1.LoadAppliactionInfo(_LocalDrivingLicenseApplicationInfo.ApplicationID);
             switch (TestType)
             {
                 case enTestTypes.eVisionType:
@@ -58,5 +74,35 @@ namespace DVDL.Test
         {
             _LoadData();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (_LocalDrivingLicenseApplicationInfo.IsTestAppointmentActive((int)TestType))
+            {
+                MessageBox.Show("You Already have an Appointment for this test");
+                return;
+            }
+
+            if (_LocalDrivingLicenseApplicationInfo.DoesPassTheTest((int)TestType))
+            {
+                MessageBox.Show("You Already Passes this test");
+                return;
+            }
+            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (ctrlScheduleTest.enTestType)TestType);
+            scheduleTest.ShowDialog();
+            frmTestAppointments_Load(null, null);
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmScheduleTest scheduleTest = new frmScheduleTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value, _LocalDrivingLicenseApplicationID, (ctrlScheduleTest.enTestType)TestType);
+            scheduleTest.ShowDialog();
+            frmTestAppointments_Load(null, null); ;
+
+        }
+
+      
     }
 }

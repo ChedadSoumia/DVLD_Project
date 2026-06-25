@@ -88,7 +88,7 @@ namespace DVDL_business
             if (isFound)
             {
 
-                clsApplication application = clsApplication.FindBaseApplication(localDrivingLicenceApplicationId);
+                clsApplication application = clsApplication.FindBaseApplication(applicationID);
 
                 return new clsLocalDrivingLicenseApplication(localDrivingLicenceApplicationId, application.ApplicationID,
                     application.ApplicantPersonID, application.ApplicationDate, application.ApplicationTypeID,
@@ -171,6 +171,17 @@ namespace DVDL_business
             return clsLocalDrivingLicenseApplicationData.DoesPassTheTest(this.LocalDrivingLicenceApplicationID, TestTypeID);
         }
 
+
+        public int TrialsTest(int TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationData.TrialsTest(this.LocalDrivingLicenceApplicationID, TestTypeID);
+        }
+
+
+        public bool IsTestAppointmentActive(int TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(LocalDrivingLicenceApplicationID, TestTypeID);
+        }
 
     }
 }

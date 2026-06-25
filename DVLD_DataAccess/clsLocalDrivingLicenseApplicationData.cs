@@ -85,8 +85,8 @@ namespace DVLD_DataAccess
                     // The record was found
                     isFound = true;
 
-                    LocalAppID = (int)reader["LocalAppID"];
-                    LisenceClassID = (int)reader["LisenceClassID"];
+                    LocalAppID = (int)reader["LocalDrivingLicenseApplicationID"];
+                    LisenceClassID = (int)reader["LicenseClassID"];
 
 
                 }
@@ -305,6 +305,82 @@ namespace DVLD_DataAccess
         }
 
 
+
+        public static int TrialsTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
+        {
+            int localAppID = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT COUNT(*) 
+                        FROM LocalDrivingLicenseApplications
+                            JOIN TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
+                        WHERE TestAppointments.LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID
+		                        AND TestAppointments.TestTypeID = @TestTypeID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                {
+                    localAppID = InsertedID;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+            return localAppID;
+
+        }
+        public static bool IsTestAppointmentActive(int LocalDrivingLicenseApplicationID, int TestTypeID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT Found = 1
+                             FROM TestAppointments 
+                                    JOIN LocalDrivingLicenseApplications
+                                        ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
+                                        WHERE TestAppointments.IsLocked = 0
+                                        AND TestAppointments.TestTypeID = @TestTypeID
+                                        AND TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
 
     }
 
