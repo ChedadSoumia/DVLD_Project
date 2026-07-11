@@ -60,6 +60,7 @@
             this.ctrlScheduleTest1.Name = "ctrlScheduleTest1";
             this.ctrlScheduleTest1.Size = new System.Drawing.Size(541, 575);
             this.ctrlScheduleTest1.TabIndex = 27;
+            this.ctrlScheduleTest1.TestTypeID = DVDL_business.clsTestTypes.enTestType.VisionTest;
             // 
             // frmScheduleTest
             // 

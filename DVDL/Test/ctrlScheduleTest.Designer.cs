@@ -34,7 +34,7 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblTrial = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.lblApplicationType = new System.Windows.Forms.Label();
+            this.lblLicenseClass = new System.Windows.Forms.Label();
             this.lblAppLocalID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.dtpDate);
             this.groupBox1.Controls.Add(this.lblTrial);
             this.groupBox1.Controls.Add(this.lblFullName);
-            this.groupBox1.Controls.Add(this.lblApplicationType);
+            this.groupBox1.Controls.Add(this.lblLicenseClass);
             this.groupBox1.Controls.Add(this.lblAppLocalID);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
@@ -120,14 +120,14 @@
             this.lblFullName.TabIndex = 8;
             this.lblFullName.Text = "[???]";
             // 
-            // lblApplicationType
+            // lblLicenseClass
             // 
-            this.lblApplicationType.AutoSize = true;
-            this.lblApplicationType.Location = new System.Drawing.Point(150, 73);
-            this.lblApplicationType.Name = "lblApplicationType";
-            this.lblApplicationType.Size = new System.Drawing.Size(39, 17);
-            this.lblApplicationType.TabIndex = 7;
-            this.lblApplicationType.Text = "[???]";
+            this.lblLicenseClass.AutoSize = true;
+            this.lblLicenseClass.Location = new System.Drawing.Point(150, 73);
+            this.lblLicenseClass.Name = "lblLicenseClass";
+            this.lblLicenseClass.Size = new System.Drawing.Size(39, 17);
+            this.lblLicenseClass.TabIndex = 7;
+            this.lblLicenseClass.Text = "[???]";
             // 
             // lblAppLocalID
             // 
@@ -321,7 +321,7 @@
         private System.Windows.Forms.Label lblAppointmentLock;
         private System.Windows.Forms.Label lblTrial;
         private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Label lblApplicationType;
+        private System.Windows.Forms.Label lblLicenseClass;
         private System.Windows.Forms.Label lblAppLocalID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

@@ -105,7 +105,11 @@ namespace DVDL_business
         }
 
 
+        public bool DoesAttendTestType(clsTestTypes.enTestType TestTypeID)
 
+        {
+            return clsLocalDrivingLicenseApplicationData.DoesAttendTestType(this.LocalDrivingLicenceApplicationID, (int)TestTypeID);
+        }
 
         private bool _UpdateLocalDrivingLicenseApplication()
         {
@@ -166,9 +170,9 @@ namespace DVDL_business
         }
 
 
-        public bool DoesPassTheTest(int TestTypeID)
+        public bool DoesPassTheTest(clsTestTypes.enTestType TestTypeID)
         {
-            return clsLocalDrivingLicenseApplicationData.DoesPassTheTest(this.LocalDrivingLicenceApplicationID, TestTypeID);
+            return clsLocalDrivingLicenseApplicationData.DoesPassTheTest(this.LocalDrivingLicenceApplicationID, (int)TestTypeID);
         }
 
 
@@ -178,10 +182,12 @@ namespace DVDL_business
         }
 
 
-        public bool IsTestAppointmentActive(int TestTypeID)
+        public static bool  IsTestAppointmentActive(int localDrivingLicenceApplicationID, clsTestTypes.enTestType TestTypeID)
         {
-            return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(LocalDrivingLicenceApplicationID, TestTypeID);
+            return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(localDrivingLicenceApplicationID, (int)TestTypeID);
         }
+
+
 
     }
 }

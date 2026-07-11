@@ -39,6 +39,8 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ctrlDrivingLicenseApplicationInfo1 = new DVDL.Application.Local_Driving_License_Applications.ctrlDrivingLicenseApplicationInfo();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAppointments)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +49,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 788);
+            this.panel2.Location = new System.Drawing.Point(0, 799);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(739, 10);
             this.panel2.TabIndex = 18;
@@ -101,19 +103,19 @@
             this.editToolStripMenuItem,
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 52);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // takeTestToolStripMenuItem
             // 
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.takeTestToolStripMenuItem.Text = "Take Test";
             // 
             // ctrlDrivingLicenseApplicationInfo1
@@ -124,12 +126,31 @@
             this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(735, 514);
             this.ctrlDrivingLicenseApplicationInfo1.TabIndex = 23;
             // 
+            // lblRecordsCount
+            // 
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.Location = new System.Drawing.Point(113, 774);
+            this.lblRecordsCount.Name = "lblRecordsCount";
+            this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
+            this.lblRecordsCount.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 774);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "#Records:";
+            // 
             // frmTestAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(739, 798);
+            this.ClientSize = new System.Drawing.Size(739, 809);
+            this.Controls.Add(this.lblRecordsCount);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvAllAppointments);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.label1);
@@ -160,5 +181,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
+        private System.Windows.Forms.Label lblRecordsCount;
+        private System.Windows.Forms.Label label2;
     }
 }

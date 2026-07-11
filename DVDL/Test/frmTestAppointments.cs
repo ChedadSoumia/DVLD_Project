@@ -15,13 +15,10 @@ namespace DVDL.Test
 {
     public partial class frmTestAppointments : Form
     {
-        public enum enTestTypes { eVisionType = 1, eWrittenType = 2, eStreetType = 3 };
-        public enTestTypes TestType = enTestTypes.eVisionType;
-
+        private clsTestTypes.enTestType _TestType = clsTestTypes.enTestType.VisionTest;
+        private DataTable _dtLicenseTestAppointments;
         int _LocalDrivingLicenseApplicationID = -1;
-        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplicationInfo;
-        int _TestAppointmentID = -1;
-        clsTestAppointments testAppointmentInfo;
+        
 
 
         private void _LoadDesign()
@@ -35,39 +32,62 @@ namespace DVDL.Test
 
 
 
-        public frmTestAppointments(int localDrivingLicenseApplicationID,enTestTypes testType)
+        public frmTestAppointments(int localDrivingLicenseApplicationID, clsTestTypes.enTestType testType)
         {
             InitializeComponent();
             _LoadDesign();
-            TestType = testType;
+            _TestType = testType;
             _LocalDrivingLicenseApplicationID=localDrivingLicenseApplicationID;
-            _LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(localDrivingLicenseApplicationID);
             
         }
 
 
-        private void _LoadData()
+        private void _LoadTestTypeTitle()
         {
-
-            dgvAllAppointments.DataSource = clsTestAppointments.GetAppointments(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)TestType);
-
-            ctrlDrivingLicenseApplicationInfo1.LoadAppliactionInfo(_LocalDrivingLicenseApplicationInfo.ApplicationID);
-            switch (TestType)
+            switch (_TestType)
             {
-                case enTestTypes.eVisionType:
+                case clsTestTypes.enTestType.VisionTest:
                     this.Text = "Vision Test appointments";
                     lblMainTitle.Text = "Vision Test appointments";
                     break;
-                case enTestTypes.eWrittenType:
+                case clsTestTypes.enTestType.WrittenTest:
                     this.Text = "Written Test appointments";
                     lblMainTitle.Text = "Written Test appointments";
                     break;
-                case enTestTypes.eStreetType:
+                case clsTestTypes.enTestType.StreetTest:
                     this.Text = "Street Test appointments";
                     lblMainTitle.Text = "Street Test appointments";
                     break;
-
             }
+            }
+
+        private void _LoadData()
+        {
+
+            _LoadTestTypeTitle();
+
+            ctrlDrivingLicenseApplicationInfo1.LoadLocalLicenseDrivingAppliactionInfo(_LocalDrivingLicenseApplicationID);
+            _dtLicenseTestAppointments = clsTestAppointments.GetAppointments(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType);
+            dgvAllAppointments.DataSource = _dtLicenseTestAppointments;
+
+            lblRecordsCount.Text = dgvAllAppointments.Rows.Count.ToString();
+
+            if (dgvAllAppointments.Rows.Count > 0)
+            {
+                dgvAllAppointments.Columns[0].HeaderText = "Appointment ID";
+                dgvAllAppointments.Columns[0].Width = 150;
+
+                dgvAllAppointments.Columns[1].HeaderText = "Appointment Date";
+                dgvAllAppointments.Columns[1].Width = 200;
+
+                dgvAllAppointments.Columns[2].HeaderText = "Paid Fees";
+                dgvAllAppointments.Columns[2].Width = 150;
+
+                dgvAllAppointments.Columns[3].HeaderText = "Is Locked";
+                dgvAllAppointments.Columns[3].Width = 100;
+            }
+
+
         }
 
         private void frmTestAppointments_Load(object sender, EventArgs e)
@@ -77,19 +97,19 @@ namespace DVDL.Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (_LocalDrivingLicenseApplicationInfo.IsTestAppointmentActive((int)TestType))
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplicationInfo = new clsLocalDrivingLicenseApplication();
+            if (clsLocalDrivingLicenseApplication.IsTestAppointmentActive(_LocalDrivingLicenseApplicationID,_TestType))
             {
-                MessageBox.Show("You Already have an Appointment for this test");
+                MessageBox.Show("Person Already have an active appointment for this test");
                 return;
             }
 
-            if (_LocalDrivingLicenseApplicationInfo.DoesPassTheTest((int)TestType))
+            if (localDrivingLicenseApplicationInfo.DoesPassTheTest(_TestType))
             {
-                MessageBox.Show("You Already Passes this test");
+                MessageBox.Show("Person Already Passes this test");
                 return;
             }
-            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (ctrlScheduleTest.enTestType)TestType);
+            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType);
             scheduleTest.ShowDialog();
             frmTestAppointments_Load(null, null);
 
@@ -97,7 +117,7 @@ namespace DVDL.Test
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmScheduleTest scheduleTest = new frmScheduleTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value, _LocalDrivingLicenseApplicationID, (ctrlScheduleTest.enTestType)TestType);
+            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType,(int)dgvAllAppointments.CurrentRow.Cells[0].Value);
             scheduleTest.ShowDialog();
             frmTestAppointments_Load(null, null); ;
 

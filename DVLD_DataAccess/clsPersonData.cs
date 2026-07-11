@@ -38,7 +38,6 @@ namespace DVLD_DataAccess
                     FirstName = (string)reader["FirstName"];
                     SecondName = (string)reader["SecondName"];
 
-                    //ThirdName: allows null in database so we should handle null
                     if (reader["ThirdName"] != DBNull.Value)
                     {
                         ThirdName = (string)reader["ThirdName"];
@@ -56,7 +55,6 @@ namespace DVLD_DataAccess
                     Phone = (string)reader["Phone"];
 
 
-                    //Email: allows null in database so we should handle null
                     if (reader["Email"] != DBNull.Value)
                     {
                         Email = (string)reader["Email"];
@@ -68,7 +66,6 @@ namespace DVLD_DataAccess
 
                     NationalityCountryID = (int)reader["NationalityCountryID"];
 
-                    //ImagePath: allows null in database so we should handle null
                     if (reader["ImagePath"] != DBNull.Value)
                     {
                         ImagePath = (string)reader["ImagePath"];
