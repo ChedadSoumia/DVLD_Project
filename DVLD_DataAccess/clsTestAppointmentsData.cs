@@ -228,10 +228,6 @@ namespace DVLD_DataAccess
             else
                 command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
 
-
-
-
-
             try
             {
                 connection.Open();
@@ -386,6 +382,7 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
+        
 
     }
 }

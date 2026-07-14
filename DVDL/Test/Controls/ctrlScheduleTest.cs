@@ -79,7 +79,7 @@ namespace DVDL.Test
 
             lblFeesVisionTest.Text = _TestAppointmentInfo.PaidFees.ToString();
 
-            if(DateTime.Compare(_TestAppointmentInfo.AppointmentDate, DateTime.Now) < 0)
+            if(DateTime.Compare(_TestAppointmentInfo.AppointmentDate, DateTime.Now) > 0)
             {
                 dtpDate.MinDate  = DateTime.Now;
             }

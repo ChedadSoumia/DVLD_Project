@@ -119,10 +119,15 @@ namespace DVDL.Test
         {
             frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType,(int)dgvAllAppointments.CurrentRow.Cells[0].Value);
             scheduleTest.ShowDialog();
-            frmTestAppointments_Load(null, null); ;
+            frmTestAppointments_Load(null, null); 
 
         }
 
-      
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTakeTest takeTest = new frmTakeTest();
+            takeTest.ShowDialog();
+            frmTestAppointments_Load(null, null);
+        }
     }
 }

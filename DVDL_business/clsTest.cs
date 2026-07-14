@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace DVDL_business
     public class clsTest
     {
 
-       
+        private enum enMode { eAddNew = 0, eUpdate = 1}
+        private enMode _Mode = enMode.eAddNew;
+
         public int TestID { get; set; }
         public int TestAppointmentID { get; set; }
         public clsTestAppointments TestAppointmentInfo;
@@ -28,6 +31,7 @@ namespace DVDL_business
             TestResult = 0;
             Notes = "";
             CrearedByUserID= -1;
+            _Mode = enMode.eAddNew;
 
         }
 
@@ -41,6 +45,8 @@ namespace DVDL_business
             Notes=notes;
             CrearedByUserID=crearedByUserID;
             CreatedByUserInfo = clsUser.Find(crearedByUserID);
+
+            _Mode = enMode.eUpdate;
 
         }
 
@@ -88,6 +94,23 @@ namespace DVDL_business
             }
         }
 
+        public static clsTest HasTestAppointmentATestResult(int testAppointmentID)
+        {
+            int testID = -1, createdByUserId = -1;
+            byte testResult = 0;
+            string notes = "";
+
+            bool isFound = clsTestData.HasTestAppointmentATestResult(reftestID,  testAppointmentID, ref testResult, ref notes, ref createdByUserId);
+
+            if (isFound)
+            {
+                return new clsTest(testID, testAppointmentID, testResult, notes, createdByUserId);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
         public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
@@ -95,11 +118,32 @@ namespace DVDL_business
             return clsTestData.GetPassedTestCount(LocalDrivingLicenseApplicationID);
         }
 
+        private bool _UpdateTestNotes()
+        {
+            return clsTestData.UpdateTestNotes(this.TestID,this.Notes);
+        }
 
         public bool Save()
         {
-            return _AddNewTest();
+            switch (_Mode)
+            {
+                case enMode.eAddNew:
+                    if (_AddNewTest())
+                    {
+                        _Mode = enMode.eUpdate;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.eUpdate:
+                    return _UpdateTestNotes();
+            }
+            return false;
         }
+
+
 
 
 

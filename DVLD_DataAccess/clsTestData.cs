@@ -303,5 +303,113 @@ namespace DVLD_DataAccess
             return dt;
 
         }
+
+
+        public static bool UpdateTestNotes(int TestId, string notes)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"
+                                UPDATE Tests 
+                                SET Notes = @notes
+                                WHERE TestID = @TestId; ";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@TestId", TestId);
+          
+
+            if (notes == "")
+
+                command.Parameters.AddWithValue("@notes", DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@notes", notes);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+
+        public static bool HasTestAppointmentATestResult(ref int TestID, int TestAppointmentID, ref byte TestResult, ref string Notes, ref int CreatedByUserID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT	Tests.TestID,Tests.TestAppointmentID,Tests.TestResult,Tests.Notes,Tests.CreatedByUserID
+                                FROM	Tests
+			                                JOIN TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID
+                                WHERE TestAppointments.TestAppointmentID = @TestAppointmentID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    TestID = (int)reader["TestID"];
+                    TestResult = (byte)reader["TestResult"];
+
+
+
+                    if (reader["Notes"] != DBNull.Value)
+                    {
+                        Notes = (string)reader["Notes"];
+                    }
+                    else
+                    {
+                        Notes = "";
+                    }
+
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
+
     }
 }

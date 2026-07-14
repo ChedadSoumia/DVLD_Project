@@ -97,9 +97,10 @@
             // 
             // dtpDate
             // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(153, 177);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 24);
+            this.dtpDate.Size = new System.Drawing.Size(142, 24);
             this.dtpDate.TabIndex = 12;
             // 
             // lblTrial
