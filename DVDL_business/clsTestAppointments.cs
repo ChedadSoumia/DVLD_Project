@@ -17,6 +17,7 @@ namespace DVDL_business
         public int TestAppointmentID { set; get; }
         public clsTestTypes.enTestType TestTypeID { set; get; }
         public int LocalDrivingLicenseApplicationID { set; get; }
+        public clsLocalDrivingLicenseApplication LocalDrivingLicenseApplicationInfo { set; get; }
         public DateTime AppointmentDate { set; get; }
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
@@ -42,12 +43,14 @@ namespace DVDL_business
             this.TestAppointmentID= testAppointmentID;
             this.TestTypeID = testTypeId;
             this.LocalDrivingLicenseApplicationID = localDrivingLicenseApplicationID;
+            this.LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(localDrivingLicenseApplicationID);
             this.AppointmentDate=appointmentDate;
             this.PaidFees= paidFees;
             this.CreatedByUserID= createdByUserID;
             this.IsLocked = isLocked;
             this.RetakeTestApplicationID= retakeTestApplicationID;
             this.RetakeTestAppInfo = clsApplication.FindBaseApplication(retakeTestApplicationID);
+            
             Mode = enMode.eUpdate;
         }
 

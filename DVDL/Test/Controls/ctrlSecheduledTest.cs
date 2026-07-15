@@ -16,14 +16,10 @@ namespace DVDL.Test
     public partial class ctrlSecheduledTest : UserControl
     {
 
-        private enum enMode { eAddNew = 0, eUpdate = 1 }
-        private enMode _Mode = enMode.eAddNew;
-
         private int _TestAppointmentID = -1;
         private clsTestAppointments _TestAppointmentInfo;
 
         private int _TestID = -1;
-        private clsTest _TestInfo;
 
         private clsTestTypes.enTestType _TestTypeID = clsTestTypes.enTestType.VisionTest;
         public clsTestTypes.enTestType TestTypeID
@@ -59,15 +55,34 @@ namespace DVDL.Test
         }
         private void _LoadData()
         {
-            
+            lblAppLocalID.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationID.ToString();
+            lblLicenseClass.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationInfo.LicenseClassInfo.ClassName;
+            lblFullName.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationInfo.ApplicantFullName;
+            lblTrial.Text = clsTest.GetPassedTestCount(_TestAppointmentInfo.LocalDrivingLicenseApplicationID).ToString();
+            lblTestDate.Text = clsFormat.DateToShort(_TestAppointmentInfo.AppointmentDate);
+            lblFees.Text = _TestAppointmentInfo.PaidFees.ToString();
+            if (_TestID == -1)
+                lblTestID.Text = "Not Taken Yet";
+            else 
+                lblTestID.Text = _TestID.ToString();
+
+
         }
 
-        public void LoadTestAppointmentInfo(int testAppointmentID,clsTestTypes.enTestType testTypeID)
+        public void LoadTestAppointmentInfo(int testAppointmentID,clsTestTypes.enTestType testTypeID , int TestID = -1)
         {
             _TestAppointmentID = testAppointmentID;
             _TestAppointmentInfo = clsTestAppointments.Find(testAppointmentID);
-            _TestTypeID = testTypeID;
 
+            if (_TestAppointmentInfo == null)
+            {
+                MessageBox.Show("Error: No  Appointment ID = " + _TestAppointmentID.ToString(),
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _TestAppointmentID = -1;
+                return;
+            }
+
+            _TestID = TestID;
 
 
             _LoadData();

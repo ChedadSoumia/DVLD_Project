@@ -352,7 +352,7 @@ namespace DVLD_DataAccess
                                  TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID 
                             WHERE
                             (LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID)  
-                            AND(TestAppointments.TestTypeID = @TestTypeID) and isLocked=0
+                            AND(TestAppointments.TestTypeID = @TestTypeID) and isLocked = 0
                             ORDER BY TestAppointments.TestAppointmentID desc";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -363,7 +363,7 @@ namespace DVLD_DataAccess
             try
             {
                 connection.Open();
-                Object Result = command.ExecuteReader();
+                Object Result = command.ExecuteScalar();
 
                 if (Result != null)
                 {

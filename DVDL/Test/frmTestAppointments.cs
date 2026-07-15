@@ -125,7 +125,7 @@ namespace DVDL.Test
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTakeTest takeTest = new frmTakeTest();
+            frmTakeTest takeTest = new frmTakeTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value);
             takeTest.ShowDialog();
             frmTestAppointments_Load(null, null);
         }

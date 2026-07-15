@@ -299,7 +299,7 @@ namespace DVDL.Test
             _TestAppointmentInfo.TestTypeID = _TestTypeID;
             _TestAppointmentInfo.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplication.LocalDrivingLicenceApplicationID;
             _TestAppointmentInfo.AppointmentDate = dtpDate.Value;
-            _TestAppointmentInfo.PaidFees = Convert.ToSingle(lblFeesVisionTest);
+            _TestAppointmentInfo.PaidFees = Convert.ToSingle(lblFeesVisionTest.Text);
             _TestAppointmentInfo.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
             if (_TestAppointmentInfo.Save())

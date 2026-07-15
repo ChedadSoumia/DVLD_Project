@@ -19,16 +19,16 @@ namespace DVDL_business
         public int TestID { get; set; }
         public int TestAppointmentID { get; set; }
         public clsTestAppointments TestAppointmentInfo;
-        public byte TestResult { get; set; }
+        public bool TestResult { get; set; }
         public string Notes { get; set; }
         public int CrearedByUserID { get; set; }
         public clsUser CreatedByUserInfo;
 
-        clsTest()
+        public clsTest()
         {
             TestID = -1;
             TestAppointmentID = -1;
-            TestResult = 0;
+            TestResult = false;
             Notes = "";
             CrearedByUserID= -1;
             _Mode = enMode.eAddNew;
@@ -36,7 +36,7 @@ namespace DVDL_business
         }
 
 
-        clsTest(int testID, int testAppointmentID, byte testResult, string notes,int crearedByUserID)
+        private clsTest(int testID, int testAppointmentID, bool testResult, string notes,int crearedByUserID)
         {
             TestID=testID;
             TestAppointmentID=testAppointmentID;
@@ -61,7 +61,7 @@ namespace DVDL_business
         public static clsTest Find(int TestID)
         {
             int testAppointmentID = -1,  createdByUserId = -1;
-            byte testResult = 0;
+            bool testResult = false;
             string notes = "";
 
             bool isFound = clsTestData.GetTestByID(TestID, ref testAppointmentID, ref testResult, ref notes, ref createdByUserId);
@@ -76,13 +76,13 @@ namespace DVDL_business
             }
         }
 
-        public static clsTest FindByTestAppointmentID(int testAppointmentID)
+        public static clsTest FindLastTestPerPersonAndLicenseClass(int ApplicantPersonID,int LicenseClassID,clsTestTypes.enTestType TestTypeID)
         {
-            int testID = -1, createdByUserId = -1;
-            byte testResult = 0;
+            int testID = -1, createdByUserId = -1 , testAppointmentID = -1;
+            bool testResult = false;
             string notes = "";
 
-            bool isFound = clsTestData.GetTestByTestAppointmentID(ref testID, testAppointmentID, ref testResult, ref notes, ref createdByUserId);
+            bool isFound = clsTestData.GetLastTestByPersonAndTestTypeAndLicenseClass(ApplicantPersonID, LicenseClassID,(int) TestTypeID,ref testID, ref testAppointmentID, ref testResult, ref notes, ref createdByUserId);
 
             if (isFound)
             {
@@ -97,10 +97,10 @@ namespace DVDL_business
         public static clsTest HasTestAppointmentATestResult(int testAppointmentID)
         {
             int testID = -1, createdByUserId = -1;
-            byte testResult = 0;
+            bool testResult = false;
             string notes = "";
 
-            bool isFound = clsTestData.HasTestAppointmentATestResult(reftestID,  testAppointmentID, ref testResult, ref notes, ref createdByUserId);
+            bool isFound = clsTestData.HasTestAppointmentATestResult(ref testID,  testAppointmentID, ref testResult, ref notes, ref createdByUserId);
 
             if (isFound)
             {
@@ -116,6 +116,11 @@ namespace DVDL_business
         public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
         {
             return clsTestData.GetPassedTestCount(LocalDrivingLicenseApplicationID);
+        }
+
+        public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
+        {
+            return GetPassedTestCount(LocalDrivingLicenseApplicationID) == 3;
         }
 
         private bool _UpdateTestNotes()

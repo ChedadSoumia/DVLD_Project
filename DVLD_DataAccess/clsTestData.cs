@@ -13,7 +13,7 @@ namespace DVLD_DataAccess
     public class clsTestData
     {
 
-        public static bool GetTestByID(int TestID,ref int TestAppointmentID,ref byte TestResult,ref string Notes,ref int CreatedByUserID)
+        public static bool GetTestByID(int TestID,ref int TestAppointmentID,ref bool TestResult,ref string Notes,ref int CreatedByUserID)
         {
             bool isFound = false;
 
@@ -36,7 +36,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     TestAppointmentID = (int)reader["TestAppointmentID"];
-                    TestResult = (byte)reader["TestResult"];
+                    TestResult = (bool)reader["TestResult"];
 
 
 
@@ -76,17 +76,32 @@ namespace DVLD_DataAccess
         }
 
 
-        public static bool GetTestByTestAppointmentID(ref int TestID,  int TestAppointmentID, ref byte TestResult, ref string Notes, ref int CreatedByUserID)
+        public static bool GetLastTestByPersonAndTestTypeAndLicenseClass
+            (int PersonID, int LicenseClassID, int TestTypeID, ref int TestID,
+              ref int TestAppointmentID, ref bool TestResult,
+              ref string Notes, ref int CreatedByUserID)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Tests WHERE TestAppointmentID = @TestAppointmentID";
+            string query = @"SELECT  top 1 Tests.TestID, 
+                Tests.TestAppointmentID, Tests.TestResult, 
+			    Tests.Notes, Tests.CreatedByUserID, Applications.ApplicantPersonID
+                FROM            LocalDrivingLicenseApplications INNER JOIN
+                                         Tests INNER JOIN
+                                         TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                         Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID
+                WHERE        (Applications.ApplicantPersonID = @PersonID) 
+                        AND (LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID)
+                        AND ( TestAppointments.TestTypeID=@TestTypeID)
+                ORDER BY Tests.TestAppointmentID DESC";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {
@@ -95,25 +110,19 @@ namespace DVLD_DataAccess
 
                 if (reader.Read())
                 {
+
                     // The record was found
                     isFound = true;
-
                     TestID = (int)reader["TestID"];
-                    TestResult = (byte)reader["TestResult"];
+                    TestAppointmentID = (int)reader["TestAppointmentID"];
+                    TestResult = (bool)reader["TestResult"];
+                    if (reader["Notes"] == DBNull.Value)
 
-
-
-                    if (reader["Notes"] != DBNull.Value)
-                    {
-                        Notes = (string)reader["Notes"];
-                    }
-                    else
-                    {
                         Notes = "";
-                    }
+                    else
+                        Notes = (string)reader["Notes"];
 
                     CreatedByUserID = (int)reader["CreatedByUserID"];
-
 
                 }
                 else
@@ -123,11 +132,12 @@ namespace DVLD_DataAccess
                 }
 
                 reader.Close();
+
+
             }
             catch (Exception ex)
             {
                 //Console.WriteLine("Error: " + ex.Message);
-
                 isFound = false;
             }
             finally
@@ -138,7 +148,7 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static int AddNewTest(int TestAppointmentID,int TestResult,string Notes,int CreatedByUserID)
+        public static int AddNewTest(int TestAppointmentID,bool TestResult,string Notes,int CreatedByUserID)
         {
             int TestID = -1;
 
@@ -229,7 +239,7 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT COUNT(Tests.TestResult) 
+            string query = @"SELECT COUNT(*) 
                             FROM  TestAppointments
 	                            JOIN Tests ON 
 	                            TestAppointments.TestAppointmentID = Tests.TestAppointmentID 
@@ -345,7 +355,7 @@ namespace DVLD_DataAccess
             return (rowsAffected > 0);
         }
 
-        public static bool HasTestAppointmentATestResult(ref int TestID, int TestAppointmentID, ref byte TestResult, ref string Notes, ref int CreatedByUserID)
+        public static bool HasTestAppointmentATestResult(ref int TestID, int TestAppointmentID, ref bool TestResult, ref string Notes, ref int CreatedByUserID)
         {
             bool isFound = false;
 
@@ -371,7 +381,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     TestID = (int)reader["TestID"];
-                    TestResult = (byte)reader["TestResult"];
+                    TestResult = (bool)reader["TestResult"];
 
 
 

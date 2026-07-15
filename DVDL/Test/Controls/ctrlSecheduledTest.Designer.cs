@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblFeesVisionTest = new System.Windows.Forms.Label();
+            this.lblTestDate = new System.Windows.Forms.Label();
+            this.lblTestID = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblTrial = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
@@ -40,9 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTestID = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTestDate = new System.Windows.Forms.Label();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.groupBox1.Controls.Add(this.lblTestDate);
             this.groupBox1.Controls.Add(this.lblTestID);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.lblFeesVisionTest);
+            this.groupBox1.Controls.Add(this.lblFees);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.lblTrial);
             this.groupBox1.Controls.Add(this.lblFullName);
@@ -70,14 +70,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test Type";
             // 
-            // lblFeesVisionTest
+            // lblTestDate
             // 
-            this.lblFeesVisionTest.AutoSize = true;
-            this.lblFeesVisionTest.Location = new System.Drawing.Point(150, 219);
-            this.lblFeesVisionTest.Name = "lblFeesVisionTest";
-            this.lblFeesVisionTest.Size = new System.Drawing.Size(39, 17);
-            this.lblFeesVisionTest.TabIndex = 14;
-            this.lblFeesVisionTest.Text = "[???]";
+            this.lblTestDate.AutoSize = true;
+            this.lblTestDate.Location = new System.Drawing.Point(150, 177);
+            this.lblTestDate.Name = "lblTestDate";
+            this.lblTestDate.Size = new System.Drawing.Size(100, 17);
+            this.lblTestDate.TabIndex = 17;
+            this.lblTestDate.Text = "[dd/mm/yyyy]";
+            // 
+            // lblTestID
+            // 
+            this.lblTestID.AutoSize = true;
+            this.lblTestID.Location = new System.Drawing.Point(150, 249);
+            this.lblTestID.Name = "lblTestID";
+            this.lblTestID.Size = new System.Drawing.Size(95, 17);
+            this.lblTestID.TabIndex = 16;
+            this.lblTestID.Text = "Not Taken Yet";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(57, 249);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Test ID:";
+            // 
+            // lblFees
+            // 
+            this.lblFees.AutoSize = true;
+            this.lblFees.Location = new System.Drawing.Point(150, 219);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(39, 17);
+            this.lblFees.TabIndex = 14;
+            this.lblFees.Text = "[???]";
             // 
             // label8
             // 
@@ -175,34 +203,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "D.L.App.ID:";
             // 
-            // lblTestID
-            // 
-            this.lblTestID.AutoSize = true;
-            this.lblTestID.Location = new System.Drawing.Point(150, 249);
-            this.lblTestID.Name = "lblTestID";
-            this.lblTestID.Size = new System.Drawing.Size(95, 17);
-            this.lblTestID.TabIndex = 16;
-            this.lblTestID.Text = "Not Taken Yet";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(57, 249);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 17);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Test ID:";
-            // 
-            // lblTestDate
-            // 
-            this.lblTestDate.AutoSize = true;
-            this.lblTestDate.Location = new System.Drawing.Point(150, 177);
-            this.lblTestDate.Name = "lblTestDate";
-            this.lblTestDate.Size = new System.Drawing.Size(100, 17);
-            this.lblTestDate.TabIndex = 17;
-            this.lblTestDate.Text = "[dd/mm/yyyy]";
-            // 
             // lblMainTitle
             // 
             this.lblMainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,7 +236,7 @@
         private System.Windows.Forms.Label lblTestDate;
         private System.Windows.Forms.Label lblTestID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblFeesVisionTest;
+        private System.Windows.Forms.Label lblFees;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTrial;
         private System.Windows.Forms.Label lblFullName;
