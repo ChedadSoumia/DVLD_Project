@@ -187,7 +187,10 @@ namespace DVDL_business
             return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(localDrivingLicenceApplicationID, (int)TestTypeID);
         }
 
-
+        public clsTest GetLastTestPerTestType(clsTestTypes.enTestType TestTypeID) 
+        {
+            return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
+        }
 
     }
 }

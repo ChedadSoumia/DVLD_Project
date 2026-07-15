@@ -99,18 +99,31 @@ namespace DVDL.Test
         {
             clsLocalDrivingLicenseApplication localDrivingLicenseApplicationInfo = new clsLocalDrivingLicenseApplication();
             if (clsLocalDrivingLicenseApplication.IsTestAppointmentActive(_LocalDrivingLicenseApplicationID,_TestType))
+            
             {
                 MessageBox.Show("Person Already have an active appointment for this test");
                 return;
             }
 
-            if (localDrivingLicenseApplicationInfo.DoesPassTheTest(_TestType))
+            clsTest LastTest = localDrivingLicenseApplicationInfo.GetLastTestPerTestType(_TestType);
+
+
+            if(LastTest == null)
             {
-                MessageBox.Show("Person Already Passes this test");
+                frmScheduleTest frm1 = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
+                frm1.ShowDialog();
+                frmTestAppointments_Load(null, null);
                 return;
             }
-            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType);
-            scheduleTest.ShowDialog();
+
+            if (LastTest.TestResult == true)
+            {
+                MessageBox.Show("This person already passed this test before, you can only retake faild test", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmScheduleTest frm2 = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
+            frm2.ShowDialog();
             frmTestAppointments_Load(null, null);
 
         }
