@@ -25,6 +25,18 @@ namespace DVDL_business
         public int RetakeTestApplicationID { set; get; }
         public clsApplication RetakeTestAppInfo { set; get; }
 
+
+        private int _GetTestID()
+        {
+            return clsTestAppointmentsData.GetTestID(TestAppointmentID);
+        }
+        public int TestID
+        {
+            get
+            {
+                return _GetTestID();
+            }
+        }
         public clsTestAppointments() {
 
 

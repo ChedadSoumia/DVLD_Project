@@ -69,6 +69,16 @@ namespace DVDL_business
         }
 
 
+        private bool _UpdateLicenseClass()
+        {
+            return clsLicenseClassesData.UpdateLicenseClass(this.LicenseClassID, this.ClassName, this.ClassDescription, this.MinimumAllowedAge, this.DefaultValidityLength, this.ClassFees);
+        }
+
+        public bool Save()
+        {
+            return _UpdateLicenseClass();
+        }
+
 
     }
 }

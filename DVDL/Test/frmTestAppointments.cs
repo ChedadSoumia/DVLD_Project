@@ -97,8 +97,8 @@ namespace DVDL.Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplicationInfo = new clsLocalDrivingLicenseApplication();
-            if (clsLocalDrivingLicenseApplication.IsTestAppointmentActive(_LocalDrivingLicenseApplicationID,_TestType))
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(_LocalDrivingLicenseApplicationID);
+            if (localDrivingLicenseApplicationInfo.IsTestAppointmentActive(_TestType))
             
             {
                 MessageBox.Show("Person Already have an active appointment for this test");
@@ -138,7 +138,7 @@ namespace DVDL.Test
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTakeTest takeTest = new frmTakeTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value);
+            frmTakeTest takeTest = new frmTakeTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value, (clsTestTypes.enTestType)_TestType);
             takeTest.ShowDialog();
             frmTestAppointments_Load(null, null);
         }

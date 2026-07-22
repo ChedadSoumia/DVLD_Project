@@ -60,7 +60,7 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static bool GetDriverByPersonID(ref int DriverID, int PersonID,int CreatedByUser, DateTime CreatedDate)
+        public static bool GetDriverByPersonID(ref int DriverID, int PersonID,ref int CreatedByUser, ref DateTime CreatedDate)
         {
 
             bool isFound = false;
@@ -83,7 +83,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     DriverID = (int)reader["DriverID"];
-                    CreatedByUser = (int)reader["CreatedByUser"];
+                    CreatedByUser = (int)reader["CreatedByUserID"];
                     CreatedDate = (DateTime)reader["CreatedDate"];
 
                 }
@@ -115,8 +115,8 @@ namespace DVLD_DataAccess
 
 
             // SYSDATETIME()
-            string query = @"INSERT INTO Users (PersonID, CreatedByUserID, CreatedDate)
-                             VALUES (@PersonID, @UserName, @CreatedByUser,@CreatedDate);
+            string query = @"INSERT INTO Drivers (PersonID, CreatedByUserID, CreatedDate)
+                             VALUES (@PersonID, @CreatedByUser,@CreatedDate);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);

@@ -1,5 +1,6 @@
 ﻿using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Global_Classes;
+using DVDL.License;
 using DVDL.Test;
 using DVDL_business;
 using DVLD_Buisness;
@@ -176,23 +177,31 @@ namespace DVDL.Application
             clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication =
                     clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID
                                                     (LocalDrivingLicenseApplicationID);
+            int TotalPassedTests = (int)dgvAllLocalApplications.CurrentRow.Cells[5].Value;
+            bool LicenseExists = LocalDrivingLicenseApplication.IsLicenseIssued();
 
+            deleteToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
+            editToolStripMenuItem.Enabled = !LicenseExists && (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
+            cancelApplicationToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
 
-            deleteToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eCompleted);
-            editToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
-
-
+            sechduleTestsToolStripMenuItem.Enabled = !LicenseExists;
+            
             bool PassVisionTest = LocalDrivingLicenseApplication.DoesPassTheTest(clsTestTypes.enTestType.VisionTest);
             bool PassWrittenTest = LocalDrivingLicenseApplication.DoesPassTheTest(clsTestTypes.enTestType.WrittenTest);
             bool PassStreetTest = LocalDrivingLicenseApplication.DoesPassTheTest(clsTestTypes.enTestType.StreetTest);
 
-            sechduleVisionTestToolStripMenuItem.Enabled = (!PassVisionTest ) ;
-            sechduleWrittenTestToolStripMenuItem.Enabled = (!PassWrittenTest && PassVisionTest);
-            sechduleStreetTestToolStripMenuItem.Enabled = (!PassStreetTest && PassWrittenTest && PassVisionTest);
+            sechduleTestsToolStripMenuItem.Enabled = (!PassVisionTest || !PassWrittenTest || !PassStreetTest) && (LocalDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.eNew);
 
-            sechduleTestsToolStripMenuItem.Enabled = !(LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eNew);
+            if (sechduleTestsToolStripMenuItem.Enabled)
+            {
+                sechduleVisionTestToolStripMenuItem.Enabled = !PassVisionTest;
+                sechduleWrittenTestToolStripMenuItem.Enabled = PassVisionTest && !PassWrittenTest;
+                sechduleStreetTestToolStripMenuItem.Enabled = PassVisionTest && PassWrittenTest && !PassStreetTest;
+            }
 
-            cancelApplicationToolStripMenuItem.Enabled = !(LocalDrivingLicenseApplication.ApplicationStatus != clsApplication.enApplicationStatus.eNew);
+            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3) && !LicenseExists ;
+
+            showLicenseToolStripMenuItem.Enabled = LicenseExists;
         }
 
         private void showApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,6 +230,14 @@ namespace DVDL.Application
             frmTestAppointments TestLists = new frmTestAppointments((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value, clsTestTypes.enTestType.StreetTest);
             TestLists.ShowDialog();
             frmLocalDrivingLicenseApplications_Load(null, null);
+        }
+
+        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueDriverLicenseForTheFirstTime IssueDriverLicenseForTheFirstTime = new frmIssueDriverLicenseForTheFirstTime((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
+            IssueDriverLicenseForTheFirstTime.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+
         }
     }
 }

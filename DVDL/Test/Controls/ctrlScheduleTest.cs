@@ -229,7 +229,7 @@ namespace DVDL.Test
             lblAppLocalID.Text = _LocalDrivingLicenseApplicationID.ToString();
             lblLicenseClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
             lblFullName.Text = _LocalDrivingLicenseApplication.ApplicantFullName;
-            lblTrial.Text = _LocalDrivingLicenseApplication.TrialsTest((int)_TestTypeID).ToString();
+            lblTrial.Text = _LocalDrivingLicenseApplication.TrialsTest(_TestTypeID).ToString();
             
 
             if(_Mode == enMode.eAddNew)

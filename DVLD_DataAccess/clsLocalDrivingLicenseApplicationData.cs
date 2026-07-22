@@ -269,16 +269,18 @@ namespace DVLD_DataAccess
 
         public static bool DoesPassTheTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
-            int localAppID = -1;
+            bool Result = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"select Found = 1 
-                        from TestAppointments
-		                        join Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID 
-                        where TestAppointments.LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID
-		                        AND Tests.TestResult = 1
-		                        AND TestAppointments.TestTypeID = @TestTypeID;";
+            string query = @"SELECT top 1 TestResult
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                 Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
+                            WHERE
+                            (LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID) 
+                            AND(TestAppointments.TestTypeID = @TestTypeID)
+                            ORDER BY TestAppointments.TestAppointmentID desc";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -289,9 +291,9 @@ namespace DVLD_DataAccess
             {
                 connection.Open();
                 object result = command.ExecuteScalar();
-                if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                if (result != null && bool.TryParse(result.ToString(), out bool returnedResult))
                 {
-                    localAppID = InsertedID;
+                    Result = returnedResult;
                 }
 
             }
@@ -300,23 +302,26 @@ namespace DVLD_DataAccess
 
             }
             finally { connection.Close(); }
-            return (localAppID != -1);
+            return Result;
 
         }
 
 
 
-        public static int TrialsTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
+        public static byte TrialsTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
-            int localAppID = 0;
+            byte TotalTrialsPerTest = 0;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT COUNT(*) 
-                        FROM LocalDrivingLicenseApplications
-                            JOIN TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
-                        WHERE TestAppointments.LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID
-		                        AND TestAppointments.TestTypeID = @TestTypeID;";
+            string query = @" SELECT TotalTrialsPerTest = count(TestID)
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                 Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
+                            WHERE
+                            (LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID) 
+                            AND(TestAppointments.TestTypeID = @TestTypeID)
+                       ";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -327,9 +332,9 @@ namespace DVLD_DataAccess
             {
                 connection.Open();
                 object result = command.ExecuteScalar();
-                if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                if (result != null && byte.TryParse(result.ToString(), out byte TotalTrials))
                 {
-                    localAppID = InsertedID;
+                    TotalTrialsPerTest = TotalTrials;
                 }
 
             }
@@ -338,7 +343,7 @@ namespace DVLD_DataAccess
 
             }
             finally { connection.Close(); }
-            return localAppID;
+            return TotalTrialsPerTest;
 
         }
         public static bool IsTestAppointmentActive(int LocalDrivingLicenseApplicationID, int TestTypeID)

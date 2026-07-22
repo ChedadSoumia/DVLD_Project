@@ -24,7 +24,7 @@ namespace DVDL_business
         {
             get
             {
-                return base.PersonInfo.FullName;
+                return base.ApplicantFullName;
             }
         }
 
@@ -176,13 +176,18 @@ namespace DVDL_business
         }
 
 
-        public int TrialsTest(int TestTypeID)
+        public int TrialsTest(clsTestTypes.enTestType TestTypeID)
         {
-            return clsLocalDrivingLicenseApplicationData.TrialsTest(this.LocalDrivingLicenceApplicationID, TestTypeID);
+            return clsLocalDrivingLicenseApplicationData.TrialsTest(this.LocalDrivingLicenceApplicationID, (int)TestTypeID);
         }
 
 
-        public static bool  IsTestAppointmentActive(int localDrivingLicenceApplicationID, clsTestTypes.enTestType TestTypeID)
+        public bool  IsTestAppointmentActive( clsTestTypes.enTestType TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(this.LocalDrivingLicenceApplicationID, (int)TestTypeID);
+        }
+
+        public static bool IsTestAppointmentActive(int localDrivingLicenceApplicationID,clsTestTypes.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.IsTestAppointmentActive(localDrivingLicenceApplicationID, (int)TestTypeID);
         }
@@ -190,6 +195,18 @@ namespace DVDL_business
         public clsTest GetLastTestPerTestType(clsTestTypes.enTestType TestTypeID) 
         {
             return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
+        }
+
+
+        public bool IsLicenseIssued()
+        {
+            return (GetActiveLicenseID() != -1);
+        }
+
+        public int GetActiveLicenseID()
+        {
+
+            return clsLicenses.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, (int)this.LicenseClassID);
         }
 
     }

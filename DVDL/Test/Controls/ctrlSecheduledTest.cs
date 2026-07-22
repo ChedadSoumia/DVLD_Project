@@ -15,13 +15,30 @@ namespace DVDL.Test
 {
     public partial class ctrlSecheduledTest : UserControl
     {
-
-        private int _TestAppointmentID = -1;
         private clsTestAppointments _TestAppointmentInfo;
+        private int _TestAppointmentID = -1;
+        public int TestAppointmentID
+        {
+            get
+            {
+                return _TestAppointmentID;
+            }
+        }
+
+
+
+        private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
+        private int _LocalDrivingLicenseApplicationID = -1;
+
+        
 
         private int _TestID = -1;
+        public int TestID
+        {
+            get {  return _TestID; }
+        }
 
-        private clsTestTypes.enTestType _TestTypeID = clsTestTypes.enTestType.VisionTest;
+        private clsTestTypes.enTestType _TestTypeID;
         public clsTestTypes.enTestType TestTypeID
         {
             get { return _TestTypeID; }
@@ -53,23 +70,9 @@ namespace DVDL.Test
             InitializeComponent();
             _LoadDesign();
         }
-        private void _LoadData()
-        {
-            lblAppLocalID.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationID.ToString();
-            lblLicenseClass.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationInfo.LicenseClassInfo.ClassName;
-            lblFullName.Text = _TestAppointmentInfo.LocalDrivingLicenseApplicationInfo.ApplicantFullName;
-            lblTrial.Text = clsTest.GetPassedTestCount(_TestAppointmentInfo.LocalDrivingLicenseApplicationID).ToString();
-            lblTestDate.Text = clsFormat.DateToShort(_TestAppointmentInfo.AppointmentDate);
-            lblFees.Text = _TestAppointmentInfo.PaidFees.ToString();
-            if (_TestID == -1)
-                lblTestID.Text = "Not Taken Yet";
-            else 
-                lblTestID.Text = _TestID.ToString();
+       
 
-
-        }
-
-        public void LoadTestAppointmentInfo(int testAppointmentID,clsTestTypes.enTestType testTypeID , int TestID = -1)
+        public void LoadTestAppointmentInfo(int testAppointmentID)
         {
             _TestAppointmentID = testAppointmentID;
             _TestAppointmentInfo = clsTestAppointments.Find(testAppointmentID);
@@ -82,10 +85,32 @@ namespace DVDL.Test
                 return;
             }
 
-            _TestID = TestID;
+            _TestID = _TestAppointmentInfo.TestID ;
+
+            _LocalDrivingLicenseApplicationID = _TestAppointmentInfo.LocalDrivingLicenseApplicationID;
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(_LocalDrivingLicenseApplicationID);
+
+            if (_LocalDrivingLicenseApplication == null)
+            {
+                MessageBox.Show("Error: No Local Driving License Application with ID = " + _LocalDrivingLicenseApplicationID.ToString(),
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            lblAppLocalID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenceApplicationID.ToString();
+            lblLicenseClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
+            lblFullName.Text = _LocalDrivingLicenseApplication.PersonFullName;
 
 
-            _LoadData();
+            lblTrial.Text = _LocalDrivingLicenseApplication.TrialsTest(_TestTypeID).ToString();
+
+
+
+            lblTestDate.Text = clsFormat.DateToShort(_TestAppointmentInfo.AppointmentDate);
+            lblFees.Text = _TestAppointmentInfo.PaidFees.ToString();
+
+            lblTestID.Text = (_TestAppointmentInfo.TestID == -1) ? "Not Taken Yet" : _TestAppointmentInfo.TestID.ToString() ;
+            
         }
 
     }
