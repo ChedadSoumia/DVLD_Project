@@ -242,9 +242,23 @@ namespace DVDL.Application
 
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDriverLicenseInfo driverLicenseInfo = new frmDriverLicenseInfo((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
-            driverLicenseInfo.ShowDialog();
-            frmLocalDrivingLicenseApplications_Load(null, null);
+
+            int LocalDrivingLicenseApplicationID = (int)dgvAllLocalApplications.CurrentRow.Cells[0].Value;
+
+            int LicenseID = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(LocalDrivingLicenseApplicationID).GetActiveLicenseID();
+
+            if (LicenseID != -1)
+            {
+                frmDriverLicenseInfo driverLicenseInfo = new frmDriverLicenseInfo(LicenseID);
+                driverLicenseInfo.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No License Found!", "No License", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            
         }
     }
 }
