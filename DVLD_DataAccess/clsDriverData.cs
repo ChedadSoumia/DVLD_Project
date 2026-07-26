@@ -123,7 +123,7 @@ namespace DVLD_DataAccess
 
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
-            command.Parameters.AddWithValue("@CreatedDate", CreatedDate);
+            command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
 
             try
             {

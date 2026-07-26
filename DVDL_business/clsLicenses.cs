@@ -156,5 +156,11 @@ namespace DVDL_business
         {
             return clsLicenseData.GetActiveLicenseIDByPersonID(PersonID, LicenseClass);
         }
+
+
+        public static bool IsLicenseExistByPersonID(int PersonID, int LicenseClass)
+        {
+            return (GetActiveLicenseIDByPersonID(PersonID, LicenseClass) != -1);
+        }
     }
 }

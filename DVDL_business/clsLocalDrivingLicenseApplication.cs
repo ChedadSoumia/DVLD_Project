@@ -197,6 +197,56 @@ namespace DVDL_business
             return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
         }
 
+        public bool PassedAllTests()
+        {
+            return clsTest.PassedAllTests(this.LocalDrivingLicenceApplicationID);
+        }
+
+        public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
+        {
+            int DriverID = -1;
+            clsDriver Driver = clsDriver.FindByPersonID(this.ApplicantPersonID);
+            if (Driver == null)
+            {
+                Driver = new clsDriver();
+                Driver.PersonID = this.ApplicantPersonID;
+                Driver.CreatedByUserID = CreatedByUserID;
+
+                if (Driver.Save())
+                {
+                    DriverID = Driver.DriverID;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                DriverID = Driver.DriverID;
+            }
+
+            clsLicenses _LicenseInfo = new clsLicenses();
+            _LicenseInfo.DriverID = DriverID;
+            _LicenseInfo.ApplicationID = this.ApplicationID;
+            _LicenseInfo.LicenseClass = this.LicenseClassID;
+            _LicenseInfo.IssueDate = DateTime.Now;
+            _LicenseInfo.ExpirationDate = _LicenseInfo.IssueDate.AddYears(this.LicenseClassInfo.DefaultValidityLength);
+            _LicenseInfo.Notes = Notes;
+            _LicenseInfo.PaidFees = this.LicenseClassInfo.ClassFees;
+            _LicenseInfo.IsActive = true;
+            _LicenseInfo.IssueReason = clsLicenses.enIssueReason.eFirstTime;
+            _LicenseInfo.CreatedByUserID = CreatedByUserID;
+
+            if (_LicenseInfo.Save())
+            {
+                this.SetComplete();
+                return _LicenseInfo.LicenseID;
+            }
+            else
+                return -1;
+
+        }
 
         public bool IsLicenseIssued()
         {
@@ -208,6 +258,8 @@ namespace DVDL_business
 
             return clsLicenses.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, (int)this.LicenseClassID);
         }
+
+       
 
     }
 }

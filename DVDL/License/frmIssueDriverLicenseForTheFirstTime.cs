@@ -15,8 +15,8 @@ namespace DVDL.License
     public partial class frmIssueDriverLicenseForTheFirstTime : Form
     {
 
-        private clsLicenses _LicenseInfo;
         private int _LocalDrivingLicenseApplicationID = -1;
+        private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplicationInfo;
 
         private void _LoadDesign()
         {
@@ -37,56 +37,56 @@ namespace DVDL.License
 
         private void frmIssueDriverLicenseForTheFirstTime_Load(object sender, EventArgs e)
         {
+            txtNotes.Focus();
+            _LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(_LocalDrivingLicenseApplicationID);
+
+            if (_LocalDrivingLicenseApplicationInfo == null)
+            {
+
+                MessageBox.Show("No Applicaiton with ID=" + _LocalDrivingLicenseApplicationID.ToString(), "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            if (!_LocalDrivingLicenseApplicationInfo.PassedAllTests())
+            {
+                MessageBox.Show("Person Should Pass All Tests First.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+            int LicenseID = _LocalDrivingLicenseApplicationInfo.GetActiveLicenseID();
+            if (LicenseID != -1) {
+                MessageBox.Show("Person already has License before with License ID=" + LicenseID.ToString(), "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
             ctrlDrivingLicenseApplicationInfo1.LoadLocalLicenseDrivingAppliactionInfo(_LocalDrivingLicenseApplicationID);
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(_LocalDrivingLicenseApplicationID);
-            _LicenseInfo = new clsLicenses();
-            _LicenseInfo.ApplicationID = localDrivingLicenseApplication.ApplicationID;
 
-            if (!clsDriver.IsPersonADriver(localDrivingLicenseApplication.ApplicantPersonID))
+            int LicenseID = _LocalDrivingLicenseApplicationInfo.IssueLicenseForTheFirstTime(txtNotes.Text.Trim(), clsGlobal.CurrentUser.UserID);
+
+
+            if (LicenseID != -1)
             {
-                clsDriver _Driver = new clsDriver();
-                _Driver.PersonID = localDrivingLicenseApplication.ApplicantPersonID;
-                _Driver.CreatedByUserID = clsGlobal.CurrentUser.UserID;
-                _Driver.CreatedDate = DateTime.Now;
+                MessageBox.Show("License Issued Successfully with License ID = " + LicenseID.ToString(),
+                    "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                if (!_Driver.Save()){
-                    MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                
-            }
-
-            _LicenseInfo.DriverID = clsDriver.FindByPersonID(localDrivingLicenseApplication.ApplicantPersonID).DriverID;
-            _LicenseInfo.LicenseClass = localDrivingLicenseApplication.LicenseClassID;
-            _LicenseInfo.IssueDate = DateTime.Now;
-            _LicenseInfo.ExpirationDate = _LicenseInfo.IssueDate.AddYears(localDrivingLicenseApplication.LicenseClassInfo.DefaultValidityLength);
-            _LicenseInfo.Notes = txtNotes.Text.Trim();
-            _LicenseInfo.PaidFees = localDrivingLicenseApplication.LicenseClassInfo.ClassFees;
-            _LicenseInfo.IsActive = true;
-            _LicenseInfo.IssueReason = clsLicenses.enIssueReason.eFirstTime;
-            _LicenseInfo.CreatedByUserID = clsGlobal.CurrentUser.UserID;
-
-
-
-            if (_LicenseInfo.Save())
-            {
-
-                localDrivingLicenseApplication.SetComplete();
-                MessageBox.Show("License issued Successfully with License ID = " + _LicenseInfo.LicenseID, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("License Was not Issued ! ",
+                 "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
+
+
+
         }
     }
 }
