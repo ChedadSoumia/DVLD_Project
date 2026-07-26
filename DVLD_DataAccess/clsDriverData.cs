@@ -35,7 +35,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     PersonID = (int)reader["PersonID"];
-                    CreatedByUser = (int)reader["CreatedByUser"];
+                    CreatedByUser = (int)reader["CreatedByUserID"];
                     CreatedDate = (DateTime)reader["CreatedDate"];
 
                 }

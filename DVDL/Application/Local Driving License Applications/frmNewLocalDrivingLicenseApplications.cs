@@ -156,21 +156,12 @@ namespace DVDL.Application.Local_Driving_License_Applications
             }
 
 
-            //---------------------------------------------------------------------------------------------------------------------------
-            //---------------------------------------------------------------------------------------------------------------------------
-            //---------------------------------------------------------------------------------------------------------------------------
-
-            // there is another function here 
-            // check if user already have issued license of the same driving  class.
-
             if (clsLicenses.IsLicenseExistByPersonID(ctrlPersonCardWithFilter1.PersonID,licenseClassesID))
             {
                 MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //---------------------------------------------------------------------------------------------------------------------------
-            //---------------------------------------------------------------------------------------------------------------------------
 
             _LocalDrivingLicenseApplication.ApplicantPersonID = ctrlPersonCardWithFilter1.PersonID;
             _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;

@@ -97,6 +97,7 @@ namespace DVDL_business
             int ApplicationID = -1;
             int DriverID = -1;
             int LicenseClass = -1;
+            
             DateTime IssueDate = DateTime.Now;
             DateTime ExpirationDate = DateTime.Now;
             string Notes = "";

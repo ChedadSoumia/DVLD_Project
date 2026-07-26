@@ -239,5 +239,12 @@ namespace DVDL.Application
             frmLocalDrivingLicenseApplications_Load(null, null);
 
         }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDriverLicenseInfo driverLicenseInfo = new frmDriverLicenseInfo((int)dgvAllLocalApplications.CurrentRow.Cells[0].Value);
+            driverLicenseInfo.ShowDialog();
+            frmLocalDrivingLicenseApplications_Load(null, null);
+        }
     }
 }
