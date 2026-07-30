@@ -163,5 +163,42 @@ namespace DVDL_business
         {
             return (GetActiveLicenseIDByPersonID(PersonID, LicenseClass) != -1);
         }
+
+
+
+        public bool RenewLicence(string Notes ,float Total,int CreatedByUserID)
+        {
+            clsApplication Application = new clsApplication();
+
+            Application.ApplicantPersonID = this.ApplicationInfo.ApplicantPersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = 2;
+            Application.ApplicationStatus = this.ApplicationInfo.ApplicationStatus;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = this.ApplicationInfo.PaidFees;
+            Application.CreatedByUserID = CreatedByUserID;
+            
+            if (!Application.Save())
+                return false;
+
+
+            int OldLicenseID = this.LicenseID;
+
+            this.ApplicationID = Application.ApplicationID;
+            this.IssueDate = DateTime.Now;
+            this.ExpirationDate = this.IssueDate.AddYears(clsLicenseClasses.Find(this.LicenseClass).DefaultValidityLength);
+            this.IssueReason = clsLicenses.enIssueReason.eRenewal;
+            this.PaidFees = Total;
+            this.Notes = Notes;
+
+
+            if (this.Save()){
+                clsLicenseData.DeactivateLicense(OldLicenseID);
+                return true;
+            }
+            
+
+            return false;
+        }
     }
 }

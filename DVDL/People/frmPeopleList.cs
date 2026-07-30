@@ -66,7 +66,7 @@ namespace DVDL.People
         private void twtFilter_TextChanged(object sender, EventArgs e)
         {
             string FilterColumn = "";
-            //Map Selected Filter to real Column name 
+            
             switch (comboBox1.Text)
             {
                 case "Person ID":

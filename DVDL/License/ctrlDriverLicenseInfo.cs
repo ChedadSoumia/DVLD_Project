@@ -16,9 +16,18 @@ namespace DVDL.License
 {
     public partial class ctrlDriverLicenseInfo : UserControl
     {
-        private int _LicenseID;
+        private int _LicenseID=-1;
         private clsLicenses _LicenseInfo;
 
+        public int LicenseID
+        {
+            get { return _LicenseID; }
+        }
+
+        public clsLicenses SelectedLicenseInfo {  get { return _LicenseInfo; } }
+
+
+      
 
         public ctrlDriverLicenseInfo()
         {
@@ -58,7 +67,7 @@ namespace DVDL.License
             lblNotes.Text = (_LicenseInfo.Notes == "") ?"No Notes": _LicenseInfo.Notes;
 
             lblIsActive.Text = (_LicenseInfo.IsActive) ? "Yes" : "No";
-            lblDateOfBirth.Text = clsFormat.DateToShort((_LicenseInfo.DriverInfo.PersonInfo.DateOfBirth);
+            lblDateOfBirth.Text = clsFormat.DateToShort(_LicenseInfo.DriverInfo.PersonInfo.DateOfBirth);
             lblDriverID.Text = _LicenseInfo.DriverID.ToString();
             lblExpirationDate.Text = clsFormat.DateToShort(_LicenseInfo.ExpirationDate);
 

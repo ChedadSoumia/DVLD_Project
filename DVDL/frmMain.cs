@@ -1,6 +1,8 @@
 ﻿using DVDL.Application;
 using DVDL.Application.Local_Driving_License_Applications;
+using DVDL.Drivers;
 using DVDL.Global_Classes;
+using DVDL.License;
 using DVDL.Login;
 using DVDL.People;
 using DVDL.Test;
@@ -91,6 +93,19 @@ namespace DVDL
         {
             frmNewLocalDrivingLicenseApplications NewLocalDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplications();
             NewLocalDrivingLicenseApplication.ShowDialog();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListDrivers DriversList = new frmListDrivers();
+            DriversList.ShowDialog();
+
+        }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewLocalDrivingLicense RenewLocalLicense = new frmRenewLocalDrivingLicense();
+            RenewLocalLicense.ShowDialog();
         }
     }
 }

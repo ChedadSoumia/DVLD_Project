@@ -46,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvAllPeople = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
@@ -165,7 +164,7 @@
             this.btnAddPerson.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddPerson.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddPerson.Location = new System.Drawing.Point(1728, 131);
+            this.btnAddPerson.Location = new System.Drawing.Point(1536, 131);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(37, 31);
             this.btnAddPerson.TabIndex = 1;
@@ -198,16 +197,6 @@
             this.lblRecordsCount.Size = new System.Drawing.Size(0, 17);
             this.lblRecordsCount.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(708, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dgvAllPeople
             // 
             this.dgvAllPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -237,7 +226,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1882, 753);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -274,7 +262,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvAllPeople;
         private System.Windows.Forms.Panel panel2;
     }
