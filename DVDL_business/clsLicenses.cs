@@ -164,41 +164,102 @@ namespace DVDL_business
             return (GetActiveLicenseIDByPersonID(PersonID, LicenseClass) != -1);
         }
 
+        public bool DeactivateCurrentLicense()
+        {
+            return clsLicenseData.DeactivateLicense(this.LicenseID);
+        }
 
 
-        public bool RenewLicence(string Notes ,float Total,int CreatedByUserID)
+        public clsLicenses ReplacmentLicence(clsApplication.enApplicationType ApplicationType, int CreatedByUserID)
+        {
+
+            clsApplication Application = new clsApplication();
+
+            Application.ApplicantPersonID = this.ApplicationInfo.ApplicantPersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)ApplicationType;
+            Application.ApplicationStatus = clsApplication.enApplicationStatus.eCompleted;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsApplicationType.Find((int)ApplicationType).ApplicationTypeFees;
+            Application.CreatedByUserID = CreatedByUserID;
+
+            if (!Application.Save())
+                return null;
+
+            clsLicenses ReplacmentLicense = new clsLicenses();
+            ReplacmentLicense.ApplicationID = Application.ApplicationID;
+            ReplacmentLicense.DriverID = this.DriverID;
+            ReplacmentLicense.LicenseClass = this.LicenseClass;
+            ReplacmentLicense.IssueDate = this.IssueDate;
+
+
+            ReplacmentLicense.ExpirationDate = this.ExpirationDate;
+            ReplacmentLicense.Notes = Notes;
+            ReplacmentLicense.PaidFees = this.LicenseClassesInfo.ClassFees;
+            ReplacmentLicense.IsActive = true;
+            
+            if(ApplicationType == clsApplication.enApplicationType.eReplaceDamagedDrivingLicense)
+                ReplacmentLicense.IssueReason = clsLicenses.enIssueReason.eDamagedreplacement;
+            else
+                ReplacmentLicense.IssueReason = clsLicenses.enIssueReason.eLostreplacement;
+
+            ReplacmentLicense.CreatedByUserID = CreatedByUserID;
+
+
+            if (!ReplacmentLicense.Save())
+                return null;
+
+
+            DeactivateCurrentLicense();
+            return ReplacmentLicense;
+        }
+        public clsLicenses RenewLicence(string Notes,int CreatedByUserID)
         {
             clsApplication Application = new clsApplication();
 
             Application.ApplicantPersonID = this.ApplicationInfo.ApplicantPersonID;
             Application.ApplicationDate = DateTime.Now;
-            Application.ApplicationTypeID = 2;
-            Application.ApplicationStatus = this.ApplicationInfo.ApplicationStatus;
+            Application.ApplicationTypeID = (int)clsApplication.enApplicationType.eRenewDrivingLicense;
+            Application.ApplicationStatus = clsApplication.enApplicationStatus.eCompleted;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = this.ApplicationInfo.PaidFees;
+            Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.eRenewDrivingLicense).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
             
             if (!Application.Save())
-                return false;
+                return null;
 
 
-            int OldLicenseID = this.LicenseID;
+           clsLicenses NewLicense = new clsLicenses();
 
-            this.ApplicationID = Application.ApplicationID;
-            this.IssueDate = DateTime.Now;
-            this.ExpirationDate = this.IssueDate.AddYears(clsLicenseClasses.Find(this.LicenseClass).DefaultValidityLength);
-            this.IssueReason = clsLicenses.enIssueReason.eRenewal;
-            this.PaidFees = Total;
-            this.Notes = Notes;
+            NewLicense.ApplicationID = Application.ApplicationID;
+            NewLicense.DriverID = this.DriverID;
+            NewLicense.LicenseClass = this.LicenseClass;
+            NewLicense.IssueDate = DateTime.Now;
 
 
-            if (this.Save()){
-                clsLicenseData.DeactivateLicense(OldLicenseID);
-                return true;
-            }
-            
+            NewLicense.ExpirationDate = NewLicense.IssueDate.AddYears(this.LicenseClassesInfo.DefaultValidityLength);
+            NewLicense.Notes =Notes;
+            NewLicense.PaidFees = this.LicenseClassesInfo.ClassFees;
+            NewLicense.IsActive = true;
+            NewLicense.IssueReason = clsLicenses.enIssueReason.eRenewal;
+            NewLicense.CreatedByUserID = CreatedByUserID;
 
-            return false;
+
+            if (!NewLicense.Save())
+                return null;
+
+
+            DeactivateCurrentLicense();
+            return NewLicense;            
         }
+
+
+
+
+        public bool IsLicenseExpired()
+        {
+            return (this.ExpirationDate  < DateTime.Now);
+        }
+
     }
 }

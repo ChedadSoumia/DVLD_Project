@@ -59,6 +59,7 @@
             this.lblCreatedBY = new System.Windows.Forms.Label();
             this.ctrlDriverLicenseInfoWithFilter1 = new DVDL.License.ctrlDriverLicenseInfoWithFilter();
             this.lblNewAppInfo = new System.Windows.Forms.LinkLabel();
+            this.llShowLicenseHistory = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,7 +138,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.72727F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.27273F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel1.Controls.Add(this.lbl5, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblTotal, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 3);
@@ -173,7 +174,7 @@
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(330, 150);
+            this.lbl5.Location = new System.Drawing.Point(327, 150);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(72, 16);
             this.lbl5.TabIndex = 14;
@@ -182,7 +183,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(529, 150);
+            this.lblTotal.Location = new System.Drawing.Point(526, 150);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(39, 17);
             this.lblTotal.TabIndex = 15;
@@ -192,7 +193,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(330, 116);
+            this.label11.Location = new System.Drawing.Point(327, 116);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 16);
             this.label11.TabIndex = 12;
@@ -201,7 +202,7 @@
             // lblExpirationDate
             // 
             this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Location = new System.Drawing.Point(529, 116);
+            this.lblExpirationDate.Location = new System.Drawing.Point(526, 116);
             this.lblExpirationDate.Name = "lblExpirationDate";
             this.lblExpirationDate.Size = new System.Drawing.Size(39, 17);
             this.lblExpirationDate.TabIndex = 13;
@@ -211,7 +212,7 @@
             // 
             this.LBL33.AutoSize = true;
             this.LBL33.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL33.Location = new System.Drawing.Point(330, 43);
+            this.LBL33.Location = new System.Drawing.Point(327, 43);
             this.LBL33.Name = "LBL33";
             this.LBL33.Size = new System.Drawing.Size(97, 16);
             this.LBL33.TabIndex = 10;
@@ -220,7 +221,7 @@
             // lblOldLicenseID
             // 
             this.lblOldLicenseID.AutoSize = true;
-            this.lblOldLicenseID.Location = new System.Drawing.Point(529, 43);
+            this.lblOldLicenseID.Location = new System.Drawing.Point(526, 43);
             this.lblOldLicenseID.Name = "lblOldLicenseID";
             this.lblOldLicenseID.Size = new System.Drawing.Size(39, 17);
             this.lblOldLicenseID.TabIndex = 11;
@@ -229,7 +230,7 @@
             // lblNewLicenseID
             // 
             this.lblNewLicenseID.AutoSize = true;
-            this.lblNewLicenseID.Location = new System.Drawing.Point(529, 0);
+            this.lblNewLicenseID.Location = new System.Drawing.Point(526, 0);
             this.lblNewLicenseID.Name = "lblNewLicenseID";
             this.lblNewLicenseID.Size = new System.Drawing.Size(39, 17);
             this.lblNewLicenseID.TabIndex = 7;
@@ -239,7 +240,7 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(330, 0);
+            this.lbl.Location = new System.Drawing.Point(327, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(121, 16);
             this.lbl.TabIndex = 6;
@@ -268,7 +269,7 @@
             // lblNewApplicationID
             // 
             this.lblNewApplicationID.AutoSize = true;
-            this.lblNewApplicationID.Location = new System.Drawing.Point(159, 0);
+            this.lblNewApplicationID.Location = new System.Drawing.Point(158, 0);
             this.lblNewApplicationID.Name = "lblNewApplicationID";
             this.lblNewApplicationID.Size = new System.Drawing.Size(39, 17);
             this.lblNewApplicationID.TabIndex = 3;
@@ -287,7 +288,7 @@
             // lblNewIssueDate
             // 
             this.lblNewIssueDate.AutoSize = true;
-            this.lblNewIssueDate.Location = new System.Drawing.Point(159, 82);
+            this.lblNewIssueDate.Location = new System.Drawing.Point(158, 82);
             this.lblNewIssueDate.Name = "lblNewIssueDate";
             this.lblNewIssueDate.Size = new System.Drawing.Size(39, 17);
             this.lblNewIssueDate.TabIndex = 3;
@@ -306,7 +307,7 @@
             // lblApplicationFees
             // 
             this.lblApplicationFees.AutoSize = true;
-            this.lblApplicationFees.Location = new System.Drawing.Point(159, 116);
+            this.lblApplicationFees.Location = new System.Drawing.Point(158, 116);
             this.lblApplicationFees.Name = "lblApplicationFees";
             this.lblApplicationFees.Size = new System.Drawing.Size(39, 17);
             this.lblApplicationFees.TabIndex = 3;
@@ -325,7 +326,7 @@
             // lblLicenseFees
             // 
             this.lblLicenseFees.AutoSize = true;
-            this.lblLicenseFees.Location = new System.Drawing.Point(159, 150);
+            this.lblLicenseFees.Location = new System.Drawing.Point(158, 150);
             this.lblLicenseFees.Name = "lblLicenseFees";
             this.lblLicenseFees.Size = new System.Drawing.Size(39, 17);
             this.lblLicenseFees.TabIndex = 3;
@@ -334,7 +335,7 @@
             // lblApplicationDate
             // 
             this.lblApplicationDate.AutoSize = true;
-            this.lblApplicationDate.Location = new System.Drawing.Point(159, 43);
+            this.lblApplicationDate.Location = new System.Drawing.Point(158, 43);
             this.lblApplicationDate.Name = "lblApplicationDate";
             this.lblApplicationDate.Size = new System.Drawing.Size(39, 17);
             this.lblApplicationDate.TabIndex = 5;
@@ -344,7 +345,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(330, 82);
+            this.label3.Location = new System.Drawing.Point(327, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 8;
@@ -353,7 +354,7 @@
             // lblCreatedBY
             // 
             this.lblCreatedBY.AutoSize = true;
-            this.lblCreatedBY.Location = new System.Drawing.Point(529, 82);
+            this.lblCreatedBY.Location = new System.Drawing.Point(526, 82);
             this.lblCreatedBY.Name = "lblCreatedBY";
             this.lblCreatedBY.Size = new System.Drawing.Size(39, 17);
             this.lblCreatedBY.TabIndex = 9;
@@ -373,7 +374,7 @@
             // 
             this.lblNewAppInfo.AutoSize = true;
             this.lblNewAppInfo.Enabled = false;
-            this.lblNewAppInfo.Location = new System.Drawing.Point(797, 153);
+            this.lblNewAppInfo.Location = new System.Drawing.Point(986, 151);
             this.lblNewAppInfo.Name = "lblNewAppInfo";
             this.lblNewAppInfo.Size = new System.Drawing.Size(147, 17);
             this.lblNewAppInfo.TabIndex = 24;
@@ -381,12 +382,25 @@
             this.lblNewAppInfo.Text = "Show new License Info";
             this.lblNewAppInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewAppInfo_LinkClicked);
             // 
+            // llShowLicenseHistory
+            // 
+            this.llShowLicenseHistory.AutoSize = true;
+            this.llShowLicenseHistory.Enabled = false;
+            this.llShowLicenseHistory.Location = new System.Drawing.Point(808, 151);
+            this.llShowLicenseHistory.Name = "llShowLicenseHistory";
+            this.llShowLicenseHistory.Size = new System.Drawing.Size(137, 17);
+            this.llShowLicenseHistory.TabIndex = 24;
+            this.llShowLicenseHistory.TabStop = true;
+            this.llShowLicenseHistory.Text = "Show License History";
+            this.llShowLicenseHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewAppInfo_LinkClicked);
+            // 
             // frmRenewLocalDrivingLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1526, 657);
+            this.Controls.Add(this.llShowLicenseHistory);
             this.Controls.Add(this.lblNewAppInfo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlDriverLicenseInfoWithFilter1);
@@ -398,6 +412,7 @@
             this.Name = "frmRenewLocalDrivingLicense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renew Local Driving License";
+            this.Activated += new System.EventHandler(this.frmRenewLocalDrivingLicense_Activated);
             this.Load += new System.EventHandler(this.frmRenewLocalDrivingLicense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -440,5 +455,6 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel lblNewAppInfo;
+        private System.Windows.Forms.LinkLabel llShowLicenseHistory;
     }
 }

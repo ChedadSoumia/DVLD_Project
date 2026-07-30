@@ -89,6 +89,12 @@
     <Compile Include="Application\Local Driving License Applications\frmNewLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>frmNewLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Application\Replacement for Lost or Damaged License\frmReplacementforLostorDamagedLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Replacement for Lost or Damaged License\frmReplacementforLostorDamagedLicense.Designer.cs">
+      <DependentUpon>frmReplacementforLostorDamagedLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drivers\frmListDrivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Local Driving License Applications\frmNewLocalDrivingLicenseApplications.resx">
       <DependentUpon>frmNewLocalDrivingLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Replacement for Lost or Damaged License\frmReplacementforLostorDamagedLicense.resx">
+      <DependentUpon>frmReplacementforLostorDamagedLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\frmListDrivers.resx">
       <DependentUpon>frmListDrivers.cs</DependentUpon>

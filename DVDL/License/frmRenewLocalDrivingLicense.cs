@@ -16,8 +16,7 @@ namespace DVDL.License
     public partial class frmRenewLocalDrivingLicense : Form
     {
 
-        private int _LicenseID = -1;
-        private clsLicenses _LicenseInfo ;
+        private int _NewLicenseID = -1;
 
         private void _MyDesign()
         {
@@ -35,71 +34,93 @@ namespace DVDL.License
         private void frmRenewLocalDrivingLicense_Load(object sender, EventArgs e)
         {
             ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
+            lblApplicationDate.Text = clsFormat.DateToShort(DateTime.Now);
+            lblNewIssueDate.Text = lblApplicationDate.Text;
+
+            lblExpirationDate.Text = "[???]";
+            lblApplicationFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.eRenewDrivingLicense).ApplicationTypeFees.ToString();
+            lblCreatedBY.Text = clsGlobal.CurrentUser.UserName;
         }
 
-        private void _LoadOldLicenseData()
-        {
-            lblApplicationDate.Text = clsFormat.DateToShort(DateTime.Now);
-            lblNewIssueDate.Text = clsFormat.DateToShort(DateTime.Now);
-            lblApplicationFees.Text = clsApplicationType.Find(2).ApplicationTypeFees.ToString();
-            lblLicenseFees.Text = _LicenseInfo.LicenseClassesInfo.ClassFees.ToString();
-            lblOldLicenseID.Text = _LicenseInfo.LicenseID.ToString();
-            lblCreatedBY.Text = clsGlobal.CurrentUser.UserName;
-            lblExpirationDate.Text = clsFormat.DateToShort(DateTime.Now.AddYears(_LicenseInfo.LicenseClassesInfo.DefaultValidityLength));
-            lblTotal.Text = (Convert.ToSingle(lblLicenseFees.Text) + Convert.ToSingle(lblApplicationFees.Text)).ToString();
-        }
+  
 
         private void ctrlDriverLicenseInfoWithFilter1_OnLicenseSelected(int obj)
         {
-            _LicenseID = obj;
-            _LicenseInfo = clsLicenses.Find(_LicenseID);
-            if(DateTime.Now < _LicenseInfo.ExpirationDate)
+            int SelectedLicenseID = obj;
+
+            lblOldLicenseID.Text = SelectedLicenseID.ToString();
+            llShowLicenseHistory.Enabled = (SelectedLicenseID !=-1);
+            
+            if (SelectedLicenseID == -1)
+                return;
+
+            lblExpirationDate.Text = clsFormat.DateToShort(DateTime.Now.AddYears(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClassesInfo.DefaultValidityLength));
+            lblLicenseFees.Text = ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClassesInfo.ClassFees.ToString();
+            lblTotal.Text = (Convert.ToSingle(lblApplicationFees.Text) + Convert.ToSingle(lblLicenseFees.Text)).ToString();
+            txtNotes.Text = ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.Notes;
+
+            if (!ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.IsLicenseExpired())
             {
-                MessageBox.Show("Selected License is not Expired, ON: " + clsFormat.DateToShort(_LicenseInfo.ExpirationDate));
+                MessageBox.Show("Selected License is not yet expiared, it will expire on: " + clsFormat.DateToShort(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ExpirationDate)
+                    , "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnRenew.Enabled = false;
-                    
+                return;
             }
-            else
+
+            if (!ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.IsActive)
             {
-                btnRenew.Enabled = true;
-                _LoadOldLicenseData();
-
-
+                MessageBox.Show("Selected License is not Not Active, choose an active license."
+                    , "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnRenew.Enabled = false;
+                return;
             }
+            
+            btnRenew.Enabled = true;
 
         }
 
         private void btnRenew_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to Renew this License?", "Confirm Renew", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Are you sure you want to Renew the license?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
                 return;
-
-            
-
-
-                if (_LicenseInfo.RenewLicence(txtNotes.Text.Trim(), Convert.ToSingle(lblTotal.Text), clsGlobal.CurrentUser.UserID))
-            {
-                
-                MessageBox.Show("the license was Renew " + _LicenseInfo.LicenseID.ToString(), "Renew", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                lblNewApplicationID.Text = _LicenseInfo.ApplicationID.ToString();
-                lblNewAppInfo.Enabled= true;
-                lblNewLicenseID.Text = _LicenseInfo.LicenseID.ToString();
             }
-            else
+
+            clsLicenses NewLicense = ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.RenewLicence(txtNotes.Text.Trim(),clsGlobal.CurrentUser.UserID);
+
+
+            if (NewLicense == null)
             {
-                MessageBox.Show("Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faild to Renew the License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
             }
+
+            lblNewApplicationID.Text = NewLicense.ApplicationID.ToString();
+            _NewLicenseID = NewLicense.LicenseID;
+            lblNewLicenseID.Text = _NewLicenseID.ToString();
+            MessageBox.Show("Licensed Renewed Successfully with ID=" + _NewLicenseID.ToString(), "License Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            btnRenew.Enabled = false;
+            ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
+            lblNewAppInfo.Enabled = true;
+
         }
 
         private void lblNewAppInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmDriverLicenseInfo RenewLicenseInfo = new frmDriverLicenseInfo(_LicenseInfo.LicenseID);
+            frmDriverLicenseInfo RenewLicenseInfo = new frmDriverLicenseInfo(_NewLicenseID);
             RenewLicenseInfo.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmRenewLocalDrivingLicense_Activated(object sender, EventArgs e)
+        {
+            ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
         }
     }
 }

@@ -37,5 +37,10 @@ namespace DVDL.License
             ctrlDriverLicenseInfo1.LoadLicenseInfo(_LicenseID);
             
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

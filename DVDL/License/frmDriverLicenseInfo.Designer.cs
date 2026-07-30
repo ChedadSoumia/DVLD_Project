@@ -49,8 +49,9 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 47);
             this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "button1";
+            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ctrlDriverLicenseInfo1
             // 

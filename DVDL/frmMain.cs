@@ -1,5 +1,6 @@
 ﻿using DVDL.Application;
 using DVDL.Application.Local_Driving_License_Applications;
+using DVDL.Application.Replacement_for_Lost_or_Damaged_License;
 using DVDL.Drivers;
 using DVDL.Global_Classes;
 using DVDL.License;
@@ -106,6 +107,12 @@ namespace DVDL
         {
             frmRenewLocalDrivingLicense RenewLocalLicense = new frmRenewLocalDrivingLicense();
             RenewLocalLicense.ShowDialog();
+        }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReplacementforLostorDamagedLicense ReplaceLostDamagedLicense = new frmReplacementforLostorDamagedLicense();
+            ReplaceLostDamagedLicense.ShowDialog();
         }
     }
 }
