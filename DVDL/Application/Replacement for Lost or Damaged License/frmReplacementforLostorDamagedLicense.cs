@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DVDL_business.clsLicenses;
 
 namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
 {
@@ -18,8 +19,8 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
 
         private int _ReplacedLicenseID = -1;
 
-        private clsApplication.enApplicationType _ReplacementCause = clsApplication.enApplicationType.eReplaceDamagedDrivingLicense;
-        public clsApplication.enApplicationType ReplacementCause
+        private clsLicenses.enIssueReason _ReplacementCause = clsLicenses.enIssueReason.eDamagedreplacement;
+        public clsLicenses.enIssueReason ReplacementCause
         {
             get { return _ReplacementCause; }
             set
@@ -27,17 +28,17 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
                 _ReplacementCause = value;
                 switch (_ReplacementCause) 
                 {
-                    case clsApplication.enApplicationType.eReplaceDamagedDrivingLicense:
+                    case clsLicenses.enIssueReason.eDamagedreplacement:
                         lblMainTitle.Text = "Replacement For Damaged License";
-                        this.Text = "Replacement For Damaged License";
-                        lblApplicationFees.Text = clsApplicationType.Find((int)_ReplacementCause).ApplicationTypeFees.ToString();
+                        lblApplicationFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.eReplaceDamagedDrivingLicense).ApplicationTypeFees.ToString();
                         break;
-                    case clsApplication.enApplicationType.eReplaceLostDrivingLicense:
+                    case clsLicenses.enIssueReason.eLostreplacement:
                         lblMainTitle.Text = "Replacement For Lost License";
-                        this.Text = "Replacement For Lost License";
-                        lblApplicationFees.Text = clsApplicationType.Find((int)_ReplacementCause).ApplicationTypeFees.ToString();
+                        lblApplicationFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.eReplaceLostDrivingLicense).ApplicationTypeFees.ToString();
                         break;
                 }
+                this.Text = lblMainTitle.Text;
+
             }
         }
 
@@ -80,27 +81,22 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
         private void frmReplacementforLostorDamagedLicense_Load(object sender, EventArgs e)
         {
             ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
-            if (rbDamagedLicense.Checked)
-            {
-                ReplacementCause = clsApplication.enApplicationType.eReplaceDamagedDrivingLicense;
-            }
-            else
-            {
-                ReplacementCause = clsApplication.enApplicationType.eReplaceLostDrivingLicense;
-            }
+           
 
             lblCreatedBY.Text = clsGlobal.CurrentUser.UserName;
             lblApplicationDate.Text = clsFormat.DateToShort(DateTime.Now);
+
+            rbDamagedLicense.Checked = true;
         }
 
         private void rbDamagedLicense_CheckedChanged(object sender, EventArgs e)
         {
-            ReplacementCause = clsApplication.enApplicationType.eReplaceDamagedDrivingLicense;
+            ReplacementCause = clsLicenses.enIssueReason.eDamagedreplacement;
         }
 
         private void rbLostLicense_CheckedChanged(object sender, EventArgs e)
         {
-            ReplacementCause = clsApplication.enApplicationType.eReplaceLostDrivingLicense;
+            ReplacementCause = clsLicenses.enIssueReason.eLostreplacement;
         }
 
         private void frmReplacementforLostorDamagedLicense_Activated(object sender, EventArgs e)
@@ -116,12 +112,12 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
             }
 
             clsLicenses ReplacementLicense =
-                ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ReplacmentLicence(ReplacementCause, clsGlobal.CurrentUser.UserID);
+                ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ReplaceLicense(ReplacementCause, clsGlobal.CurrentUser.UserID);
 
 
             if (ReplacementLicense == null)
             {
-                MessageBox.Show("Faild to replace the License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faild to Issue a replacemnet for this  License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
@@ -129,10 +125,11 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
 
             lblNewApplicationID.Text = ReplacementLicense.ApplicationID.ToString();
             _ReplacedLicenseID = ReplacementLicense.LicenseID;
+
             lblReplacedLicenseID.Text = _ReplacedLicenseID.ToString();
             MessageBox.Show("Licensed replaced Successfully with ID=" + _ReplacedLicenseID.ToString(), "License Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+            groupBox2.Enabled = false;
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
             btnIssueReplacment.Enabled = false;
             lblNewAppInfo.Enabled = true;

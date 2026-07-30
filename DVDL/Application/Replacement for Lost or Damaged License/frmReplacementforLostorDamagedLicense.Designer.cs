@@ -115,7 +115,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.72727F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.27273F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.tableLayoutPanel1.Controls.Add(this.LBL33, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblOldLicenseID, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblReplacedLicenseID, 3, 0);
@@ -142,7 +142,7 @@
             // 
             this.LBL33.AutoSize = true;
             this.LBL33.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL33.Location = new System.Drawing.Point(317, 34);
+            this.LBL33.Location = new System.Drawing.Point(314, 34);
             this.LBL33.Name = "LBL33";
             this.LBL33.Size = new System.Drawing.Size(97, 16);
             this.LBL33.TabIndex = 10;
@@ -151,7 +151,7 @@
             // lblOldLicenseID
             // 
             this.lblOldLicenseID.AutoSize = true;
-            this.lblOldLicenseID.Location = new System.Drawing.Point(516, 34);
+            this.lblOldLicenseID.Location = new System.Drawing.Point(513, 34);
             this.lblOldLicenseID.Name = "lblOldLicenseID";
             this.lblOldLicenseID.Size = new System.Drawing.Size(39, 17);
             this.lblOldLicenseID.TabIndex = 11;
@@ -160,7 +160,7 @@
             // lblReplacedLicenseID
             // 
             this.lblReplacedLicenseID.AutoSize = true;
-            this.lblReplacedLicenseID.Location = new System.Drawing.Point(516, 0);
+            this.lblReplacedLicenseID.Location = new System.Drawing.Point(513, 0);
             this.lblReplacedLicenseID.Name = "lblReplacedLicenseID";
             this.lblReplacedLicenseID.Size = new System.Drawing.Size(39, 17);
             this.lblReplacedLicenseID.TabIndex = 7;
@@ -170,7 +170,7 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(317, 0);
+            this.lbl.Location = new System.Drawing.Point(314, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(136, 16);
             this.lbl.TabIndex = 6;
@@ -199,7 +199,7 @@
             // lblNewApplicationID
             // 
             this.lblNewApplicationID.AutoSize = true;
-            this.lblNewApplicationID.Location = new System.Drawing.Point(153, 0);
+            this.lblNewApplicationID.Location = new System.Drawing.Point(151, 0);
             this.lblNewApplicationID.Name = "lblNewApplicationID";
             this.lblNewApplicationID.Size = new System.Drawing.Size(39, 17);
             this.lblNewApplicationID.TabIndex = 3;
@@ -208,7 +208,7 @@
             // lblApplicationDate
             // 
             this.lblApplicationDate.AutoSize = true;
-            this.lblApplicationDate.Location = new System.Drawing.Point(153, 34);
+            this.lblApplicationDate.Location = new System.Drawing.Point(151, 34);
             this.lblApplicationDate.Name = "lblApplicationDate";
             this.lblApplicationDate.Size = new System.Drawing.Size(39, 17);
             this.lblApplicationDate.TabIndex = 5;
@@ -218,7 +218,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(317, 65);
+            this.label3.Location = new System.Drawing.Point(314, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 8;
@@ -227,7 +227,7 @@
             // lblCreatedBY
             // 
             this.lblCreatedBY.AutoSize = true;
-            this.lblCreatedBY.Location = new System.Drawing.Point(516, 65);
+            this.lblCreatedBY.Location = new System.Drawing.Point(513, 65);
             this.lblCreatedBY.Name = "lblCreatedBY";
             this.lblCreatedBY.Size = new System.Drawing.Size(39, 17);
             this.lblCreatedBY.TabIndex = 9;
@@ -246,7 +246,7 @@
             // lblApplicationFees
             // 
             this.lblApplicationFees.AutoSize = true;
-            this.lblApplicationFees.Location = new System.Drawing.Point(153, 65);
+            this.lblApplicationFees.Location = new System.Drawing.Point(151, 65);
             this.lblApplicationFees.Name = "lblApplicationFees";
             this.lblApplicationFees.Size = new System.Drawing.Size(39, 17);
             this.lblApplicationFees.TabIndex = 3;

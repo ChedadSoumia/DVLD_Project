@@ -170,17 +170,19 @@ namespace DVDL_business
         }
 
 
-        public clsLicenses ReplacmentLicence(clsApplication.enApplicationType ApplicationType, int CreatedByUserID)
+        public clsLicenses ReplaceLicense(enIssueReason issueReason, int CreatedByUserID)
         {
 
             clsApplication Application = new clsApplication();
 
             Application.ApplicantPersonID = this.ApplicationInfo.ApplicantPersonID;
             Application.ApplicationDate = DateTime.Now;
-            Application.ApplicationTypeID = (int)ApplicationType;
+            Application.ApplicationTypeID = (issueReason == enIssueReason.eDamagedreplacement)?
+                          (int)clsApplication.enApplicationType.eReplaceDamagedDrivingLicense
+                        : (int)clsApplication.enApplicationType.eReplaceLostDrivingLicense ;
             Application.ApplicationStatus = clsApplication.enApplicationStatus.eCompleted;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.Find((int)ApplicationType).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.Find(Application.ApplicationTypeID).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
 
             if (!Application.Save())
@@ -190,18 +192,15 @@ namespace DVDL_business
             ReplacmentLicense.ApplicationID = Application.ApplicationID;
             ReplacmentLicense.DriverID = this.DriverID;
             ReplacmentLicense.LicenseClass = this.LicenseClass;
-            ReplacmentLicense.IssueDate = this.IssueDate;
+            ReplacmentLicense.IssueDate = DateTime.Now;
 
 
             ReplacmentLicense.ExpirationDate = this.ExpirationDate;
             ReplacmentLicense.Notes = Notes;
-            ReplacmentLicense.PaidFees = this.LicenseClassesInfo.ClassFees;
+            ReplacmentLicense.PaidFees = 0;
             ReplacmentLicense.IsActive = true;
             
-            if(ApplicationType == clsApplication.enApplicationType.eReplaceDamagedDrivingLicense)
-                ReplacmentLicense.IssueReason = clsLicenses.enIssueReason.eDamagedreplacement;
-            else
-                ReplacmentLicense.IssueReason = clsLicenses.enIssueReason.eLostreplacement;
+            ReplacmentLicense.IssueReason = issueReason;
 
             ReplacmentLicense.CreatedByUserID = CreatedByUserID;
 

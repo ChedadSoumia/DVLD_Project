@@ -102,6 +102,7 @@ namespace DVDL.License
             MessageBox.Show("Licensed Renewed Successfully with ID=" + _NewLicenseID.ToString(), "License Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnRenew.Enabled = false;
+            groupBox1.Enabled = false;
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
             lblNewAppInfo.Enabled = true;
 
