@@ -54,6 +54,10 @@ namespace DVDL_business
 
         public int CreatedByUserID { get; set; }
         public clsUser CreatedByUserInfo;
+        public bool IsDetained
+        {
+            get { return clsDetainAndReleaseLicense.IsLicenseDetained(this.LicenseID); }
+        }
 
         public clsLicenses()
         {

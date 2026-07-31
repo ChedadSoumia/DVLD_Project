@@ -71,7 +71,7 @@ namespace DVDL.License
             lblDriverID.Text = _LicenseInfo.DriverID.ToString();
             lblExpirationDate.Text = clsFormat.DateToShort(_LicenseInfo.ExpirationDate);
 
-            lblIsDetained.Text = "[???]";
+            lblIsDetained.Text = (_LicenseInfo.IsDetained) ? "Yes" : "No";
 
             _LoadPersonImage();
         }

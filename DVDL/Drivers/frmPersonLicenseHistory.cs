@@ -46,7 +46,7 @@ namespace DVDL.Drivers
             {
                 ctrlPersonCardWithFilter1.LoadPersonInfo(_PersonID);
                 ctrlPersonCardWithFilter1.FilterEnable = false;
-                ctrlDriverLicenses1.LoadDriverLicensesInfoByDriverID(_PersonID);
+                ctrlDriverLicenses1.LoadDriverLicensesInfoByPersonID(_PersonID);
             }
             else
             {
