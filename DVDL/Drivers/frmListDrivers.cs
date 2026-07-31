@@ -143,7 +143,7 @@ namespace DVDL.Drivers
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPersonLicenseHistory LicensesHistory = new frmPersonLicenseHistory((int)dgvAllDrivers.CurrentRow.Cells[0].Value);
+            frmPersonLicenseHistory LicensesHistory = new frmPersonLicenseHistory((int)dgvAllDrivers.CurrentRow.Cells[1].Value);
             LicensesHistory.ShowDialog();
             frmListDrivers_Load(null, null);
         }

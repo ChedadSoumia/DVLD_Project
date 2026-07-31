@@ -75,6 +75,13 @@ namespace DVDL.Drivers
 
         }
 
+        public void Clear()
+        {
+            _dtAllLocalLicenses.Clear();
+            _dtAllInternationalLicenses.Clear();
+
+        }
+
         private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDriverLicenseInfo LicenseInfo = new frmDriverLicenseInfo((int)dgvAllLocalLicenses.CurrentRow.Cells[0].Value);

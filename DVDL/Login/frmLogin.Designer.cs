@@ -37,7 +37,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.ckbRememberMe = new System.Windows.Forms.CheckBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(386, 131);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(434, 131);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
             // label1
@@ -97,14 +99,14 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(196, 3);
+            this.txtUsername.Location = new System.Drawing.Point(220, 3);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(171, 24);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(196, 48);
+            this.txtPassword.Location = new System.Drawing.Point(220, 48);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(171, 24);
             this.txtPassword.TabIndex = 3;
@@ -112,13 +114,13 @@
             // ckbRememberMe
             // 
             this.ckbRememberMe.AutoSize = true;
-            this.ckbRememberMe.Location = new System.Drawing.Point(196, 93);
+            this.ckbRememberMe.Location = new System.Drawing.Point(220, 93);
             this.ckbRememberMe.Name = "ckbRememberMe";
             this.ckbRememberMe.Size = new System.Drawing.Size(120, 21);
             this.ckbRememberMe.TabIndex = 4;
             this.ckbRememberMe.Text = "Remember me";
             this.ckbRememberMe.UseVisualStyleBackColor = true;
-            //  
+            // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(338, 402);
@@ -129,12 +131,25 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DVDL.Properties.Resources.visibility;
+            this.pictureBox1.Location = new System.Drawing.Point(484, 254);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(537, 587);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblMainTitle);
@@ -146,6 +161,7 @@
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +178,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox ckbRememberMe;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

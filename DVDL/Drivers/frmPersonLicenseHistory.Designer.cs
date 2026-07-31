@@ -81,6 +81,7 @@
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(834, 422);
             this.ctrlPersonCardWithFilter1.TabIndex = 19;
+            this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
             // 
             // frmPersonLicenseHistory
             // 

@@ -11,12 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using DVDL.Properties;
 
 namespace DVDL.Login
 {
     public partial class frmLogin : Form
     {
-    
+        private bool _showPassword = false;
+
+
         public frmLogin()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace DVDL.Login
             Design.labelDesign(label2);
             Design.DataTextBoxDesign(txtUsername);
             Design.DataTextBoxDesign(txtPassword);
+            txtPassword.UseSystemPasswordChar = true;
             Design.lblLoginStyle(lblMainTitle);
             Design.DataButtonDesign(btnLogin);
 
@@ -85,6 +89,18 @@ namespace DVDL.Login
             {
                 ckbRememberMe.Checked = false;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            _showPassword = !_showPassword;
+
+            txtPassword.UseSystemPasswordChar = !_showPassword;
+
+            pictureBox1.Image = _showPassword
+                ? Resources.visibilityoff
+                : Resources.visibility;
         }
     }
 }

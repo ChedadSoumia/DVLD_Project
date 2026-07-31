@@ -14,19 +14,24 @@ namespace DVDL.Drivers
 {
     public partial class frmPersonLicenseHistory : Form
     {
-        private int _DriverID=-1;
-        private clsDriver _DriverInfo;
+        private int _PersonID=-1;
         private void _LoadDesign()
         {
             Design.ButtonCloseStyle(btnClose);
             Design.MainLabelTitleDesign(lblMainTitle);
 
         }
-        public frmPersonLicenseHistory(int DriverID)
+
+        public frmPersonLicenseHistory()
         {
             InitializeComponent();
             _LoadDesign();
-            _DriverID = DriverID;
+        }
+        public frmPersonLicenseHistory(int PersonID)
+        {
+            InitializeComponent();
+            _LoadDesign();
+            _PersonID = PersonID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -36,10 +41,30 @@ namespace DVDL.Drivers
 
         private void frmPersonLicenseHistory_Load(object sender, EventArgs e)
         {
-            _DriverInfo = clsDriver.FindByID(_DriverID);
-            ctrlPersonCardWithFilter1.LoadPersonInfo(_DriverInfo.PersonID);
-            ctrlPersonCardWithFilter1.FilterEnable = false;
-            ctrlDriverLicenses1.LoadDriverLicensesInfoByDriverID(_DriverID);
+
+            if(_PersonID != -1)
+            {
+                ctrlPersonCardWithFilter1.LoadPersonInfo(_PersonID);
+                ctrlPersonCardWithFilter1.FilterEnable = false;
+                ctrlDriverLicenses1.LoadDriverLicensesInfoByDriverID(_PersonID);
+            }
+            else
+            {
+                ctrlPersonCardWithFilter1.Enabled = true;
+                ctrlPersonCardWithFilter1.Focus();
+            }
+            
+        }
+
+        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        {
+            _PersonID = obj;
+            if (_PersonID == -1)
+            {
+                ctrlDriverLicenses1.Clear();
+            }
+            else
+                ctrlDriverLicenses1.LoadDriverLicensesInfoByPersonID(_PersonID);
         }
     }
 }
