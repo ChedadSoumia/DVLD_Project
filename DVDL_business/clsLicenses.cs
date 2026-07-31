@@ -206,7 +206,10 @@ namespace DVDL_business
 
 
             if (!ReplacmentLicense.Save())
+            {
+                Application.Delete();
                 return null;
+            }
 
 
             DeactivateCurrentLicense();
@@ -245,7 +248,10 @@ namespace DVDL_business
 
 
             if (!NewLicense.Save())
+            {
+                Application.Delete();
                 return null;
+            }
 
 
             DeactivateCurrentLicense();
@@ -253,12 +259,17 @@ namespace DVDL_business
         }
 
 
-
+        public static DataTable GetDriverLicenses(int DriverId)
+        {
+            return clsLicenseData.GetDriverLicenses(DriverId);
+        }
 
         public bool IsLicenseExpired()
         {
             return (this.ExpirationDate  < DateTime.Now);
         }
+
+
 
     }
 }

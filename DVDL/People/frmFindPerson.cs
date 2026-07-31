@@ -39,5 +39,7 @@ namespace DVDL.People
         {
             DataBack?.Invoke(this, ctrlPersonCardWithFilter1.PersonID);
         }
+
+       
     }
 }

@@ -140,5 +140,12 @@ namespace DVDL.Drivers
             if (comboBox1.Text == "Person ID" || comboBox1.Text == "Driver ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPersonLicenseHistory LicensesHistory = new frmPersonLicenseHistory((int)dgvAllDrivers.CurrentRow.Cells[0].Value);
+            LicensesHistory.ShowDialog();
+            frmListDrivers_Load(null, null);
+        }
     }
 }
