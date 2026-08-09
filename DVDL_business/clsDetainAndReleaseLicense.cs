@@ -14,7 +14,6 @@ namespace DVDL_business
     {
         public int DetainID {  get; set; }
         public int LicenseID {  get; set; }
-        public clsLicenses LicenseInfo;
         public DateTime DetainDate {  get; set; }
         public float FineFees { get; set; }
         public int CreatedByUserID { get; set; }
@@ -44,7 +43,6 @@ namespace DVDL_business
         {
             DetainID = detainID;
             LicenseID = licenseID;
-            LicenseInfo = clsLicenses.Find(licenseID);
             DetainDate = detainDate;
             FineFees = fineFees;
             CreatedByUserID = createdByUserID;
@@ -57,7 +55,7 @@ namespace DVDL_business
             ReleaseApplicationInfo = clsApplication.FindBaseApplication(releaseApplicationID);
         }
 
-        public clsDetainAndReleaseLicense Find(int detainID)
+        public static clsDetainAndReleaseLicense Find(int detainID)
         {
             int licenseID = -1, createdByUserID = -1, releaseByUserID = -1, releaseApplicationID=-1;
             float fineFees = 0;
@@ -73,7 +71,7 @@ namespace DVDL_business
                 return null;
         }
 
-        public clsDetainAndReleaseLicense LicenseHasDetain(int licenseID)
+        public static clsDetainAndReleaseLicense FindByLicenseID(int licenseID)
         {
             int detainID = -1, createdByUserID = -1, releaseByUserID = -1, releaseApplicationID = -1;
             float fineFees = 0;
@@ -100,24 +98,11 @@ namespace DVDL_business
             return (this.DetainID != -1);
         }
 
-        public bool Release()
+        public bool Release(int releaseByUserID,int releaseApplicationID)
         {
-            clsApplication Application = new clsApplication();
+          
+            return clsDetainAndReleaseLicenseData.ReleaseDetainedLicense(this.DetainID, releaseByUserID, releaseApplicationID);
 
-            Application.ApplicantPersonID = this.LicenseInfo.DriverInfo.PersonID;
-            Application.ApplicationDate = DateTime.Now;
-            Application.ApplicationTypeID = (int)clsApplication.enApplicationType.eReleaseDetainedDrivingLicense;
-            Application.ApplicationStatus = clsApplication.enApplicationStatus.eCompleted;
-            Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.eReleaseDetainedDrivingLicense).ApplicationTypeFees;
-            Application.CreatedByUserID = CreatedByUserID;
-
-            if (!Application.Save())
-                return false;
-
-            this.ReleaseApplicationID = Application.ApplicationID;
-
-            return clsDetainAndReleaseLicenseData.ReleaseDetainedLicense(this.DetainID,this.ReleaseByUserID, this.ReleaseApplicationID);
         }
 
         public static bool IsLicenseDetained(int LicenseID)
@@ -129,5 +114,7 @@ namespace DVDL_business
         {
             return _AddNewDetain();
         }
+
+
     }
 }

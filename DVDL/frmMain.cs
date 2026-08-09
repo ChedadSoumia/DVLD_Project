@@ -1,4 +1,5 @@
 ﻿using DVDL.Application;
+using DVDL.Application.Detain_And_Release_License;
 using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Application.Replacement_for_Lost_or_Damaged_License;
 using DVDL.Drivers;
@@ -15,6 +16,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -113,6 +115,24 @@ namespace DVDL
         {
             frmReplacementforLostorDamagedLicense ReplaceLostDamagedLicense = new frmReplacementforLostorDamagedLicense();
             ReplaceLostDamagedLicense.ShowDialog();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetainLicense DetainLicense = new frmDetainLicense();
+            DetainLicense.ShowDialog();
+        }
+
+        private void releaseDetainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmٌReleaseDetainedLicense ReleaseDetainedLicense = new frmٌReleaseDetainedLicense();
+            ReleaseDetainedLicense.ShowDialog();
+        }
+
+        private void manageDetainLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetainedLicensesList detainedLicensesList = new frmDetainedLicensesList();
+            detainedLicensesList.ShowDialog();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace DVLD_DataAccess
 
                     LicenseID = (int)reader["LicenseID"];
                     DetainDate = (DateTime)reader["DetainDate"];
-                    FineFees = (float)reader["FineFees"];
+                    FineFees = Convert.ToSingle(reader["FineFees"]);
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     IsReleased = (bool)reader["IsReleased"];
 
@@ -50,8 +50,8 @@ namespace DVLD_DataAccess
                         ReleaseDate = null;
                     }
 
-                    ReleaseByUserID = (reader["ReleaseByUserID"] != DBNull.Value)
-                        ? (int)reader["ReleaseByUserID"]
+                    ReleaseByUserID = (reader["ReleasedByUserID"] != DBNull.Value)
+                        ? (int)reader["ReleasedByUserID"]
                         : -1;
 
                     ReleaseApplicationID = (reader["ReleaseApplicationID"] != DBNull.Value)
@@ -106,7 +106,7 @@ namespace DVLD_DataAccess
 
                     DetainID = (int)reader["DetainID"];
                     DetainDate = (DateTime)reader["DetainDate"];
-                    FineFees = (float)reader["FineFees"];
+                    FineFees = Convert.ToSingle(reader["FineFees"]);
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     IsReleased = (bool)reader["IsReleased"];
 
@@ -119,8 +119,8 @@ namespace DVLD_DataAccess
                         ReleaseDate = null;
                     }
 
-                    ReleaseByUserID = (reader["ReleaseByUserID"] != DBNull.Value)
-                        ? (int)reader["ReleaseByUserID"]
+                    ReleaseByUserID = (reader["ReleasedByUserID"] != DBNull.Value)
+                        ? (int)reader["ReleasedByUserID"]
                         : -1;
 
                     ReleaseApplicationID = (reader["ReleaseApplicationID"] != DBNull.Value)
@@ -155,8 +155,8 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO DetainedLicenses (LicenseID,DetainDate, FineFees, CreatedByUserID,IsReleased,ReleaseDate,ReleaseByUserID,ReleaseApplicationID)
-                             VALUES (@LicenseID,@DetainDate, @FineFees, @CreatedByUserID,false,NULL,NULL,NULL);
+            string query = @"INSERT INTO DetainedLicenses (LicenseID,DetainDate, FineFees, CreatedByUserID,IsReleased,ReleaseDate,ReleasedByUserID,ReleaseApplicationID)
+                             VALUES (@LicenseID,@DetainDate, @FineFees, @CreatedByUserID,0,NULL,NULL,NULL);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -198,15 +198,15 @@ namespace DVLD_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Update  DetainedLicenses  
-                            set IsReleased = true,
+                            set IsReleased = 1,
                                 ReleaseDate = @ReleaseDate,
-                                ReleaseByUserID = @ReleaseByUserID,
+                                ReleasedByUserID = @ReleasedByUserID,
                                 ReleaseApplicationID = @ReleaseApplicationID
                                 where DetainID = @DetainID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ReleaseByUserID", ReleaseByUserID);
+            command.Parameters.AddWithValue("@ReleasedByUserID", ReleaseByUserID);
             command.Parameters.AddWithValue("@ReleaseDate", DateTime.Now);
             command.Parameters.AddWithValue("@ReleaseApplicationID", ReleaseApplicationID);
             command.Parameters.AddWithValue("@DetainID", DetainID);

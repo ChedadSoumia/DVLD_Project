@@ -1,13 +1,13 @@
-﻿namespace DVDL.Global_Classes
+﻿namespace DVDL.Application.International_Driving_License_Applicaiton
 {
-    partial class Design
+    partial class ctrlInternationalDrivingLicenseApplicaiton
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,23 +20,23 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // Design
+            // ctrlInternationalDrivingLicenseApplicaiton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 340);
-            this.Name = "Design";
-            this.Text = "Design";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.Name = "ctrlInternationalDrivingLicenseApplicaiton";
+            this.Size = new System.Drawing.Size(1064, 592);
             this.ResumeLayout(false);
 
         }

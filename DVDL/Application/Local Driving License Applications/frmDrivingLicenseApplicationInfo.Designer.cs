@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDrivingLicenseApplicationInfo));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.ctrlDrivingLicenseApplicationInfo1 = new DVDL.Application.Local_Driving_License_Applications.ctrlDrivingLicenseApplicationInfo();
@@ -69,8 +70,10 @@
             this.Controls.Add(this.ctrlDrivingLicenseApplicationInfo1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDrivingLicenseApplicationInfo";
-            this.Text = "frmDrivingLicenseApplicationInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Driving License Application Info";
             this.Load += new System.EventHandler(this.frmDrivingLicenseApplicationInfo_Load);
             this.ResumeLayout(false);
 

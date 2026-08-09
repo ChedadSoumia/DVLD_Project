@@ -1,6 +1,6 @@
-﻿namespace DVDL.Global_Classes
+﻿namespace DVDL.Application.International_Driving_License_Applicaiton
 {
-    partial class Design
+    partial class frmInternationalDrivingLicenseApplicaiton
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInternationalDrivingLicenseApplicaiton));
             this.SuspendLayout();
             // 
-            // Design
+            // frmInternationalDrivingLicenseApplicaiton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 340);
-            this.Name = "Design";
-            this.Text = "Design";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.ClientSize = new System.Drawing.Size(971, 538);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmInternationalDrivingLicenseApplicaiton";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "International Driving License Application";
             this.ResumeLayout(false);
 
         }

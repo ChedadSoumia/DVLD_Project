@@ -54,6 +54,12 @@ namespace DVDL_business
 
         public int CreatedByUserID { get; set; }
         public clsUser CreatedByUserInfo;
+
+
+        public clsDetainAndReleaseLicense DetainInfo;
+        
+
+
         public bool IsDetained
         {
             get { return clsDetainAndReleaseLicense.IsLicenseDetained(this.LicenseID); }
@@ -92,6 +98,8 @@ namespace DVDL_business
             IssueReason=issueReason;
             CreatedByUserID=createdByUserId;
             CreatedByUserInfo = clsUser.Find(createdByUserId);
+
+            DetainInfo = clsDetainAndReleaseLicense.FindByLicenseID(licenseId);
 
             Mode = enMode.eUpdate;
         }
@@ -273,7 +281,45 @@ namespace DVDL_business
             return (this.ExpirationDate  < DateTime.Now);
         }
 
+        public int Detain(float FineFees, int CreatedByUserID)
+        {
+            clsDetainAndReleaseLicense DetainLicense = new clsDetainAndReleaseLicense();
+            DetainLicense.LicenseID = this.LicenseID;
+            DetainLicense.DetainDate = DateTime.Now;
+            DetainLicense.FineFees = FineFees;
+            DetainLicense.CreatedByUserID = CreatedByUserID;
 
+            if (!DetainLicense.Save())
+            {
+                return -1;
+            }
+
+            return DetainLicense.DetainID;
+
+        }
+
+        public bool ReleaseDetainedLicense(int ReleasedByUserID , ref int ApplicationID)
+        {
+            clsApplication Application = new clsApplication();
+
+            Application.ApplicantPersonID = this.DriverInfo.PersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)clsApplication.enApplicationType.eReleaseDetainedDrivingLicense;
+            Application.ApplicationStatus = clsApplication.enApplicationStatus.eCompleted;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.eReleaseDetainedDrivingLicense).ApplicationTypeFees;
+            Application.CreatedByUserID = ReleasedByUserID;
+
+            if (!Application.Save())
+            {
+                ApplicationID = -1;
+                return false;
+            }
+
+            ApplicationID = Application.ApplicationID;
+
+            return this.DetainInfo.Release(ReleasedByUserID, Application.ApplicationID);
+        }
 
     }
 }

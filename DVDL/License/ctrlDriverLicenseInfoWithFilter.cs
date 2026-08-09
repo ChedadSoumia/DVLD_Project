@@ -87,6 +87,7 @@ namespace DVDL.License
                 groupBox1.Enabled = _FilterEnabled;
             }
         }
+      
 
         public void LoadLicenseInfoWithFilter(int LicenseID)
         {
