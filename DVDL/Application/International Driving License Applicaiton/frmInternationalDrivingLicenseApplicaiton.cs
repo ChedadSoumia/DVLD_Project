@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVDL.Global_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,33 @@ namespace DVDL.Application.International_Driving_License_Applicaiton
 {
     public partial class frmInternationalDrivingLicenseApplicaiton : Form
     {
-        public frmInternationalDrivingLicenseApplicaiton()
+
+        private int _InternationalLicenseID = -1;
+
+
+        private void _LoadDate()
+        {
+            Design.MainLabelTitleDesign(lblMainTitle);
+            Design.ButtonCloseStyle(btnClose);
+        }
+
+        public frmInternationalDrivingLicenseApplicaiton(int InternationalLicenseID)
         {
             InitializeComponent();
+            _LoadDate();
+            _InternationalLicenseID = InternationalLicenseID;
+        }
+
+        private void frmInternationalDrivingLicenseApplicaiton_Load(object sender, EventArgs e)
+        {
+            if (_InternationalLicenseID == -1)
+                return;
+            ctrlInternationalDrivingLicenseApplicaiton1.LoadInternationalInfo(_InternationalLicenseID);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

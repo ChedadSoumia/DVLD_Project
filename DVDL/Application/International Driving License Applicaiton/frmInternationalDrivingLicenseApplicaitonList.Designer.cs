@@ -46,9 +46,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnAddNewInternationalLicense = new System.Windows.Forms.Button();
-            this.dgvAllDetainedLicenses = new System.Windows.Forms.DataGridView();
+            this.dgvAllInternationalLicensesList = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllDetainedLicenses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllInternationalLicensesList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -84,18 +84,21 @@
             this.showPersonDetailsToolStripMenuItem.Name = "showPersonDetailsToolStripMenuItem";
             this.showPersonDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
             this.showPersonDetailsToolStripMenuItem.Text = "Show Person Details";
+            this.showPersonDetailsToolStripMenuItem.Click += new System.EventHandler(this.showPersonDetailsToolStripMenuItem_Click_1);
             // 
             // showLicenseDetailsToolStripMenuItem
             // 
             this.showLicenseDetailsToolStripMenuItem.Name = "showLicenseDetailsToolStripMenuItem";
             this.showLicenseDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
             this.showLicenseDetailsToolStripMenuItem.Text = "Show License Details";
+            this.showLicenseDetailsToolStripMenuItem.Click += new System.EventHandler(this.showLicenseDetailsToolStripMenuItem_Click_1);
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
             this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
             this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            this.showPersonLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHistoryToolStripMenuItem_Click_1);
             // 
             // comboBox2
             // 
@@ -108,6 +111,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(213, 24);
             this.comboBox2.TabIndex = 44;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // lblRecordsCount
             // 
@@ -141,15 +145,16 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "None",
-            "Detain ID",
-            "Is Released",
-            "National No.",
-            "Full Name",
-            "Release Application ID"});
+            "International License ID",
+            "Application ID",
+            "Driver ID",
+            "Local License ID",
+            "Is Active"});
             this.comboBox1.Location = new System.Drawing.Point(214, 88);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
             this.comboBox1.TabIndex = 39;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtFilter
             // 
@@ -158,6 +163,8 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(232, 31);
             this.txtFilter.TabIndex = 38;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilter_KeyPress);
             // 
             // btnAddNewInternationalLicense
             // 
@@ -169,10 +176,11 @@
             this.btnAddNewInternationalLicense.Size = new System.Drawing.Size(37, 31);
             this.btnAddNewInternationalLicense.TabIndex = 37;
             this.btnAddNewInternationalLicense.UseVisualStyleBackColor = true;
+            this.btnAddNewInternationalLicense.Click += new System.EventHandler(this.btnAddNewInternationalLicense_Click);
             // 
-            // dgvAllDetainedLicenses
+            // dgvAllInternationalLicensesList
             // 
-            this.dgvAllDetainedLicenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllInternationalLicensesList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -180,9 +188,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllDetainedLicenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAllDetainedLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllDetainedLicenses.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvAllInternationalLicensesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAllInternationalLicensesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllInternationalLicensesList.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -190,9 +198,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAllDetainedLicenses.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAllDetainedLicenses.Location = new System.Drawing.Point(27, 135);
-            this.dgvAllDetainedLicenses.Name = "dgvAllDetainedLicenses";
+            this.dgvAllInternationalLicensesList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAllInternationalLicensesList.Location = new System.Drawing.Point(27, 135);
+            this.dgvAllInternationalLicensesList.Name = "dgvAllInternationalLicensesList";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -200,11 +208,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllDetainedLicenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAllDetainedLicenses.RowHeadersWidth = 51;
-            this.dgvAllDetainedLicenses.RowTemplate.Height = 26;
-            this.dgvAllDetainedLicenses.Size = new System.Drawing.Size(1318, 532);
-            this.dgvAllDetainedLicenses.TabIndex = 36;
+            this.dgvAllInternationalLicensesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAllInternationalLicensesList.RowHeadersWidth = 51;
+            this.dgvAllInternationalLicensesList.RowTemplate.Height = 26;
+            this.dgvAllInternationalLicensesList.Size = new System.Drawing.Size(1318, 532);
+            this.dgvAllInternationalLicensesList.TabIndex = 36;
             // 
             // frmInternationalDrivingLicenseApplicaitonList
             // 
@@ -219,14 +227,15 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnAddNewInternationalLicense);
-            this.Controls.Add(this.dgvAllDetainedLicenses);
+            this.Controls.Add(this.dgvAllInternationalLicensesList);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInternationalDrivingLicenseApplicaitonList";
             this.Text = "International Driving License Applicaiton List";
+            this.Load += new System.EventHandler(this.frmInternationalDrivingLicenseApplicaitonList_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllDetainedLicenses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllInternationalLicensesList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +256,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Button btnAddNewInternationalLicense;
-        private System.Windows.Forms.DataGridView dgvAllDetainedLicenses;
+        private System.Windows.Forms.DataGridView dgvAllInternationalLicensesList;
     }
 }

@@ -332,6 +332,9 @@
     <EmbeddedResource Include="Application\International Driving License Applicaiton\ctrlInternationalDrivingLicenseApplicaiton.resx">
       <DependentUpon>ctrlInternationalDrivingLicenseApplicaiton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\International Driving License Applicaiton\frmInternationalDrivingLicenseApplicaiton.resx">
+      <DependentUpon>frmInternationalDrivingLicenseApplicaiton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\International Driving License Applicaiton\frmInternationalDrivingLicenseApplicaitonList.resx">
       <DependentUpon>frmInternationalDrivingLicenseApplicaitonList.cs</DependentUpon>
     </EmbeddedResource>

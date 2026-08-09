@@ -45,6 +45,7 @@
     <Compile Include="clsApplicationType.cs" />
     <Compile Include="clsDetainAndReleaseLicense.cs" />
     <Compile Include="clsDriver.cs" />
+    <Compile Include="clsInternationalDrivingLicenseApplicaiton.cs" />
     <Compile Include="clsLicenseClasses.cs" />
     <Compile Include="clsLicenses.cs" />
     <Compile Include="clsLocalDrivingLicenseApplication.cs" />

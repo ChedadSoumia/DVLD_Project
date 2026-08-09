@@ -132,6 +132,7 @@
             this.internationalLiccenseToolStripMenuItem.Name = "internationalLiccenseToolStripMenuItem";
             this.internationalLiccenseToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.internationalLiccenseToolStripMenuItem.Text = "International License";
+            this.internationalLiccenseToolStripMenuItem.Click += new System.EventHandler(this.internationalLiccenseToolStripMenuItem_Click);
             // 
             // renewDrivingLicenseToolStripMenuItem
             // 
@@ -195,6 +196,7 @@
             this.internationalLicenseApplicationsToolStripMenuItem.Name = "internationalLicenseApplicationsToolStripMenuItem";
             this.internationalLicenseApplicationsToolStripMenuItem.Size = new System.Drawing.Size(318, 26);
             this.internationalLicenseApplicationsToolStripMenuItem.Text = "International License Applications";
+            this.internationalLicenseApplicationsToolStripMenuItem.Click += new System.EventHandler(this.internationalLicenseApplicationsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

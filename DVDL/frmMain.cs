@@ -1,5 +1,6 @@
 ﻿using DVDL.Application;
 using DVDL.Application.Detain_And_Release_License;
+using DVDL.Application.International_Driving_License_Applicaiton;
 using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Application.Replacement_for_Lost_or_Damaged_License;
 using DVDL.Drivers;
@@ -133,6 +134,18 @@ namespace DVDL
         {
             frmDetainedLicensesList detainedLicensesList = new frmDetainedLicensesList();
             detainedLicensesList.ShowDialog();
+        }
+
+        private void internationalLiccenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewInternationalDrivingLicenseApplicaiton newInternationalDrivingLicenseApplicaiton = new frmNewInternationalDrivingLicenseApplicaiton();
+            newInternationalDrivingLicenseApplicaiton.ShowDialog();
+        }
+
+        private void internationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInternationalDrivingLicenseApplicaitonList internationalDrivingLicenseApplicaitonList = new frmInternationalDrivingLicenseApplicaitonList();
+            internationalDrivingLicenseApplicaitonList.ShowDialog();
         }
     }
 }

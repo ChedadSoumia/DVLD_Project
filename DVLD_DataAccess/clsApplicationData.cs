@@ -168,7 +168,7 @@ namespace DVLD_DataAccess
 
 
         public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate,int ApplicatioTypeID, byte AppliactionStatus
-            , DateTime LastStatusDate, float PaidFees, int CreatedByUser)
+            , DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             //this function will return the new person id if succeeded and -1 if not.
             int ApplicationID = -1;
@@ -176,7 +176,7 @@ namespace DVLD_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"INSERT INTO Applications (ApplicantPersonID, ApplicationDate,ApplicationTypeID, ApplicationStatus,LastStatusDate,PaidFees,CreatedByUserID)
-                             VALUES (@ApplicantPersonID, @ApplicationDate,@ApplicationTypeID, @AppliactionStatus,@LastStatusDate,@PaidFees,@CreatedByUser);
+                             VALUES (@ApplicantPersonID, @ApplicationDate,@ApplicationTypeID, @AppliactionStatus,@LastStatusDate,@PaidFees,@CreatedByUserID);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -188,7 +188,7 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@AppliactionStatus", AppliactionStatus);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {

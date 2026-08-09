@@ -37,6 +37,10 @@
             this.llShowLicenseHistory = new System.Windows.Forms.LinkLabel();
             this.lblAppInfo = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLocalLicenseID = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblApplicationID = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblIssueDate = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblLocalLicenseID = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.btnSave.TabIndex = 33;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -91,6 +92,7 @@
             this.btnClose.TabIndex = 34;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ctrlDriverLicenseInfoWithFilter1
             // 
@@ -100,6 +102,7 @@
             this.ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
             this.ctrlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(773, 455);
             this.ctrlDriverLicenseInfoWithFilter1.TabIndex = 35;
+            this.ctrlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlDriverLicenseInfoWithFilter1_OnLicenseSelected);
             // 
             // llShowLicenseHistory
             // 
@@ -111,6 +114,7 @@
             this.llShowLicenseHistory.TabIndex = 37;
             this.llShowLicenseHistory.TabStop = true;
             this.llShowLicenseHistory.Text = "Show License History";
+            this.llShowLicenseHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llShowLicenseHistory_LinkClicked);
             // 
             // lblAppInfo
             // 
@@ -122,6 +126,7 @@
             this.lblAppInfo.TabIndex = 38;
             this.lblAppInfo.TabStop = true;
             this.lblAppInfo.Text = "Show License Info";
+            this.lblAppInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppInfo_LinkClicked);
             // 
             // groupBox1
             // 
@@ -148,6 +153,50 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application Info";
+            // 
+            // lblLocalLicenseID
+            // 
+            this.lblLocalLicenseID.AutoSize = true;
+            this.lblLocalLicenseID.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.lblLocalLicenseID.Location = new System.Drawing.Point(640, 63);
+            this.lblLocalLicenseID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLocalLicenseID.Name = "lblLocalLicenseID";
+            this.lblLocalLicenseID.Size = new System.Drawing.Size(35, 16);
+            this.lblLocalLicenseID.TabIndex = 237;
+            this.lblLocalLicenseID.Text = "[???]";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(431, 63);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 16);
+            this.label9.TabIndex = 236;
+            this.label9.Text = "Local License ID:";
+            // 
+            // lblExpirationDate
+            // 
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.lblExpirationDate.Location = new System.Drawing.Point(640, 101);
+            this.lblExpirationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(75, 16);
+            this.lblExpirationDate.TabIndex = 235;
+            this.lblExpirationDate.Text = "[??/??/????]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(431, 101);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 16);
+            this.label4.TabIndex = 234;
+            this.label4.Text = "Expiration Date:";
             // 
             // lblApplicationID
             // 
@@ -281,50 +330,6 @@
             this.label5.TabIndex = 221;
             this.label5.Text = "Application Date:";
             // 
-            // lblExpirationDate
-            // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.lblExpirationDate.Location = new System.Drawing.Point(640, 101);
-            this.lblExpirationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(75, 16);
-            this.lblExpirationDate.TabIndex = 235;
-            this.lblExpirationDate.Text = "[??/??/????]";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(431, 101);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 16);
-            this.label4.TabIndex = 234;
-            this.label4.Text = "Expiration Date:";
-            // 
-            // lblLocalLicenseID
-            // 
-            this.lblLocalLicenseID.AutoSize = true;
-            this.lblLocalLicenseID.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            this.lblLocalLicenseID.Location = new System.Drawing.Point(640, 63);
-            this.lblLocalLicenseID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLocalLicenseID.Name = "lblLocalLicenseID";
-            this.lblLocalLicenseID.Size = new System.Drawing.Size(35, 16);
-            this.lblLocalLicenseID.TabIndex = 237;
-            this.lblLocalLicenseID.Text = "[???]";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(431, 63);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 16);
-            this.label9.TabIndex = 236;
-            this.label9.Text = "Local License ID:";
-            // 
             // frmNewInternationalDrivingLicenseApplicaiton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -343,6 +348,7 @@
             this.Name = "frmNewInternationalDrivingLicenseApplicaiton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New International Driving License Applicaiton";
+            this.Load += new System.EventHandler(this.frmNewInternationalDrivingLicenseApplicaiton_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
