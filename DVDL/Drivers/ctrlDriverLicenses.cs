@@ -36,9 +36,13 @@ namespace DVDL.Drivers
         private void _LoadLocalLicensesInfo()
         {
             _dtAllLocalLicenses = clsDriver.GetLicenses(_DriverID);
-            dgvAllLocalLicenses.DataSource = _dtAllLocalLicenses;
+            _dtAllInternationalLicenses = clsInternationalDrivingLicenseApplicaiton.GetDriverInternationalLicenses(_DriverID);
 
-            lblCountLocalLicenses.Text = _dtAllLocalLicenses.Rows.Count.ToString();
+            dgvAllLocalLicenses.DataSource = _dtAllLocalLicenses;
+            dgvAllInternationalLicenses.DataSource = _dtAllInternationalLicenses;
+
+            lblCountLocalLicenses.Text = dgvAllLocalLicenses.Rows.Count.ToString();
+            lblCountInternationalLicenses.Text = dgvAllInternationalLicenses.Rows.Count.ToString();
         }
 
         public void LoadDriverLicensesInfoByDriverID(int DriverID)
