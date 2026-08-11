@@ -44,6 +44,32 @@ namespace DVDL.Application.International_Driving_License_Applicaiton
             dgvAllInternationalLicensesList.DataSource = _dtAllInternationalLicensesList;
 
             lblRecordsCount.Text = dgvAllInternationalLicensesList.Rows.Count.ToString();
+
+            if (dgvAllInternationalLicensesList.Rows.Count > 0)
+            {
+                dgvAllInternationalLicensesList.Columns[0].HeaderText = "Int.License ID";
+                dgvAllInternationalLicensesList.Columns[0].Width = 160;
+
+                dgvAllInternationalLicensesList.Columns[1].HeaderText = "Application ID";
+                dgvAllInternationalLicensesList.Columns[1].Width = 150;
+
+                dgvAllInternationalLicensesList.Columns[2].HeaderText = "Driver ID";
+                dgvAllInternationalLicensesList.Columns[2].Width = 130;
+
+                dgvAllInternationalLicensesList.Columns[3].HeaderText = "L.License ID";
+                dgvAllInternationalLicensesList.Columns[3].Width = 130;
+
+                dgvAllInternationalLicensesList.Columns[4].HeaderText = "Issue Date";
+                dgvAllInternationalLicensesList.Columns[4].Width = 180;
+
+                dgvAllInternationalLicensesList.Columns[5].HeaderText = "Expiration Date";
+                dgvAllInternationalLicensesList.Columns[5].Width = 180;
+
+                dgvAllInternationalLicensesList.Columns[6].HeaderText = "Is Active";
+                dgvAllInternationalLicensesList.Columns[6].Width = 120;
+
+            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
