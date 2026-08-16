@@ -1,0 +1,146 @@
+﻿using DVDL.Global_Classes;
+using DVDL_business;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DVDL.Test
+{
+    public partial class frmTestAppointments : Form
+    {
+        private clsTestTypes.enTestType _TestType = clsTestTypes.enTestType.VisionTest;
+        private DataTable _dtLicenseTestAppointments;
+        int _LocalDrivingLicenseApplicationID = -1;
+        
+
+
+        private void _LoadDesign()
+        {
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnAddNew);
+            clsDesign.DataGridViewDesign(dgvAllAppointments);
+            
+           
+        }
+
+
+
+        public frmTestAppointments(int localDrivingLicenseApplicationID, clsTestTypes.enTestType testType)
+        {
+            InitializeComponent();
+            _LoadDesign();
+            _TestType = testType;
+            _LocalDrivingLicenseApplicationID=localDrivingLicenseApplicationID;
+            
+        }
+
+
+        private void _LoadTestTypeTitle()
+        {
+            switch (_TestType)
+            {
+                case clsTestTypes.enTestType.VisionTest:
+                    this.Text = "Vision Test appointments";
+                    lblMainTitle.Text = "Vision Test appointments";
+                    break;
+                case clsTestTypes.enTestType.WrittenTest:
+                    this.Text = "Written Test appointments";
+                    lblMainTitle.Text = "Written Test appointments";
+                    break;
+                case clsTestTypes.enTestType.StreetTest:
+                    this.Text = "Street Test appointments";
+                    lblMainTitle.Text = "Street Test appointments";
+                    break;
+            }
+            }
+
+        private void _LoadData()
+        {
+
+            _LoadTestTypeTitle();
+
+            ctrlDrivingLicenseApplicationInfo1.LoadLocalLicenseDrivingAppliactionInfo(_LocalDrivingLicenseApplicationID);
+            _dtLicenseTestAppointments = clsTestAppointments.GetAppointments(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType);
+            dgvAllAppointments.DataSource = _dtLicenseTestAppointments;
+
+            lblRecordsCount.Text = dgvAllAppointments.Rows.Count.ToString();
+
+            if (dgvAllAppointments.Rows.Count > 0)
+            {
+                dgvAllAppointments.Columns[0].HeaderText = "Appointment ID";
+                dgvAllAppointments.Columns[0].Width = 150;
+
+                dgvAllAppointments.Columns[1].HeaderText = "Appointment Date";
+                dgvAllAppointments.Columns[1].Width = 200;
+
+                dgvAllAppointments.Columns[2].HeaderText = "Paid Fees";
+                dgvAllAppointments.Columns[2].Width = 150;
+
+                dgvAllAppointments.Columns[3].HeaderText = "Is Locked";
+                dgvAllAppointments.Columns[3].Width = 100;
+            }
+
+
+        }
+
+        private void frmTestAppointments_Load(object sender, EventArgs e)
+        {
+            _LoadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(_LocalDrivingLicenseApplicationID);
+            if (localDrivingLicenseApplicationInfo.IsTestAppointmentActive(_TestType))
+            
+            {
+                MessageBox.Show("Person Already have an active appointment for this test");
+                return;
+            }
+
+            clsTest LastTest = localDrivingLicenseApplicationInfo.GetLastTestPerTestType(_TestType);
+
+
+            if(LastTest == null)
+            {
+                frmScheduleTest frm1 = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
+                frm1.ShowDialog();
+                frmTestAppointments_Load(null, null);
+                return;
+            }
+
+            if (LastTest.TestResult == true)
+            {
+                MessageBox.Show("This person already passed this test before, you can only retake faild test", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmScheduleTest frm2 = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
+            frm2.ShowDialog();
+            frmTestAppointments_Load(null, null);
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmScheduleTest scheduleTest = new frmScheduleTest(_LocalDrivingLicenseApplicationID, (clsTestTypes.enTestType)_TestType,(int)dgvAllAppointments.CurrentRow.Cells[0].Value);
+            scheduleTest.ShowDialog();
+            frmTestAppointments_Load(null, null); 
+
+        }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTakeTest takeTest = new frmTakeTest((int)dgvAllAppointments.CurrentRow.Cells[0].Value, (clsTestTypes.enTestType)_TestType);
+            takeTest.ShowDialog();
+            frmTestAppointments_Load(null, null);
+        }
+    }
+}
