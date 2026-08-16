@@ -271,6 +271,7 @@
             this.Controls.Add(this.btnDetain);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDetainLicense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

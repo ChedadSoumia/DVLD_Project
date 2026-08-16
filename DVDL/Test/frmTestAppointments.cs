@@ -23,9 +23,9 @@ namespace DVDL.Test
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnAddNew);
-            Design.DataGridViewDesign(dgvAllAppointments);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnAddNew);
+            clsDesign.DataGridViewDesign(dgvAllAppointments);
             
            
         }

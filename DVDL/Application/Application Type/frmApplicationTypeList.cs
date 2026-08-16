@@ -28,10 +28,10 @@ namespace DVDL.Application
 
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvApplicationTypes);
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.labelDesign(label2);
-            Design.labelDesign(lblRecordsCount);
+            clsDesign.DataGridViewDesign(dgvApplicationTypes);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(lblRecordsCount);
 
         }
 

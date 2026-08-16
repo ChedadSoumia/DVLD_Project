@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DVDL.Application
 {
@@ -29,21 +30,24 @@ namespace DVDL.Application
 
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvAllLocalApplications);
-            Design.DataButtonDesign(btnAddApplication);
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(lblRecordsCount);
-            Design.DataTextBoxDesign(txtFilter);
-            Design.StyleComboBox(comboBox1);
+            clsDesign.DataGridViewDesign(dgvAllLocalApplications);
+            clsDesign.DataButtonDesign(btnAddApplication);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(lblRecordsCount);
+            clsDesign.DataTextBoxDesign(txtFilter);
+            clsDesign.StyleComboBox(comboBox1);
             comboBox1.SelectedText = "None";
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
             comboBox1.SelectedIndex = 0;
 
         }
 
         private void frmLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
+            txtFilter.Visible = false;
+            tlpDateFilter.Visible = false;
+
             _AllLocalApplications = clsApplication.GetAllApplications();
 
             dgvAllLocalApplications.DataSource = _AllLocalApplications;
@@ -58,10 +62,32 @@ namespace DVDL.Application
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            frmLocalDrivingLicenseApplications_Load(null, null);
-            txtFilter.Visible = (comboBox1.Text != "None");
-            txtFilter.Text = "";
-            txtFilter.Focus();
+            //frmLocalDrivingLicenseApplications_Load(null, null);
+            if (comboBox1.Text != "Application Date")
+            {
+                txtFilter.Text = "";
+                txtFilter.Visible = false;
+                dtpToDate.Enabled = false;
+                tlpDateFilter.Visible = true;
+            }
+            else
+            {
+                txtFilter.Visible = (comboBox1.Text != "None");
+                tlpDateFilter.Visible = false;
+                if (comboBox1.Text == "None")
+                {
+                    txtFilter.Enabled = false;
+                }
+                else
+                {
+                    txtFilter.Enabled = true;
+                }
+
+                txtFilter.Text = "";
+                txtFilter.Focus();
+            }
+
+          
         }
 
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
@@ -259,6 +285,24 @@ namespace DVDL.Application
             }
 
             
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpToDate.Enabled = true;
+        }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "ApplicationDate";
+            if (dtpToDate.Checked)
+            {
+                _AllLocalApplications.DefaultView.RowFilter = string.Format("[{0}] >= #{1:yyyy-MM-dd 00:00:00}# AND [{0}] <= #{2:yyyy-MM-dd 23:59:59}#", FilterColumn, dtpFromDate.Value, dtpToDate.Value);
+            }
+            else
+            {
+                _AllLocalApplications.DefaultView.RowFilter = "";
+            }
         }
     }
 }

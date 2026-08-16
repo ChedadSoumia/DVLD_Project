@@ -17,8 +17,8 @@ namespace DVDL.Drivers
         private int _PersonID=-1;
         private void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
 
         }
 

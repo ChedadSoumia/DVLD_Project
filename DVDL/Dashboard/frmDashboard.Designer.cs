@@ -1,6 +1,6 @@
-﻿namespace DVDL.Global_Classes
+﻿namespace DVDL.Dashboard
 {
-    partial class Design
+    partial class frmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.SuspendLayout();
             // 
-            // Design
+            // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 340);
-            this.Name = "Design";
-            this.Text = "Design";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.ClientSize = new System.Drawing.Size(1294, 753);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1312, 800);
+            this.Name = "frmDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmDashboard";
             this.ResumeLayout(false);
 
         }

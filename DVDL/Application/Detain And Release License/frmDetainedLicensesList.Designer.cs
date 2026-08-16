@@ -50,8 +50,14 @@
             this.btnReleaseLicense = new System.Windows.Forms.Button();
             this.btnAddDetainLicense = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tlpDateFilter = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllDetainedLicenses)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.tlpDateFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -108,7 +114,8 @@
             "Is Released",
             "National No.",
             "Full Name",
-            "Release Application ID"});
+            "Release Application ID",
+            "Detain Date"});
             this.comboBox1.Location = new System.Drawing.Point(239, 108);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
@@ -244,12 +251,70 @@
             this.comboBox2.TabIndex = 30;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // tlpDateFilter
+            // 
+            this.tlpDateFilter.ColumnCount = 4;
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.18182F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.81818F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tlpDateFilter.Controls.Add(this.dtpToDate, 3, 0);
+            this.tlpDateFilter.Controls.Add(this.label3, 0, 0);
+            this.tlpDateFilter.Controls.Add(this.label4, 2, 0);
+            this.tlpDateFilter.Controls.Add(this.dtpFromDate, 1, 0);
+            this.tlpDateFilter.Location = new System.Drawing.Point(464, 108);
+            this.tlpDateFilter.Name = "tlpDateFilter";
+            this.tlpDateFilter.RowCount = 1;
+            this.tlpDateFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDateFilter.Size = new System.Drawing.Size(444, 31);
+            this.tlpDateFilter.TabIndex = 31;
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.Enabled = false;
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpToDate.Location = new System.Drawing.Point(325, 3);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(115, 24);
+            this.dtpToDate.TabIndex = 29;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "From:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "To:";
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFromDate.Location = new System.Drawing.Point(80, 3);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(142, 24);
+            this.dtpFromDate.TabIndex = 28;
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
+            // 
             // frmDetainedLicensesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1475, 768);
+            this.Controls.Add(this.tlpDateFilter);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.btnReleaseLicense);
             this.Controls.Add(this.lblRecordsCount);
@@ -261,6 +326,7 @@
             this.Controls.Add(this.btnAddDetainLicense);
             this.Controls.Add(this.dgvAllDetainedLicenses);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDetainedLicensesList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -268,6 +334,8 @@
             this.Load += new System.EventHandler(this.frmDetainedLicensesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllDetainedLicenses)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tlpDateFilter.ResumeLayout(false);
+            this.tlpDateFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +360,10 @@
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tlpDateFilter;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
     }
 }

@@ -233,7 +233,7 @@
             "Not Active"});
             this.cbIsActive.Location = new System.Drawing.Point(365, 103);
             this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(232, 24);
+            this.cbIsActive.Size = new System.Drawing.Size(206, 24);
             this.cbIsActive.TabIndex = 16;
             this.cbIsActive.Visible = false;
             this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);

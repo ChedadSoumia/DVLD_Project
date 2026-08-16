@@ -38,14 +38,14 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 595);
+            this.panel2.Location = new System.Drawing.Point(0, 463);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(772, 10);
+            this.panel2.Size = new System.Drawing.Size(673, 10);
             this.panel2.TabIndex = 17;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(529, 538);
+            this.btnClose.Location = new System.Drawing.Point(537, 403);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(126, 43);
             this.btnClose.TabIndex = 18;
@@ -58,7 +58,7 @@
             this.ctrlDrivingLicenseApplicationInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(12, 18);
             this.ctrlDrivingLicenseApplicationInfo1.Name = "ctrlDrivingLicenseApplicationInfo1";
-            this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(735, 514);
+            this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(663, 379);
             this.ctrlDrivingLicenseApplicationInfo1.TabIndex = 19;
             // 
             // frmDrivingLicenseApplicationInfo
@@ -66,10 +66,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(772, 605);
+            this.ClientSize = new System.Drawing.Size(673, 473);
             this.Controls.Add(this.ctrlDrivingLicenseApplicationInfo1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDrivingLicenseApplicationInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

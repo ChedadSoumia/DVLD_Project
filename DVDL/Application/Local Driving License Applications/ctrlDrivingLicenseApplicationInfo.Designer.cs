@@ -49,9 +49,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblLocalAppID);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(34, 46);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(675, 137);
+            this.groupBox1.Size = new System.Drawing.Size(646, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driving License Application Info";
@@ -59,12 +59,14 @@
             // lblShowLicenseInfo
             // 
             this.lblShowLicenseInfo.AutoSize = true;
+            this.lblShowLicenseInfo.Enabled = false;
             this.lblShowLicenseInfo.Location = new System.Drawing.Point(84, 69);
             this.lblShowLicenseInfo.Name = "lblShowLicenseInfo";
             this.lblShowLicenseInfo.Size = new System.Drawing.Size(118, 17);
             this.lblShowLicenseInfo.TabIndex = 19;
             this.lblShowLicenseInfo.TabStop = true;
             this.lblShowLicenseInfo.Text = "Show License Info";
+            this.lblShowLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblShowLicenseInfo_LinkClicked);
             // 
             // lblPassedTests
             // 
@@ -126,9 +128,9 @@
             // ctrlBaseApplicationInfo1
             // 
             this.ctrlBaseApplicationInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ctrlBaseApplicationInfo1.Location = new System.Drawing.Point(23, 202);
+            this.ctrlBaseApplicationInfo1.Location = new System.Drawing.Point(3, 146);
             this.ctrlBaseApplicationInfo1.Name = "ctrlBaseApplicationInfo1";
-            this.ctrlBaseApplicationInfo1.Size = new System.Drawing.Size(686, 288);
+            this.ctrlBaseApplicationInfo1.Size = new System.Drawing.Size(657, 230);
             this.ctrlBaseApplicationInfo1.TabIndex = 1;
             // 
             // ctrlDrivingLicenseApplicationInfo
@@ -139,7 +141,8 @@
             this.Controls.Add(this.ctrlBaseApplicationInfo1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlDrivingLicenseApplicationInfo";
-            this.Size = new System.Drawing.Size(735, 514);
+            this.Size = new System.Drawing.Size(660, 377);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 

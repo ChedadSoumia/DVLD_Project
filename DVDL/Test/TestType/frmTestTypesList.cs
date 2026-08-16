@@ -25,10 +25,10 @@ namespace DVDL.Test
         }
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvTestTypes);
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.labelDesign(label2);
-            Design.labelDesign(lblRecordsCount);
+            clsDesign.DataGridViewDesign(dgvTestTypes);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(lblRecordsCount);
 
         }
 

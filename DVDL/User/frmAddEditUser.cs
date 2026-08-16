@@ -28,14 +28,14 @@ namespace DVDL.User
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.ButtonCloseStyle(btnClose);
-            Design.ButtonCloseStyle(btnNext);
-            Design.DataButtonDesign(btnSave);
-            Design.labelDesign(label1);
-            Design.labelDesign(label3);
-            Design.labelDesign(label4);
-            Design.labelDesign(label5);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.ButtonCloseStyle(btnNext);
+            clsDesign.DataButtonDesign(btnSave);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label3);
+            clsDesign.labelDesign(label4);
+            clsDesign.labelDesign(label5);
         }
 
         public frmAddEditUser()

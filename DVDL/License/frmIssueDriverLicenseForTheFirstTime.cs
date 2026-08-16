@@ -20,8 +20,8 @@ namespace DVDL.License
 
         private void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
-            Design.DataButtonDesign(btnIssue);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.DataButtonDesign(btnIssue);
         }
         public frmIssueDriverLicenseForTheFirstTime(int LocalDrivingLicenseApplicationID)
         {

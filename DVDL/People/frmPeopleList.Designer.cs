@@ -39,7 +39,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.twtFilter = new System.Windows.Forms.TextBox();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.btnAddPerson = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.dgvAllPeople = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
             this.SuspendLayout();
@@ -65,66 +66,67 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 188);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 160);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
-            // twtFilter
+            // txtFilter
             // 
-            this.twtFilter.Location = new System.Drawing.Point(423, 131);
-            this.twtFilter.Multiline = true;
-            this.twtFilter.Name = "twtFilter";
-            this.twtFilter.Size = new System.Drawing.Size(232, 31);
-            this.twtFilter.TabIndex = 2;
-            this.twtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.twtFilter_KeyPress);
+            this.txtFilter.Location = new System.Drawing.Point(423, 131);
+            this.txtFilter.Multiline = true;
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(232, 31);
+            this.txtFilter.TabIndex = 2;
+            this.txtFilter.TextChanged += new System.EventHandler(this.twtFilter_TextChanged);
+            this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.twtFilter_KeyPress);
             // 
             // comboBox1
             // 
@@ -152,7 +154,7 @@
             // lblMainTitle
             // 
             this.lblMainTitle.AutoSize = true;
-            this.lblMainTitle.Location = new System.Drawing.Point(22, 65);
+            this.lblMainTitle.Location = new System.Drawing.Point(46, 42);
             this.lblMainTitle.Name = "lblMainTitle";
             this.lblMainTitle.Size = new System.Drawing.Size(99, 17);
             this.lblMainTitle.TabIndex = 4;
@@ -160,10 +162,10 @@
             // 
             // btnAddPerson
             // 
-            this.btnAddPerson.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddPerson.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddPerson.Location = new System.Drawing.Point(1536, 131);
+            this.btnAddPerson.Location = new System.Drawing.Point(1401, 131);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(37, 31);
             this.btnAddPerson.TabIndex = 1;
@@ -205,7 +207,7 @@
             this.dgvAllPeople.Name = "dgvAllPeople";
             this.dgvAllPeople.RowHeadersWidth = 51;
             this.dgvAllPeople.RowTemplate.Height = 26;
-            this.dgvAllPeople.Size = new System.Drawing.Size(1628, 532);
+            this.dgvAllPeople.Size = new System.Drawing.Size(1674, 532);
             this.dgvAllPeople.TabIndex = 0;
             this.dgvAllPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllPeople_CellContentClick);
             // 
@@ -215,26 +217,42 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 743);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1882, 10);
+            this.panel2.Size = new System.Drawing.Size(1747, 10);
             this.panel2.TabIndex = 16;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "All",
+            "Male",
+            "Female"});
+            this.comboBox2.Location = new System.Drawing.Point(423, 131);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(184, 24);
+            this.comboBox2.TabIndex = 17;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // frmPeopleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1882, 753);
+            this.ClientSize = new System.Drawing.Size(1747, 753);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.twtFilter);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.dgvAllPeople);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPeopleList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People List";
             this.Load += new System.EventHandler(this.frmPeopleList_Load);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -246,7 +264,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnAddPerson;
-        private System.Windows.Forms.TextBox twtFilter;
+        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblMainTitle;
         private System.Windows.Forms.Label label1;
@@ -263,5 +281,6 @@
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvAllPeople;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

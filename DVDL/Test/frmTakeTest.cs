@@ -26,8 +26,8 @@ namespace DVDL.Test
 
         private void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
-            Design.DataButtonDesign(btnSave);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.DataButtonDesign(btnSave);
         }
         public frmTakeTest(int testAppointmentID, clsTestTypes.enTestType TestType)
         {

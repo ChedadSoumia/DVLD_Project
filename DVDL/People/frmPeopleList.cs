@@ -22,21 +22,22 @@ namespace DVDL.People
                                                        "Phone", "Email");
         public frmPeopleList()
         {
-            
+
             InitializeComponent();
             _Load();
+
         }
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvAllPeople);
-            Design.DataButtonDesign(btnAddPerson);
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(lblRecordsCount);
-            Design.DataTextBoxDesign(twtFilter);
-            Design.StyleComboBox( comboBox1);
+            clsDesign.DataGridViewDesign(dgvAllPeople);
+            clsDesign.DataButtonDesign(btnAddPerson);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(lblRecordsCount);
+            clsDesign.DataTextBoxDesign(txtFilter);
+            clsDesign.StyleComboBox(comboBox1);
             comboBox1.SelectedText = "None";
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
             comboBox1.SelectedIndex = 0;
 
         }
@@ -48,10 +49,11 @@ namespace DVDL.People
                                                        "GendorCaption", "DateOfBirth", "CountryName",
                                                        "Phone", "Email");
 
-            dgvAllPeople.DataSource= _dtPeople;
+            dgvAllPeople.DataSource = _dtPeople;
             lblRecordsCount.Text = _dtPeople.Rows.Count.ToString();
         }
-        private void _Load() {
+        private void _Load()
+        {
             _MyDesign();
             _RefreshPeopleList();
         }
@@ -63,18 +65,36 @@ namespace DVDL.People
             _RefreshPeopleList();
         }
 
-      
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            twtFilter.Visible = (comboBox1.Text != "None");
-
-            if (twtFilter.Visible)
+            if (comboBox1.Text == "Gendor")
             {
-                twtFilter.Text = "";
-                twtFilter.Focus();
+                txtFilter.Text = "";
+                txtFilter.Visible = false;
+                comboBox2.Visible = true;
+                comboBox2.SelectedIndex = 0;
+                comboBox2.Focus();
+            }
+            else
+            {
+                txtFilter.Visible = (comboBox1.Text != "None");
+                comboBox2.Visible = false;
+                if (comboBox1.Text == "None")
+                {
+                    txtFilter.Enabled = false;
+                }
+                else
+                {
+                    txtFilter.Enabled = true;
+                }
+
+                txtFilter.Text = "";
+                txtFilter.Focus();
             }
         }
+
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -132,45 +152,50 @@ namespace DVDL.People
 
         private void frmPeopleList_Load(object sender, EventArgs e)
         {
+            comboBox2.Visible = false;
+            txtFilter.Visible = false;
+
+            _RefreshPeopleList();
+
             if (dgvAllPeople.Rows.Count > 0)
             {
 
                 dgvAllPeople.Columns[0].HeaderText = "Person ID";
-                dgvAllPeople.Columns[0].Width = 110;
+                dgvAllPeople.Columns[0].Width = 100;
 
                 dgvAllPeople.Columns[1].HeaderText = "National No.";
-                dgvAllPeople.Columns[1].Width = 120;
+                dgvAllPeople.Columns[1].Width = 90;
 
 
-                dgvAllPeople.Columns[2].HeaderText = "First Name";
-                dgvAllPeople.Columns[2].Width = 120;
+                dgvAllPeople.Columns[2].HeaderText = "Firstname";
+                dgvAllPeople.Columns[2].Width = 90;
 
-                dgvAllPeople.Columns[3].HeaderText = "Second Name";
-                dgvAllPeople.Columns[3].Width = 140;
+                dgvAllPeople.Columns[3].HeaderText = "Secondname";
+                dgvAllPeople.Columns[3].Width = 90;
 
 
-                dgvAllPeople.Columns[4].HeaderText = "Third Name";
-                dgvAllPeople.Columns[4].Width = 120;
+                dgvAllPeople.Columns[4].HeaderText = "Thirdname";
+                dgvAllPeople.Columns[4].Width = 90;
 
-                dgvAllPeople.Columns[5].HeaderText = "Last Name";
-                dgvAllPeople.Columns[5].Width = 120;
+                dgvAllPeople.Columns[5].HeaderText = "Lastname";
+                dgvAllPeople.Columns[5].Width = 90;
 
                 dgvAllPeople.Columns[6].HeaderText = "Gendor";
-                dgvAllPeople.Columns[6].Width = 120;
+                dgvAllPeople.Columns[6].Width = 80;
 
                 dgvAllPeople.Columns[7].HeaderText = "Date Of Birth";
-                dgvAllPeople.Columns[7].Width = 140;
+                dgvAllPeople.Columns[7].Width = 110;
 
                 dgvAllPeople.Columns[8].HeaderText = "Nationality";
-                dgvAllPeople.Columns[8].Width = 120;
+                dgvAllPeople.Columns[8].Width = 100;
 
 
                 dgvAllPeople.Columns[9].HeaderText = "Phone";
-                dgvAllPeople.Columns[9].Width = 120;
+                dgvAllPeople.Columns[9].Width = 100;
 
 
                 dgvAllPeople.Columns[10].HeaderText = "Email";
-                dgvAllPeople.Columns[10].Width = 170;
+                dgvAllPeople.Columns[10].Width = 150;
             }
         }
 
@@ -181,6 +206,80 @@ namespace DVDL.People
             _RefreshPeopleList();
         }
 
-       
+        private void twtFilter_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "";
+            switch (comboBox1.Text)
+            {
+                case "Person ID":
+                    FilterColumn = "PersonID";
+                    break;
+                case "National No.":
+                    FilterColumn = "NationalNo";
+                    break;
+                case "First Name":
+                    FilterColumn = "FirstName";
+                    break;
+                case "Second Name":
+                    FilterColumn = "Second Name";
+                    break;
+                case "Third Name":
+                    FilterColumn = "ThirdName";
+                    break;
+                case "Last Name":
+                    FilterColumn = "LastName";
+                    break;
+                case "Nationality":
+                    FilterColumn = "Nationality";
+                    break;
+                case "Phone":
+                    FilterColumn = "Phone";
+                    break;
+                case "Email":
+                    FilterColumn = "Email";
+                    break;
+                default:
+                    FilterColumn = "None";
+                    break;
+            }
+
+            if (txtFilter.Text == "" || FilterColumn == "None")
+            {
+                _dtPeople.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvAllPeople.Rows.Count.ToString();
+                return;
+
+            }
+
+
+            if (FilterColumn == "PersonID")
+            {
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
+            }
+            else
+            {
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilter.Text.Trim());
+            }
+
+
+            lblRecordsCount.Text = dgvAllPeople.Rows.Count.ToString();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "GendorCaption";
+            string FilterValue = comboBox2.Text;
+            
+            if (FilterValue == "All")
+            {
+                _dtPeople.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                _dtPeople.DefaultView.RowFilter = string.Format("{0} = '{1}'", FilterColumn, FilterValue);
+            }
+            lblRecordsCount.Text = dgvAllPeople.Rows.Count.ToString();
+        }
     }
 }
+

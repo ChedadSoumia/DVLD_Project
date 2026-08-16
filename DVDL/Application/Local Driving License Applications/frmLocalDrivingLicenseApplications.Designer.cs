@@ -60,8 +60,14 @@
             this.btnAddApplication = new System.Windows.Forms.Button();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tlpDateFilter = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllLocalApplications)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.tlpDateFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,7 +106,8 @@
             "L.D.L. AppID",
             "National No.",
             "Full Name",
-            "Status"});
+            "Status",
+            "ApplicationDate"});
             this.comboBox1.Location = new System.Drawing.Point(170, 92);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
@@ -162,7 +169,7 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(293, 260);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(293, 232);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showApplicationToolStripMenuItem
@@ -314,12 +321,70 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "#Records:";
             // 
+            // tlpDateFilter
+            // 
+            this.tlpDateFilter.ColumnCount = 4;
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.18182F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.81818F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tlpDateFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tlpDateFilter.Controls.Add(this.dtpToDate, 3, 0);
+            this.tlpDateFilter.Controls.Add(this.label3, 0, 0);
+            this.tlpDateFilter.Controls.Add(this.label4, 2, 0);
+            this.tlpDateFilter.Controls.Add(this.dtpFromDate, 1, 0);
+            this.tlpDateFilter.Location = new System.Drawing.Point(401, 89);
+            this.tlpDateFilter.Name = "tlpDateFilter";
+            this.tlpDateFilter.RowCount = 1;
+            this.tlpDateFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDateFilter.Size = new System.Drawing.Size(444, 31);
+            this.tlpDateFilter.TabIndex = 32;
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.Enabled = false;
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpToDate.Location = new System.Drawing.Point(325, 3);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(115, 24);
+            this.dtpToDate.TabIndex = 29;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "From:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "To:";
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFromDate.Location = new System.Drawing.Point(80, 3);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(142, 24);
+            this.dtpFromDate.TabIndex = 28;
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
+            // 
             // frmLocalDrivingLicenseApplications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1374, 720);
+            this.Controls.Add(this.tlpDateFilter);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddApplication);
@@ -335,6 +400,8 @@
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllLocalApplications)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tlpDateFilter.ResumeLayout(false);
+            this.tlpDateFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +436,10 @@
         private System.Windows.Forms.ToolStripMenuItem sechduleVisionTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sechduleWrittenTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sechduleStreetTestToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tlpDateFilter;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
     }
 }

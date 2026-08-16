@@ -70,7 +70,9 @@
             this.Controls.Add(this.ctrlInternationalDrivingLicenseApplicaiton1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(765, 531);
             this.Name = "frmInternationalDrivingLicenseApplicaiton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "International Driving License Application";

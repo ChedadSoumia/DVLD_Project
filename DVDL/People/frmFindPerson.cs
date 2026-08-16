@@ -23,8 +23,8 @@ namespace DVDL.People
 
         private void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
 
         }
 

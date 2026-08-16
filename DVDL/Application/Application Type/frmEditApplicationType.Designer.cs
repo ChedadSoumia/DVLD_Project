@@ -160,6 +160,7 @@
             this.Controls.Add(this.lblMainTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditApplicationType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditApplicationType";
             this.Load += new System.EventHandler(this.frmEditApplicationType_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

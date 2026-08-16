@@ -45,9 +45,9 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
 
         private void _MyDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.ButtonCloseStyle(btnClose);
-            Design.DataButtonDesign(btnIssueReplacment);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.DataButtonDesign(btnIssueReplacment);
         }
         public frmReplacementforLostorDamagedLicense()
         {

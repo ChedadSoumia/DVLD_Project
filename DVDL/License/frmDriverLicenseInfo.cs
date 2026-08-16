@@ -20,8 +20,8 @@ namespace DVDL.License
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
 
         }
         public frmDriverLicenseInfo(int LicenseInfo)

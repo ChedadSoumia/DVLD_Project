@@ -3,6 +3,7 @@ using DVDL.Application.Detain_And_Release_License;
 using DVDL.Application.International_Driving_License_Applicaiton;
 using DVDL.Application.Local_Driving_License_Applications;
 using DVDL.Application.Replacement_for_Lost_or_Damaged_License;
+using DVDL.Dashboard;
 using DVDL.Drivers;
 using DVDL.Global_Classes;
 using DVDL.License;
@@ -30,7 +31,8 @@ namespace DVDL
         public frmMain(frmLogin frm)
         {
             InitializeComponent();
-            Design.MenuStripDesign(menuStrip1);
+            clsDesign.DataButtonDesign(btnDashboard);
+            clsDesign.MenuStripDesign(menuStrip1);
             _frmLogin = frm;
         }
 
@@ -146,6 +148,17 @@ namespace DVDL
         {
             frmInternationalDrivingLicenseApplicaitonList internationalDrivingLicenseApplicaitonList = new frmInternationalDrivingLicenseApplicaitonList();
             internationalDrivingLicenseApplicaitonList.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            frmDashboard Dashboard = new frmDashboard();
+            Dashboard.ShowDialog();
         }
     }
 }

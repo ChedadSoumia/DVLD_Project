@@ -76,8 +76,11 @@ namespace DVDL.Application.Local_Driving_License_Applications
             ctrlBaseApplicationInfo1.LoadBaseApplicationInfo(_LocalDrivingLicenseApplicationInfo.ApplicationID);
             
         }
-       
 
- 
+        private void lblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDrivingLicenseApplicationInfo LicenseInfo = new frmDrivingLicenseApplicationInfo(_LocalLicenseDrivingApplicationID);
+
+        }
     }
 }

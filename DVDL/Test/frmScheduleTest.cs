@@ -23,7 +23,7 @@ namespace DVDL.Test
 
         private void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.ButtonCloseStyle(btnClose);
         }
         public frmScheduleTest(int localDrivingLicenseApplicationID, clsTestTypes.enTestType testType, int testAppointmentID = -1)
         {

@@ -347,8 +347,10 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRelease);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmٌReleaseDetainedLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Release Detained License";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

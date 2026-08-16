@@ -44,23 +44,23 @@ namespace DVDL.People
         }
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnSave);
-            Design.ButtonCloseStyle(btnClose);
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(label7);
-            Design.labelDesign(label8);
-            Design.labelDesign(label9);
-            Design.labelDesign(label10);
-            Design.labelDesign(label11);
-            Design.labelDesign(label12);
-            Design.labelDesign(label14);
-            Design.NormallabelDesign(lblPersonID);
-            Design.NormallabelDesign(label3);
-            Design.NormallabelDesign(label4);
-            Design.NormallabelDesign(label5);
-            Design.NormallabelDesign(label6);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnSave);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(label7);
+            clsDesign.labelDesign(label8);
+            clsDesign.labelDesign(label9);
+            clsDesign.labelDesign(label10);
+            clsDesign.labelDesign(label11);
+            clsDesign.labelDesign(label12);
+            clsDesign.labelDesign(label14);
+            clsDesign.NormallabelDesign(lblPersonID);
+            clsDesign.NormallabelDesign(label3);
+            clsDesign.NormallabelDesign(label4);
+            clsDesign.NormallabelDesign(label5);
+            clsDesign.NormallabelDesign(label6);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

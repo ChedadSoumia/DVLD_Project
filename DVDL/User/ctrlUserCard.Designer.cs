@@ -41,16 +41,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.groupBox1.Controls.Add(this.lblIsActive);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblUserName);
             this.groupBox1.Controls.Add(this.lblUserID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(9, 311);
+            this.groupBox1.Location = new System.Drawing.Point(9, 281);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(807, 86);
+            this.groupBox1.Size = new System.Drawing.Size(807, 74);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Information";
@@ -58,66 +58,66 @@
             // lblIsActive
             // 
             this.lblIsActive.AutoSize = true;
-            this.lblIsActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsActive.Location = new System.Drawing.Point(645, 37);
+            this.lblIsActive.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            this.lblIsActive.Location = new System.Drawing.Point(645, 32);
             this.lblIsActive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIsActive.Name = "lblIsActive";
-            this.lblIsActive.Size = new System.Drawing.Size(45, 25);
+            this.lblIsActive.Size = new System.Drawing.Size(37, 22);
             this.lblIsActive.TabIndex = 140;
             this.lblIsActive.Text = "???";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(547, 37);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(547, 32);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.Size = new System.Drawing.Size(105, 22);
             this.label2.TabIndex = 139;
             this.label2.Text = "Is Active : ";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(431, 37);
+            this.lblUserName.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            this.lblUserName.Location = new System.Drawing.Point(431, 32);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(45, 25);
+            this.lblUserName.Size = new System.Drawing.Size(37, 22);
             this.lblUserName.TabIndex = 138;
             this.lblUserName.Text = "???";
             // 
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.Location = new System.Drawing.Point(220, 37);
+            this.lblUserID.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            this.lblUserID.Location = new System.Drawing.Point(220, 32);
             this.lblUserID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(45, 25);
+            this.lblUserID.Size = new System.Drawing.Size(37, 22);
             this.lblUserID.TabIndex = 137;
             this.lblUserID.Text = "???";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(125, 37);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(125, 32);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.Size = new System.Drawing.Size(96, 22);
             this.label4.TabIndex = 136;
             this.label4.Text = "User ID : ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 37);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(317, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 25);
+            this.label1.Size = new System.Drawing.Size(109, 22);
             this.label1.TabIndex = 130;
             this.label1.Text = "Username:";
             // 
@@ -126,7 +126,7 @@
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
             this.ctrlPersonCard1.Location = new System.Drawing.Point(9, 14);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(812, 291);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(812, 252);
             this.ctrlPersonCard1.TabIndex = 3;
             // 
             // ctrlUserCard
@@ -137,7 +137,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlUserCard";
-            this.Size = new System.Drawing.Size(828, 411);
+            this.Size = new System.Drawing.Size(828, 363);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

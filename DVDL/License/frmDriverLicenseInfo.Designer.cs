@@ -32,6 +32,7 @@
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.ctrlDriverLicenseInfo1 = new DVDL.License.ctrlDriverLicenseInfo();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblMainTitle
@@ -45,7 +46,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(663, 451);
+            this.btnClose.Location = new System.Drawing.Point(662, 443);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 47);
             this.btnClose.TabIndex = 7;
@@ -61,17 +62,29 @@
             this.ctrlDriverLicenseInfo1.Size = new System.Drawing.Size(754, 339);
             this.ctrlDriverLicenseInfo1.TabIndex = 8;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 494);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(775, 10);
+            this.panel2.TabIndex = 21;
+            // 
             // frmDriverLicenseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(806, 535);
+            this.ClientSize = new System.Drawing.Size(775, 504);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ctrlDriverLicenseInfo1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDriverLicenseInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Driver License Info";
             this.Load += new System.EventHandler(this.frmDriverLicenseInfo_Load);
             this.ResumeLayout(false);
@@ -84,5 +97,6 @@
         private System.Windows.Forms.Label lblMainTitle;
         private System.Windows.Forms.Button btnClose;
         private ctrlDriverLicenseInfo ctrlDriverLicenseInfo1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

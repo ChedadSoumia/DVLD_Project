@@ -27,15 +27,15 @@ namespace DVDL.User
         }
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvAllUsers);
-            Design.DataButtonDesign(btnAddUser);
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(lblCountUsers);
-            Design.DataTextBoxDesign(txtFilter);
-            Design.StyleComboBox(cbFilters);
+            clsDesign.DataGridViewDesign(dgvAllUsers);
+            clsDesign.DataButtonDesign(btnAddUser);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(lblCountUsers);
+            clsDesign.DataTextBoxDesign(txtFilter);
+            clsDesign.StyleComboBox(cbFilters);
             cbFilters.SelectedText = "None";
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
             cbFilters.SelectedIndex = 0;
 
         }

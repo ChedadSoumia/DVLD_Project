@@ -63,7 +63,7 @@ namespace DVDL.Test
         }
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
         }
         public ctrlSecheduledTest()
         {

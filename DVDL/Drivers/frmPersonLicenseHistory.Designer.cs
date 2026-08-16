@@ -49,14 +49,14 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 876);
+            this.panel2.Location = new System.Drawing.Point(0, 907);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(878, 10);
             this.panel2.TabIndex = 17;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(704, 832);
+            this.btnClose.Location = new System.Drawing.Point(744, 806);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 38);
             this.btnClose.TabIndex = 18;
@@ -67,9 +67,9 @@
             // ctrlDriverLicenses1
             // 
             this.ctrlDriverLicenses1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ctrlDriverLicenses1.Location = new System.Drawing.Point(50, 494);
+            this.ctrlDriverLicenses1.Location = new System.Drawing.Point(50, 445);
             this.ctrlDriverLicenses1.Name = "ctrlDriverLicenses1";
-            this.ctrlDriverLicenses1.Size = new System.Drawing.Size(769, 355);
+            this.ctrlDriverLicenses1.Size = new System.Drawing.Size(828, 355);
             this.ctrlDriverLicenses1.TabIndex = 20;
             // 
             // ctrlPersonCardWithFilter1
@@ -79,7 +79,7 @@
             this.ctrlPersonCardWithFilter1.FilterEnable = true;
             this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(50, 66);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(834, 422);
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(834, 373);
             this.ctrlPersonCardWithFilter1.TabIndex = 19;
             this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
             // 
@@ -88,7 +88,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(878, 886);
+            this.ClientSize = new System.Drawing.Size(878, 917);
             this.Controls.Add(this.ctrlDriverLicenses1);
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.Controls.Add(this.btnClose);

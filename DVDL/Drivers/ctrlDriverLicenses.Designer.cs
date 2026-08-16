@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(752, 332);
+            this.groupBox1.Size = new System.Drawing.Size(811, 332);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Drivers Licenses";
@@ -69,7 +69,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(736, 301);
+            this.tabControl1.Size = new System.Drawing.Size(785, 309);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -81,7 +81,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(728, 272);
+            this.tabPage1.Size = new System.Drawing.Size(777, 280);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Local";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.dgvAllLocalLicenses.ReadOnly = true;
             this.dgvAllLocalLicenses.RowHeadersWidth = 51;
             this.dgvAllLocalLicenses.RowTemplate.Height = 26;
-            this.dgvAllLocalLicenses.Size = new System.Drawing.Size(681, 203);
+            this.dgvAllLocalLicenses.Size = new System.Drawing.Size(736, 203);
             this.dgvAllLocalLicenses.TabIndex = 2;
             // 
             // contextMenuStrip1
@@ -152,7 +152,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(728, 316);
+            this.tabPage2.Size = new System.Drawing.Size(777, 280);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "international";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             // lblCountInternationalLicenses
             // 
             this.lblCountInternationalLicenses.AutoSize = true;
-            this.lblCountInternationalLicenses.Location = new System.Drawing.Point(106, 279);
+            this.lblCountInternationalLicenses.Location = new System.Drawing.Point(106, 261);
             this.lblCountInternationalLicenses.Name = "lblCountInternationalLicenses";
             this.lblCountInternationalLicenses.Size = new System.Drawing.Size(0, 17);
             this.lblCountInternationalLicenses.TabIndex = 13;
@@ -171,18 +171,18 @@
             this.dgvAllInternationalLicenses.AllowUserToDeleteRows = false;
             this.dgvAllInternationalLicenses.AllowUserToOrderColumns = true;
             this.dgvAllInternationalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllInternationalLicenses.Location = new System.Drawing.Point(21, 61);
+            this.dgvAllInternationalLicenses.Location = new System.Drawing.Point(21, 45);
             this.dgvAllInternationalLicenses.Name = "dgvAllInternationalLicenses";
             this.dgvAllInternationalLicenses.ReadOnly = true;
             this.dgvAllInternationalLicenses.RowHeadersWidth = 51;
             this.dgvAllInternationalLicenses.RowTemplate.Height = 26;
-            this.dgvAllInternationalLicenses.Size = new System.Drawing.Size(684, 203);
+            this.dgvAllInternationalLicenses.Size = new System.Drawing.Size(750, 203);
             this.dgvAllInternationalLicenses.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 277);
+            this.label3.Location = new System.Drawing.Point(27, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 12;
@@ -192,7 +192,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 21);
+            this.label4.Location = new System.Drawing.Point(18, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(202, 16);
             this.label4.TabIndex = 10;
@@ -205,7 +205,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlDriverLicenses";
-            this.Size = new System.Drawing.Size(766, 349);
+            this.Size = new System.Drawing.Size(829, 342);
             this.Load += new System.EventHandler(this.ctrlDriverLicenses_Load);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

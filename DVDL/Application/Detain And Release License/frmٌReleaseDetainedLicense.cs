@@ -21,9 +21,9 @@ namespace DVDL.Application.Replacement_for_Lost_or_Damaged_License
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnRelease);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnRelease);
+            clsDesign.ButtonCloseStyle(btnClose);
 
         }
 

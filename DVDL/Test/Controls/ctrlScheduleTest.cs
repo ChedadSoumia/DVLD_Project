@@ -54,8 +54,8 @@ namespace DVDL.Test
 
         private void _LoadDesign()
         {
-            Design.DataButtonDesign(btnSave);
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnSave);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
         }
 
         public ctrlScheduleTest()

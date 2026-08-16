@@ -22,12 +22,12 @@ namespace DVDL.User
         private void _MyDesign()
         {
             
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(label3);
-            Design.ButtonCloseStyle(btnClose);
-            Design.DataButtonDesign(btnSave);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(label3);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.DataButtonDesign(btnSave);
 
         }
 

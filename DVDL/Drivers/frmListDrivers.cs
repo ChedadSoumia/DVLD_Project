@@ -20,12 +20,12 @@ namespace DVDL.Drivers
 
         private void _MyDesign()
         {
-            Design.DataGridViewDesign(dgvAllDrivers);
-            Design.labelDesign(lblRecordsCount);
-            Design.DataTextBoxDesign(txtFilter);
-            Design.StyleComboBox(comboBox1);
+            clsDesign.DataGridViewDesign(dgvAllDrivers);
+            clsDesign.labelDesign(lblRecordsCount);
+            clsDesign.DataTextBoxDesign(txtFilter);
+            clsDesign.StyleComboBox(comboBox1);
             comboBox1.SelectedText = "None";
-            Design.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
             comboBox1.SelectedIndex = 0;
 
         }

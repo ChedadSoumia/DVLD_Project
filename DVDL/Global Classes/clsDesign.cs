@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -11,12 +9,9 @@ using System.Windows.Forms;
 
 namespace DVDL.Global_Classes
 {
-    public partial class Design : Form
+    public class clsDesign
     {
-        public Design()
-        {
-            InitializeComponent();
-        }
+
         public static void lblLoginStyle(Label lblLogin)
         {
             lblLogin.Text = "Login";
@@ -98,7 +93,7 @@ namespace DVDL.Global_Classes
             textBox1.Font = new Font("Segoe UI", 10);
             textBox1.BackColor = Color.White;
         }
-        public static void StyleComboBox( ComboBox comboBox1)
+        public static void StyleComboBox(ComboBox comboBox1)
         {
             comboBox1.FlatStyle = FlatStyle.Flat;
             comboBox1.Font = new Font("Segoe UI", 10);
@@ -110,7 +105,7 @@ namespace DVDL.Global_Classes
         }
         public static void MainLabelTitleDesign(Label labelTitle)
         {
-            labelTitle.Location = new Point(30, 20); 
+            labelTitle.Location = new Point(30, 20);
             labelTitle.Margin = new Padding(10);
             labelTitle.ForeColor = Color.Transparent;
 
@@ -128,5 +123,6 @@ namespace DVDL.Global_Classes
             labelTitle.Font = new Font("Segoe UI", 20, FontStyle.Bold);
             labelTitle.AutoSize = true;
         }
+
     }
 }

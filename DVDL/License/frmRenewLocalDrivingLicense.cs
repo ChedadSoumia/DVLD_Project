@@ -20,9 +20,9 @@ namespace DVDL.License
 
         private void _MyDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.ButtonCloseStyle(btnClose);
-            Design.DataButtonDesign(btnRenew);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.DataButtonDesign(btnRenew);
         }
 
         public frmRenewLocalDrivingLicense()

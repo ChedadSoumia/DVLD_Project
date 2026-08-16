@@ -17,14 +17,14 @@ namespace DVDL.People
         {
             InitializeComponent();
             ctrlPersonCard1.LoadPersonInfo(PersonID);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.ButtonCloseStyle(btnClose);
         }
 
         public frmShowPersonInfo(string NationalNo)
         {
             InitializeComponent();
             ctrlPersonCard1.LoadPersonInfo(NationalNo);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.ButtonCloseStyle(btnClose);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

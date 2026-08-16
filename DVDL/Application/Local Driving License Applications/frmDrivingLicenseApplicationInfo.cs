@@ -17,7 +17,7 @@ namespace DVDL.Application.Local_Driving_License_Applications
 
         void _LoadDesign()
         {
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.ButtonCloseStyle(btnClose);
         }
 
         public frmDrivingLicenseApplicationInfo(int LocalLicenseDrivingApplicationID)

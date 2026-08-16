@@ -121,8 +121,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmApplicationTypeList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Application Type";
             this.Load += new System.EventHandler(this.frmApplicationTypeList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();

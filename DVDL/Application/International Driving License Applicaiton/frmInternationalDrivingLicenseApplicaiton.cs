@@ -19,8 +19,8 @@ namespace DVDL.Application.International_Driving_License_Applicaiton
 
         private void _LoadDate()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.ButtonCloseStyle(btnClose);
         }
 
         public frmInternationalDrivingLicenseApplicaiton(int InternationalLicenseID)

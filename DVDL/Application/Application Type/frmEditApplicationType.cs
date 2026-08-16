@@ -26,12 +26,12 @@ namespace DVDL.Application.Application_Type
         }
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnSave);
-            Design.labelDesign(label1);
-            Design.NormallabelDesign(lblAppID);
-            Design.NormallabelDesign(label3);
-            Design.NormallabelDesign(label4);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnSave);
+            clsDesign.labelDesign(label1);
+            clsDesign.NormallabelDesign(lblAppID);
+            clsDesign.NormallabelDesign(label3);
+            clsDesign.NormallabelDesign(label4);
         }
        
 

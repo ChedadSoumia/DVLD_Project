@@ -23,8 +23,8 @@ namespace DVDL.Application.International_Driving_License_Applicaiton
 
         private void _LoadDate()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnAddNewInternationalLicense);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnAddNewInternationalLicense);
         }
 
         public frmInternationalDrivingLicenseApplicaitonList()

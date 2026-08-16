@@ -137,6 +137,12 @@
     <Compile Include="Application\Detain And Release License\frmٌReleaseDetainedLicense.Designer.cs">
       <DependentUpon>frmٌReleaseDetainedLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drivers\ctrlDriverLicenses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,12 +171,7 @@
     <Compile Include="Global Classes\clsGlobal.cs" />
     <Compile Include="Global Classes\clsUtil.cs" />
     <Compile Include="Global Classes\clsValidation.cs" />
-    <Compile Include="Global Classes\Design.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Global Classes\Design.Designer.cs">
-      <DependentUpon>Design.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Global Classes\clsDesign.cs" />
     <Compile Include="License\ctrlDriverLicenseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -362,6 +363,9 @@
     <EmbeddedResource Include="Application\Detain And Release License\frmٌReleaseDetainedLicense.resx">
       <DependentUpon>frmٌReleaseDetainedLicense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Drivers\ctrlDriverLicenses.resx">
       <DependentUpon>ctrlDriverLicenses.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,9 +377,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Global Classes\Design.resx">
-      <DependentUpon>Design.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\ctrlDriverLicenseInfo.resx">
       <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>

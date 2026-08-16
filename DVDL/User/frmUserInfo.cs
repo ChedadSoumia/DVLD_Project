@@ -19,8 +19,8 @@ namespace DVDL.User
         {
             InitializeComponent();
             _UserID = UserID;
-            Design.ButtonCloseStyle(btnClose);
-            Design.MainLabelTitleDesign(label2);
+            clsDesign.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(label2);
             
 
         }

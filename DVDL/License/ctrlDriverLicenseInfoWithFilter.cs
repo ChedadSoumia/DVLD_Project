@@ -29,7 +29,7 @@ namespace DVDL.License
 
         private void _LoadDesign()
         {
-            Design.DataButtonDesign(btnSearch);
+            clsDesign.DataButtonDesign(btnSearch);
         }
 
         private void txtFilter_Validating(object sender, CancelEventArgs e)

@@ -117,7 +117,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlDriverLicenseInfo1);
             this.Name = "ctrlDriverLicenseInfoWithFilter";
-            this.Size = new System.Drawing.Size(815, 463);
+            this.Size = new System.Drawing.Size(759, 448);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

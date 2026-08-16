@@ -37,16 +37,16 @@ namespace DVDL.People.Controls
 
         private void _LoadDesign()
         {
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.labelDesign(label3);
-            Design.labelDesign(label4);
-            Design.labelDesign(label5);
-            Design.labelDesign(label6);
-            Design.labelDesign(label7);
-            Design.labelDesign(label8);
-            Design.labelDesign(label9);
-            Design.LinkLabelStyle(llEditPersonInfo);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.labelDesign(label3);
+            clsDesign.labelDesign(label4);
+            clsDesign.labelDesign(label5);
+            clsDesign.labelDesign(label6);
+            clsDesign.labelDesign(label7);
+            clsDesign.labelDesign(label8);
+            clsDesign.labelDesign(label9);
+            clsDesign.LinkLabelStyle(llEditPersonInfo);
         }
         private void ctrlPersonCard_Load(object sender, EventArgs e)
         {

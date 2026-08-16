@@ -47,7 +47,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 631);
+            this.panel2.Location = new System.Drawing.Point(0, 622);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(550, 10);
             this.panel2.TabIndex = 18;
@@ -129,7 +129,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.rbPass);
             this.flowLayoutPanel1.Controls.Add(this.rbFail);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(75, 419);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(75, 420);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(189, 32);
             this.flowLayoutPanel1.TabIndex = 27;
@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(550, 641);
+            this.ClientSize = new System.Drawing.Size(550, 632);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.txtNotes);

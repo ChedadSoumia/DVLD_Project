@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIssueDriverLicenseForTheFirstTime));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.ctrlDrivingLicenseApplicationInfo1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIssueDriverLicenseForTheFirstTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Issue Driver License For The First Time";

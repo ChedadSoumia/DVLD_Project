@@ -28,9 +28,9 @@ namespace DVDL.Application.Detain_And_Release_License
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnDetain);
-            Design.ButtonCloseStyle(btnClose);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnDetain);
+            clsDesign.ButtonCloseStyle(btnClose);
             
         }
 

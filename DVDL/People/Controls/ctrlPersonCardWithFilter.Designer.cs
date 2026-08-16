@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 38);
+            this.label1.Location = new System.Drawing.Point(29, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 8;
@@ -57,7 +57,7 @@
             this.cbFilterList.Items.AddRange(new object[] {
             "Person ID",
             "National No."});
-            this.cbFilterList.Location = new System.Drawing.Point(129, 38);
+            this.cbFilterList.Location = new System.Drawing.Point(129, 32);
             this.cbFilterList.Name = "cbFilterList";
             this.cbFilterList.Size = new System.Drawing.Size(209, 24);
             this.cbFilterList.TabIndex = 7;
@@ -65,7 +65,7 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(354, 38);
+            this.txtFilter.Location = new System.Drawing.Point(354, 32);
             this.txtFilter.Multiline = true;
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(232, 24);
@@ -82,7 +82,7 @@
             this.gbFilters.Controls.Add(this.cbFilterList);
             this.gbFilters.Location = new System.Drawing.Point(0, 3);
             this.gbFilters.Name = "gbFilters";
-            this.gbFilters.Size = new System.Drawing.Size(815, 89);
+            this.gbFilters.Size = new System.Drawing.Size(704, 74);
             this.gbFilters.TabIndex = 9;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
@@ -92,7 +92,7 @@
             this.btAddPerson.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btAddPerson.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
             this.btAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btAddPerson.Location = new System.Drawing.Point(663, 38);
+            this.btAddPerson.Location = new System.Drawing.Point(646, 28);
             this.btAddPerson.Name = "btAddPerson";
             this.btAddPerson.Size = new System.Drawing.Size(37, 31);
             this.btAddPerson.TabIndex = 10;
@@ -104,7 +104,7 @@
             this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFilter.BackgroundImage = global::DVDL.Properties.Resources.PersonSearch;
             this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFilter.Location = new System.Drawing.Point(604, 38);
+            this.btnFilter.Location = new System.Drawing.Point(603, 28);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(37, 31);
             this.btnFilter.TabIndex = 9;
@@ -120,7 +120,7 @@
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
             this.ctrlPersonCard1.Location = new System.Drawing.Point(3, 113);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(812, 291);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(812, 254);
             this.ctrlPersonCard1.TabIndex = 10;
             // 
             // ctrlPersonCardWithFilter
@@ -131,7 +131,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(834, 422);
+            this.Size = new System.Drawing.Size(822, 372);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();

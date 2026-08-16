@@ -33,7 +33,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ctrlDriverLicenseInfoWithFilter1 = new DVDL.License.ctrlDriverLicenseInfoWithFilter();
             this.llShowLicenseHistory = new System.Windows.Forms.LinkLabel();
             this.lblAppInfo = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.ctrlDriverLicenseInfoWithFilter1 = new DVDL.License.ctrlDriverLicenseInfoWithFilter();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(496, 714);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(148, 50);
@@ -94,16 +95,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // ctrlDriverLicenseInfoWithFilter1
-            // 
-            this.ctrlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
-            this.ctrlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(52, 85);
-            this.ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
-            this.ctrlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(773, 455);
-            this.ctrlDriverLicenseInfoWithFilter1.TabIndex = 35;
-            this.ctrlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlDriverLicenseInfoWithFilter1_OnLicenseSelected);
             // 
             // llShowLicenseHistory
             // 
@@ -331,11 +322,22 @@
             this.label5.TabIndex = 221;
             this.label5.Text = "Application Date:";
             // 
+            // ctrlDriverLicenseInfoWithFilter1
+            // 
+            this.ctrlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctrlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(52, 85);
+            this.ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
+            this.ctrlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(773, 455);
+            this.ctrlDriverLicenseInfoWithFilter1.TabIndex = 35;
+            this.ctrlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlDriverLicenseInfoWithFilter1_OnLicenseSelected);
+            // 
             // frmNewInternationalDrivingLicenseApplicaiton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(838, 780);
             this.Controls.Add(this.llShowLicenseHistory);
             this.Controls.Add(this.lblAppInfo);
@@ -345,7 +347,9 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblMainTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(860, 830);
             this.Name = "frmNewInternationalDrivingLicenseApplicaiton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New International Driving License Applicaiton";

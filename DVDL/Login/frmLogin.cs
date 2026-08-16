@@ -27,13 +27,13 @@ namespace DVDL.Login
         }
         private void _MyDesign()
         {
-            Design.labelDesign(label1);
-            Design.labelDesign(label2);
-            Design.DataTextBoxDesign(txtUsername);
-            Design.DataTextBoxDesign(txtPassword);
+            clsDesign.labelDesign(label1);
+            clsDesign.labelDesign(label2);
+            clsDesign.DataTextBoxDesign(txtUsername);
+            clsDesign.DataTextBoxDesign(txtPassword);
             txtPassword.UseSystemPasswordChar = true;
-            Design.lblLoginStyle(lblMainTitle);
-            Design.DataButtonDesign(btnLogin);
+            clsDesign.lblLoginStyle(lblMainTitle);
+            clsDesign.DataButtonDesign(btnLogin);
 
         }
 
@@ -101,6 +101,11 @@ namespace DVDL.Login
             pictureBox1.Image = _showPassword
                 ? Resources.visibilityoff
                 : Resources.visibility;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

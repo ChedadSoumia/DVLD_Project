@@ -232,6 +232,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInternationalDrivingLicenseApplicaitonList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "International Driving License Applicaiton List";
             this.Load += new System.EventHandler(this.frmInternationalDrivingLicenseApplicaitonList_Load);
             this.contextMenuStrip1.ResumeLayout(false);

@@ -22,9 +22,9 @@ namespace DVDL.Application.Detain_And_Release_License
 
         private void _LoadDesign()
         {
-            Design.MainLabelTitleDesign(lblMainTitle);
-            Design.DataButtonDesign(btnAddDetainLicense);
-            Design.DataButtonDesign(btnReleaseLicense);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataButtonDesign(btnAddDetainLicense);
+            clsDesign.DataButtonDesign(btnReleaseLicense);
 
         }
 
@@ -55,15 +55,26 @@ namespace DVDL.Application.Detain_And_Release_License
                 txtFilter.Text = "";
                 txtFilter.Visible = false;
                 comboBox2.Visible = true;
+                tlpDateFilter.Visible = false;
                 comboBox2.SelectedIndex = 0;
                 comboBox2.Focus();
 
+            }else if (comboBox1.Text == "Detain Date")
+            {
+                txtFilter.Text = "";
+                dtpToDate.Enabled = false;
+                tlpDateFilter.Visible = true;
+                tlpDateFilter.Focus();
+                txtFilter.Visible = false;
+                comboBox2.Visible = true;
+                comboBox2.SelectedIndex = 0;
             }
             else
             {
                 txtFilter.Visible = (comboBox1.Text != "None");
                 comboBox2.Visible = false;
-                if(comboBox1.Text == "None")
+                tlpDateFilter.Visible = false;
+                if (comboBox1.Text == "None")
                 {
                     txtFilter.Enabled = false;
                 }
@@ -84,6 +95,8 @@ namespace DVDL.Application.Detain_And_Release_License
             comboBox1.SelectedText = "None";
             txtFilter.Visible = false;
             comboBox2.Visible = false;
+            dtpToDate.Enabled = false;
+            tlpDateFilter.Visible = false;
 
             _dtAllDetainLicensesList = clsDetainAndReleaseLicense.GetAllDetainedLicenses();
             dgvAllDetainedLicenses.DataSource = _dtAllDetainLicensesList;
@@ -234,6 +247,25 @@ namespace DVDL.Application.Detain_And_Release_License
             frmPersonLicenseHistory PersonLicenseHistory = new frmPersonLicenseHistory(clsLicenses.Find((int)dgvAllDetainedLicenses.CurrentRow.Cells[1].Value).DriverInfo.PersonID);
             PersonLicenseHistory.ShowDialog();
             frmDetainedLicensesList_Load(null, null);
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpToDate.Enabled = true;
+        }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "DetainDate";
+            if (dtpToDate.Checked)
+            {
+                _dtAllDetainLicensesList.DefaultView.RowFilter = string.Format("[{0}] >= #{1:yyyy-MM-dd 00:00:00}# AND [{0}] <= #{2:yyyy-MM-dd 23:59:59}#", FilterColumn, dtpFromDate.Value, dtpToDate.Value);
+            }
+            else
+            {
+                _dtAllDetainLicensesList.DefaultView.RowFilter = "";
+            }
+            
         }
     }
 }

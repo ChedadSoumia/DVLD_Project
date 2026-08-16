@@ -59,14 +59,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.groupBox1.Controls.Add(this.llEditPersonInfo);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Controls.Add(this.pbPersonImage);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(805, 276);
+            this.groupBox1.Size = new System.Drawing.Size(805, 245);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
@@ -75,7 +75,7 @@
             // 
             this.llEditPersonInfo.AutoSize = true;
             this.llEditPersonInfo.Enabled = false;
-            this.llEditPersonInfo.Location = new System.Drawing.Point(648, 35);
+            this.llEditPersonInfo.Location = new System.Drawing.Point(643, 20);
             this.llEditPersonInfo.Name = "llEditPersonInfo";
             this.llEditPersonInfo.Size = new System.Drawing.Size(105, 17);
             this.llEditPersonInfo.TabIndex = 4;
@@ -88,13 +88,13 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.55944F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.44056F));
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblDateOfBirth, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblPhone, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblCountry, 1, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(310, 94);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(310, 60);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -159,7 +159,7 @@
             // 
             // pbPersonImage
             // 
-            this.pbPersonImage.Location = new System.Drawing.Point(607, 65);
+            this.pbPersonImage.Location = new System.Drawing.Point(602, 40);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(192, 192);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +183,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblGendor, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblEmail, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblAddress, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 65);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.66667F));
@@ -307,10 +307,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlPersonCard";
-            this.Size = new System.Drawing.Size(812, 291);
+            this.Size = new System.Drawing.Size(815, 257);
             this.Load += new System.EventHandler(this.ctrlPersonCard_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
