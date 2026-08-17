@@ -16,6 +16,8 @@ namespace DVDL.Test
     public partial class ctrlScheduleTest : UserControl
     {
 
+        
+
         public enum enMode {eAddNew= 0,eUpdate=1 }
         private enMode _Mode = enMode.eAddNew;
 
@@ -301,11 +303,19 @@ namespace DVDL.Test
             _TestAppointmentInfo.AppointmentDate = dtpDate.Value;
             _TestAppointmentInfo.PaidFees = Convert.ToSingle(lblFeesVisionTest.Text);
             _TestAppointmentInfo.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+            clsSendMessages SendEmail = new clsSendMessages();
+            SendEmail.Subscribe(_TestAppointmentInfo);
+
 
             if (_TestAppointmentInfo.Save())
             {
+               
                 _Mode = enMode.eUpdate;
+                
+
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                
 
             }
             else
@@ -313,5 +323,7 @@ namespace DVDL.Test
 
 
         }
+
+        
     }
 }

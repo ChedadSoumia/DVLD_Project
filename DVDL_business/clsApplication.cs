@@ -78,10 +78,10 @@ namespace DVDL_business
         {
             this.ApplicationID = applicationID;
             this.ApplicantPersonID = applicantPersonId;
-            PersonInfo = clsPerson.Find(applicantPersonId);
+            this.PersonInfo = clsPerson.Find(applicantPersonId);
             this.ApplicationDate = applicationDate;
             this.ApplicationTypeID = applicationTypeID;
-            ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID);
+            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID);
             this.ApplicationStatus = applicationStatus;
             this.LastStatusDate = lastStatusDate;
             this.PaidFees = paidFees;

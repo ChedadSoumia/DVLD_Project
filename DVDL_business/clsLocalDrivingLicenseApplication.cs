@@ -24,7 +24,7 @@ namespace DVDL_business
         {
             get
             {
-                return base.ApplicantFullName;
+                return this.ApplicantFullName;
             }
         }
 
@@ -43,6 +43,7 @@ namespace DVDL_business
             this.LocalDrivingLicenceApplicationID = localDrivingLicenceApplicationID;
             this.ApplicationID = applicationID;
             this.ApplicantPersonID = applicantPersonID;
+            this.PersonInfo = clsPerson.Find(applicantPersonID);
             this.ApplicationDate = applicationDate;
             this.ApplicationTypeID = applicationTypeId;
             this.ApplicationStatus = applicationStatus;
@@ -50,7 +51,7 @@ namespace DVDL_business
             this.PaidFees = paidFees;
             this.CreatedByUserID = createdByUserID;
             this.LicenseClassID = licenseClassID;
-
+            
             this.LicenseClassInfo = clsLicenseClasses.Find(licenseClassID);
 
             Mode = enMode.eUpdate;

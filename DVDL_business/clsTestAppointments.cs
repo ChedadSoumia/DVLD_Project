@@ -9,13 +9,42 @@ using static DVDL_business.clsTestTypes;
 
 namespace DVDL_business
 {
+   
+    public class TestAppointmentEventArgs
+    {
+        public int AppointmentID { get; }
+        public int ApplicationID { get; }
+        public string ApplicantName { get; }
+        public string ApplicantEmail { get; }
+        public int TestTypeID { get; }
+        public DateTime AppointmentDate { get; }
+
+        public TestAppointmentEventArgs(
+            int appointmentID,
+            int applicationID,
+            string applicantName,
+            string applicantEmail,
+            int testTypeID,
+            DateTime appointmentDate)
+        {
+            AppointmentID = appointmentID;
+            ApplicationID = applicationID;
+            ApplicantName = applicantName;
+            ApplicantEmail = applicantEmail;
+            TestTypeID = testTypeID;
+            AppointmentDate = appointmentDate;
+        }
+    }
     public  class clsTestAppointments
     {
+
+        public event EventHandler<TestAppointmentEventArgs> OnTestBooked;
         public enum enMode { eAddNew = 0, eUpdate = 1 };
         public enMode Mode = enMode.eAddNew;
 
         public int TestAppointmentID { set; get; }
         public clsTestTypes.enTestType TestTypeID { set; get; }
+        public clsTestTypes TestTypesInfo;
         public int LocalDrivingLicenseApplicationID { set; get; }
         public clsLocalDrivingLicenseApplication LocalDrivingLicenseApplicationInfo { set; get; }
         public DateTime AppointmentDate { set; get; }
@@ -43,6 +72,7 @@ namespace DVDL_business
             this.TestAppointmentID = -1;
             this.TestTypeID = clsTestTypes.enTestType.VisionTest;
             this.AppointmentDate = DateTime.Now;
+            this.LocalDrivingLicenseApplicationID = -1;
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
             this.RetakeTestApplicationID = -1;
@@ -54,6 +84,7 @@ namespace DVDL_business
         {
             this.TestAppointmentID= testAppointmentID;
             this.TestTypeID = testTypeId;
+            this.TestTypesInfo = clsTestTypes.Find(testTypeId);
             this.LocalDrivingLicenseApplicationID = localDrivingLicenseApplicationID;
             this.LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(localDrivingLicenseApplicationID);
             this.AppointmentDate=appointmentDate;
@@ -103,6 +134,17 @@ namespace DVDL_business
             this.TestAppointmentID = clsTestAppointmentsData.AddNewTestAppointment((int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
                this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.RetakeTestApplicationID);
 
+            if (this.TestAppointmentID != -1)
+            {
+                if (OnTestBooked != null)
+                {
+                    LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindlocalDrivingLicenceApplicationID(this.LocalDrivingLicenseApplicationID);
+                    OnTestBooked(this, new TestAppointmentEventArgs(this.TestAppointmentID, this.LocalDrivingLicenseApplicationInfo.ApplicationID,
+                        this.LocalDrivingLicenseApplicationInfo.ApplicantFullName, this.LocalDrivingLicenseApplicationInfo.PersonInfo.Email, (int)this.TestTypeID,
+                                                    this.AppointmentDate));
+                }
+            }
+
             return (this.TestAppointmentID != -1);
         }
 
@@ -124,8 +166,20 @@ namespace DVDL_business
 
         private bool _UpdateAppointmentTest()
         {
-            return clsTestAppointmentsData.UpdateTestAppointment(this.TestAppointmentID, (int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
+            bool IsUpdated = clsTestAppointmentsData.UpdateTestAppointment(this.TestAppointmentID, (int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
                 this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID);
+
+           if(IsUpdated)
+            {
+                if (OnTestBooked != null)
+                {
+                    OnTestBooked(this, new TestAppointmentEventArgs(this.TestAppointmentID, this.LocalDrivingLicenseApplicationInfo.ApplicationID,
+                        this.LocalDrivingLicenseApplicationInfo.ApplicantFullName, this.LocalDrivingLicenseApplicationInfo.PersonInfo.Email, (int)this.TestTypeID,
+                                                    this.AppointmentDate));
+                }
+            }
+
+            return IsUpdated;
         }
 
 
@@ -136,6 +190,7 @@ namespace DVDL_business
                 case enMode.eAddNew:
                     if (_AddTestAppointment())
                     {
+                       
                         Mode = enMode.eUpdate;
                         return true;
                     }
