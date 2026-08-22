@@ -157,7 +157,7 @@ namespace DVDL
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            frmDashboard Dashboard = new frmDashboard();
+            frmMainDashboard Dashboard = new frmMainDashboard();
             Dashboard.ShowDialog();
         }
     }

@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -137,10 +138,16 @@
     <Compile Include="Application\Detain And Release License\frmٌReleaseDetainedLicense.Designer.cs">
       <DependentUpon>frmٌReleaseDetainedLicense.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\frmDashboard.cs">
+    <Compile Include="Dashboard\frmMainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+    <Compile Include="Dashboard\frmMainDashboard.Designer.cs">
+      <DependentUpon>frmMainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\pages\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\pages\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Drivers\ctrlDriverLicenses.cs">
@@ -207,6 +214,12 @@
     </Compile>
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\frmSendGmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\frmSendGmail.Designer.cs">
+      <DependentUpon>frmSendGmail.cs</DependentUpon>
     </Compile>
     <Compile Include="People\Controls\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
@@ -363,7 +376,10 @@
     <EmbeddedResource Include="Application\Detain And Release License\frmٌReleaseDetainedLicense.resx">
       <DependentUpon>frmٌReleaseDetainedLicense.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+    <EmbeddedResource Include="Dashboard\frmMainDashboard.resx">
+      <DependentUpon>frmMainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\pages\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\ctrlDriverLicenses.resx">
@@ -395,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\frmSendGmail.resx">
+      <DependentUpon>frmSendGmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
@@ -515,6 +534,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OpenLock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-alt %281%29.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

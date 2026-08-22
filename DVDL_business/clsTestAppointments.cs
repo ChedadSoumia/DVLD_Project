@@ -39,6 +39,7 @@ namespace DVDL_business
     {
 
         public event EventHandler<TestAppointmentEventArgs> OnTestBooked;
+        public event EventHandler<TestAppointmentEventArgs> OnTestBookedUpdated;
         public enum enMode { eAddNew = 0, eUpdate = 1 };
         public enMode Mode = enMode.eAddNew;
 
@@ -171,9 +172,9 @@ namespace DVDL_business
 
            if(IsUpdated)
             {
-                if (OnTestBooked != null)
+                if (OnTestBookedUpdated != null)
                 {
-                    OnTestBooked(this, new TestAppointmentEventArgs(this.TestAppointmentID, this.LocalDrivingLicenseApplicationInfo.ApplicationID,
+                    OnTestBookedUpdated(this, new TestAppointmentEventArgs(this.TestAppointmentID, this.LocalDrivingLicenseApplicationInfo.ApplicationID,
                         this.LocalDrivingLicenseApplicationInfo.ApplicantFullName, this.LocalDrivingLicenseApplicationInfo.PersonInfo.Email, (int)this.TestTypeID,
                                                     this.AppointmentDate));
                 }

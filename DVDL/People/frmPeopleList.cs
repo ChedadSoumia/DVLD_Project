@@ -1,4 +1,5 @@
 ﻿using DVDL.Global_Classes;
+using DVDL.Messages;
 using DVDL_business;
 using System;
 using System.Collections.Generic;
@@ -279,6 +280,19 @@ namespace DVDL.People
                 _dtPeople.DefaultView.RowFilter = string.Format("{0} = '{1}'", FilterColumn, FilterValue);
             }
             lblRecordsCount.Text = dgvAllPeople.Rows.Count.ToString();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            deleteToolStripMenuItem.Enabled = !(clsDriver.IsPersonADriver((int)dgvAllPeople.CurrentRow.Cells[0].Value));
+            sendEmailToolStripMenuItem.Enabled = dgvAllPeople.CurrentRow.Cells[10].Value.ToString() != "";
+
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSendGmail SendMsg = new frmSendGmail(dgvAllPeople.CurrentRow.Cells[10].Value.ToString());
+            SendMsg.ShowDialog();
         }
     }
 }

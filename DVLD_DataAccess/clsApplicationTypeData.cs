@@ -20,11 +20,22 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM ApplicationTypes WHERE ApplicationTypeID = @ApplicationTypeID";
+            string query = @"DECLARE @AppTypeID INT = @ApplicationType_ID;
+                                DECLARE @AppTitle VARCHAR(100);
+                                DECLARE @AppFees SMALLMONEY ;
+                                DECLARE @Found BIT ;
+
+                                EXEC SP_GetApplicationTypeByID 
+		                                @ApplicationTypeID = @AppTypeID,
+		                                @Title = @AppTitle OUTPUT,
+		                                @Fees = @AppFees OUTPUT,
+		                                @IsFound = @Found OUTPUT; 
+                                IF @Found = 1
+                                        SELECT @AppTitle as ApplicationTypeTitle, @AppFees AS ApplicationFees;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            command.Parameters.AddWithValue("@ApplicationType_ID", ApplicationTypeID);
 
             try
             {
@@ -69,11 +80,10 @@ namespace DVLD_DataAccess
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"Update  ApplicationTypes  
-                            set ApplicationTypeTitle = @ApplicationTypeTitle,
-                                ApplicationFees = @ApplicationFees
-                                
-                                where ApplicationTypeID = @ApplicationTypeID";
+            string query = @"EXEC SP_UpdateApplicationType
+	                                @TypeID = @ApplicationTypeID,
+	                                @Title = @ApplicationTypeTitle,
+	                                @Fees = @ApplicationFees";
 
             SqlCommand command = new SqlCommand(query, connection);
 
