@@ -49,7 +49,7 @@ namespace DVDL_business
             SendEmail(e.ApplicantEmail, "Test Appointment date", Body);
         }
 
-        public static bool SendEmail(string ToEmail, string EmailSubject,String EmailBody)
+        public static bool SendEmail(string ToEmail, string EmailSubject, String EmailBody)
         {
 
             try
@@ -72,21 +72,21 @@ namespace DVDL_business
                     return true;
                 }
 
-                
+
 
                 //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 //smtp.UseDefaultCredentials = false;
-              
+
             }
             catch (Exception ex)
             {
 
-               
+
             }
             return false;
         }
 
 
-     
+
     }
 }
