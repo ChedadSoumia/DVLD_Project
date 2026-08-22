@@ -173,6 +173,26 @@ namespace DVDL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shield_person {
+            get {
+                object obj = ResourceManager.GetObject("shield_person", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shield_person_black {
+            get {
+                object obj = ResourceManager.GetObject("shield_person_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap users_alt__1_ {
             get {
                 object obj = ResourceManager.GetObject("users-alt (1)", resourceCulture);

@@ -67,6 +67,7 @@
             this.txtMessageBody.Name = "txtMessageBody";
             this.txtMessageBody.Size = new System.Drawing.Size(474, 198);
             this.txtMessageBody.TabIndex = 239;
+            this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
             // 
             // label1
             // 
@@ -132,9 +133,9 @@
             this.lblMainTitle.AutoSize = true;
             this.lblMainTitle.Location = new System.Drawing.Point(50, 27);
             this.lblMainTitle.Name = "lblMainTitle";
-            this.lblMainTitle.Size = new System.Drawing.Size(167, 17);
+            this.lblMainTitle.Size = new System.Drawing.Size(94, 17);
             this.lblMainTitle.TabIndex = 245;
-            this.lblMainTitle.Text = "Manage Detained Licenses";
+            this.lblMainTitle.Text = "Send Message";
             // 
             // btnReset
             // 

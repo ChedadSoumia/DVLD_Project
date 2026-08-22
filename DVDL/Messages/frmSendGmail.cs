@@ -69,5 +69,13 @@ namespace DVDL.Messages
             txtMessageBody.Text = string.Empty;
             btnSendEmail.Enabled = true;
         }
+
+        private void txtMessageBody_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMessageBody.Text != "" && txtTitle.Text != "")
+                btnSendEmail.Enabled = true;
+            else 
+                btnSendEmail.Enabled = false;
+        }
     }
 }
