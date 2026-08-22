@@ -494,12 +494,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DVDL_business\DVDL_business.csproj">
-      <Project>{31fba893-7f6c-4b55-808e-21c8f71d06b0}</Project>
-      <Name>DVDL_business</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\PersonAdd.png" />
   </ItemGroup>
   <ItemGroup>
@@ -538,6 +532,17 @@
   <ItemGroup>
     <None Include="Resources\users-alt %281%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\chart_data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_data1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVDL_business\DVDL_business.csproj">
+      <Project>{31fba893-7f6c-4b55-808e-21c8f71d06b0}</Project>
+      <Name>DVDL_business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

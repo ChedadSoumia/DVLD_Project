@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="clsApplication.cs" />
     <Compile Include="clsApplicationType.cs" />
-    <Compile Include="clsDashboard.cs" />
     <Compile Include="clsDetainAndReleaseLicense.cs" />
     <Compile Include="clsDriver.cs" />
     <Compile Include="clsInternationalDrivingLicenseApplicaiton.cs" />
@@ -52,7 +51,6 @@
     <Compile Include="clsLocalDrivingLicenseApplication.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsCountry.cs" />
-    <Compile Include="clsSendMessages.cs" />
     <Compile Include="clsSettings.cs" />
     <Compile Include="clsTest.cs" />
     <Compile Include="clsTestAppointments.cs" />
