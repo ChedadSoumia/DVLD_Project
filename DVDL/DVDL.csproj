@@ -544,5 +544,11 @@
       <Name>DVDL_business</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_person_black.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

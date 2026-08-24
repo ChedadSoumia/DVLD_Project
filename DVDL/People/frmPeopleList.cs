@@ -15,7 +15,9 @@ namespace DVDL.People
 {
     public partial class frmPeopleList : Form
     {
-        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+        private static int _NumberOfPage = 1;
+        private static DataTable _dtAllPeople = clsPerson.GetAllPeople(_NumberOfPage);
+        
 
         private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
@@ -44,7 +46,7 @@ namespace DVDL.People
         }
         private void _RefreshPeopleList()
         {
-            _dtAllPeople = clsPerson.GetAllPeople();
+            _dtAllPeople = clsPerson.GetAllPeople(_NumberOfPage);
             _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
                                                        "GendorCaption", "DateOfBirth", "CountryName",
@@ -293,6 +295,12 @@ namespace DVDL.People
         {
             frmSendGmail SendMsg = new frmSendGmail(dgvAllPeople.CurrentRow.Cells[10].Value.ToString());
             SendMsg.ShowDialog();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            _NumberOfPage = (int)numericUpDown1.Value;
+            _RefreshPeopleList();
         }
     }
 }

@@ -487,7 +487,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox5.Image = global::DVDL.Properties.Resources.users_alt__1_;
+            this.pictureBox5.Image = global::DVDL.Properties.Resources.shield_person_black;
             this.pictureBox5.Location = new System.Drawing.Point(120, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 24);
@@ -583,7 +583,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDashboard";
+            this.Text = "t";
             this.Load += new System.EventHandler(this.frmDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

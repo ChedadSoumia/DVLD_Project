@@ -49,8 +49,10 @@
             this.dgvAllPeople = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -66,58 +68,58 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 188);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 160);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // txtFilter
@@ -235,12 +237,31 @@
             this.comboBox2.TabIndex = 17;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(1643, 713);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(80, 24);
+            this.numericUpDown1.TabIndex = 18;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // frmPeopleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1747, 753);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblRecordsCount);
@@ -259,6 +280,7 @@
             this.Load += new System.EventHandler(this.frmPeopleList_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +306,6 @@
         private System.Windows.Forms.DataGridView dgvAllPeople;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
