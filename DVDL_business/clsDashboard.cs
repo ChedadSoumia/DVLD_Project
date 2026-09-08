@@ -10,10 +10,8 @@ namespace DVDL_business
 {
     public class clsDashboard
     {
-        public static int CountPerson()
-        {
-            return clsDashboardData.CountPerson();
-        }
+        public static int CountPerson()=> clsDashboardData.CountPerson();
+        
         public static int CountUsers()
         {
             return clsDashboardData.CountUsers();
@@ -22,10 +20,8 @@ namespace DVDL_business
         {
             return clsDashboardData.CountDrivers();
         }
-        public static int CountActiveLicenses()
-        {
-            return clsDashboardData.CountActiveLicenses();
-        }
+        public static int CountActiveLicenses() => clsDashboardData.CountActiveLicenses();
+        
         public static int CountNewApplication()
         {
             return clsDashboardData.CountNewApplication();
@@ -47,5 +43,8 @@ namespace DVDL_business
         {
             return clsDashboardData.AnalyseeAppliactionTable();
         }
+
+        public static DataTable ExpiredLicensesList() => clsDashboardData.ExpiredLicensesList();
+        public static int CountExpiredLicenses() => clsDashboardData.CountExpiredLicenses();
     }
 }

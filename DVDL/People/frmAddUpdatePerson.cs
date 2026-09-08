@@ -114,11 +114,13 @@ namespace DVDL.People
             if(_Mode == enMode.AddNew)
             {
                 lblMainTitle.Text = "Add New Person";
+                this.Text = "Add New Person";
                 _Person = new clsPerson();
             }
             else
             {
                 lblMainTitle.Text = "Update person";
+                this.Text = "Update person";
             }
 
             if (rbMale.Checked)

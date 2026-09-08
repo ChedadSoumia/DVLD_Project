@@ -114,7 +114,7 @@
             this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddUser.BackgroundImage = global::DVDL.Properties.Resources.personadd1;
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddUser.Location = new System.Drawing.Point(1253, 98);
+            this.btnAddUser.Location = new System.Drawing.Point(1232, 98);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(37, 31);
             this.btnAddUser.TabIndex = 8;
@@ -219,9 +219,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 651);
+            this.panel2.Location = new System.Drawing.Point(0, 770);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 10);
+            this.panel2.Size = new System.Drawing.Size(1349, 10);
             this.panel2.TabIndex = 15;
             // 
             // cbIsActive
@@ -243,7 +243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1370, 661);
+            this.ClientSize = new System.Drawing.Size(1349, 780);
             this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblCountUsers);
@@ -254,7 +254,7 @@
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.dgvAllUsers);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUserList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

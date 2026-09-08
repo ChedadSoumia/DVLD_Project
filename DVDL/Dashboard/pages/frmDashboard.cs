@@ -67,8 +67,13 @@ namespace DVDL.Dashboard.pages
             lblCencelledApplication.Text = clsDashboard.CancelledApplication().ToString();
             lblCountCompleteApplication.Text = clsDashboard.CompletedApplication().ToString();
             lblCountApplications.Text = clsDashboard.CountApplication().ToString();
+            lblExpiredLicenses.Text = clsDashboard.CountExpiredLicenses().ToString();
         }
 
-        
+        private void tableLayoutPanel9_Click(object sender, EventArgs e)
+        {
+            frmExpiredLicenses expiredLicensesList = new frmExpiredLicenses();
+            expiredLicensesList.ShowDialog();
+        }
     }
 }

@@ -150,6 +150,18 @@
     <Compile Include="Dashboard\pages\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\pages\frmExpiredLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\pages\frmExpiredLicenses.Designer.cs">
+      <DependentUpon>frmExpiredLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\pages\frmHistoryLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\pages\frmHistoryLogs.Designer.cs">
+      <DependentUpon>frmHistoryLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drivers\ctrlDriverLicenses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -381,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\pages\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\pages\frmExpiredLicenses.resx">
+      <DependentUpon>frmExpiredLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\pages\frmHistoryLogs.resx">
+      <DependentUpon>frmHistoryLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\ctrlDriverLicenses.resx">
       <DependentUpon>ctrlDriverLicenses.cs</DependentUpon>

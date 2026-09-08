@@ -172,6 +172,29 @@ namespace DVLD_DataAccess
 
             }
         }
+        public static int CountExpiredLicenses()
+        {
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("[CS_CountExpiredLicenses]", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        return Convert.ToInt32(command.ExecuteScalar());
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Loggin here
+                return 0;
+
+            }
+        }
         public static int CountApplication()
         {
             try
@@ -227,6 +250,42 @@ namespace DVLD_DataAccess
             {
 
                
+            }
+            return dt;
+        }
+
+        public static DataTable ExpiredLicensesList()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("usp_ExpirationLicensesList", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+
+                        connection.Close();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+
             }
             return dt;
         }

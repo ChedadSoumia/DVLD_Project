@@ -1,4 +1,7 @@
-﻿using DVDL.Dashboard.pages;
+﻿using DVDL.Application;
+using DVDL.Dashboard.pages;
+using DVDL.Test;
+using DVDL.User;
 using DVDL_business;
 using System;
 using System.Collections.Generic;
@@ -47,6 +50,26 @@ namespace DVDL.Dashboard
         private void frmMainDashboard_Load(object sender, EventArgs e)
         {
             _LoadForm(new frmDashboard());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _LoadForm(new frmUserList());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _LoadForm(new frmApplicationTypeList());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _LoadForm(new frmTestTypesList());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            _LoadForm(new frmHistoryLogs());
         }
     }
 }
