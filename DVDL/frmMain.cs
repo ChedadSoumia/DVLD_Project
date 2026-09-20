@@ -64,8 +64,12 @@ namespace DVDL
             if (MessageBox.Show("Are you sure you want to signout? ", "Confirm signOut", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 
             {
+                clsSettings.AddLogoutHistory(clsGlobal.CurrentUser.LoginHistoryID);
+
                 clsGlobal.CurrentUser = null;
+
                 _frmLogin.Show();
+                
                 this.Close();
                
             }

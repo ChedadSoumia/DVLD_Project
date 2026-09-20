@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DVDL.Global_Classes;
+using DVDL_business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,15 @@ namespace DVDL.Dashboard.pages
         public frmHistoryLogs()
         {
             InitializeComponent();
+            clsDesign.DataGridViewDesign(dgvHistoryLogs);
+            clsDesign.MainLabelTitleDesign(lblMainTitle);
+        }
+
+        private void frmHistoryLogs_Load(object sender, EventArgs e)
+        {
+            dgvHistoryLogs.DataSource = clsSettings.LoginUsersHistory();
+            lblRecordsCount.Text = dgvHistoryLogs.Rows.Count.ToString();
+
         }
     }
 }

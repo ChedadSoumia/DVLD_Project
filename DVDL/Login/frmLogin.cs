@@ -52,6 +52,7 @@ namespace DVDL.Login
                     clsGlobal.valuePassword = "password";
                     clsGlobal.WriteRegistryValue(txtUsername.Text.Trim());
                     clsGlobal.WriteRegistryValue(txtPassword.Text.Trim());
+                    User.LoginHistoryID = clsSettings.AddLoginHistory(User.UserID, true);
                 }
                 else
                 {
@@ -75,6 +76,7 @@ namespace DVDL.Login
             {
                 txtUsername.Focus();
                 MessageBox.Show("Invalid Username/Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsSettings.AddLoginHistory(User.UserID, false);
             }
 
         }

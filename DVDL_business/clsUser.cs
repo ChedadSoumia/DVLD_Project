@@ -21,6 +21,9 @@ namespace DVDL_business
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
+
+        public int LoginHistoryID { get; set; }
+
         public clsUser()
         {
             this.UserID = -1; 
