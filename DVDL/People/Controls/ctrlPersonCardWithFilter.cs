@@ -151,11 +151,7 @@ namespace DVDL.People.Controls
 
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-
-                btnFilter.PerformClick();
-            }
+           
 
             if (cbFilterList.Text == "Person ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

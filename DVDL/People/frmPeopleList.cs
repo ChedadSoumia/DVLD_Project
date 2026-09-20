@@ -16,7 +16,7 @@ namespace DVDL.People
     public partial class frmPeopleList : Form
     {
         private static int _NumberOfPage = 1;
-        private static DataTable _dtAllPeople = clsPerson.GetAllPeople(_NumberOfPage);
+        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
         
 
         private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
@@ -46,7 +46,7 @@ namespace DVDL.People
         }
         private void _RefreshPeopleList()
         {
-            _dtAllPeople = clsPerson.GetAllPeople(_NumberOfPage);
+            _dtAllPeople = clsPerson.GetAllPeople();
             _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
                                                        "GendorCaption", "DateOfBirth", "CountryName",

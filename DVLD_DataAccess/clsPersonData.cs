@@ -527,49 +527,7 @@ namespace DVLD_DataAccess
 
 
 
-        public static DataTable GetAllPeople(int PageNumber ,int RowsPerPage = 15)
-        {
-            DataTable dt = new DataTable();
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand("usp_AllPeople", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@PageNumber", (int)PageNumber );
-                        command.Parameters.AddWithValue("@RowsPerPage", (int)RowsPerPage);
-
-                      
-                        
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-
-                        {
-                            if (reader.HasRows)
-
-                            {
-                                dt.Load(reader);
-                            }
-                        }
-
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine($" Person doesn't Exist   {ex.Message}");
-            }
-
-            return dt;
-
-        }
+       
 
 
     }

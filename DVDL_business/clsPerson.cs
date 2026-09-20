@@ -200,9 +200,6 @@ namespace DVDL_business
             return clsPersonData.IsPersonExist(NationlNo);
         }
 
-        public static DataTable GetAllPeople(int PageNumber, int RowsPerPage = 15)
-        {
-            return clsPersonData.GetAllPeople(PageNumber, RowsPerPage);
-        }
+        
     }
 }

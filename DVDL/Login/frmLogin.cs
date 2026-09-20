@@ -48,7 +48,10 @@ namespace DVDL.Login
 
                 if (ckbRememberMe.Checked)
                 {
-                    clsGlobal.RememberUsernameAndPassword(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+                    clsGlobal.valueUserame = "username";
+                    clsGlobal.valuePassword = "password";
+                    clsGlobal.WriteRegistryValue(txtUsername.Text.Trim());
+                    clsGlobal.WriteRegistryValue(txtPassword.Text.Trim());
                 }
                 else
                 {
@@ -79,7 +82,7 @@ namespace DVDL.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             string Username = "", Password = "";
-            if (clsGlobal.GetStoredCredential(ref Username,ref Password))
+            if (clsGlobal.ReadRegistryValue(ref Username,ref Password))
             {
                 txtUsername.Text = Username;
                 txtPassword.Text = Password;

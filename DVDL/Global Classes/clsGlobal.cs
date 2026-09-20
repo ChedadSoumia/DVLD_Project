@@ -1,17 +1,22 @@
 ﻿using DVDL_business;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DVDL.Global_Classes
 {
     internal class clsGlobal
     {
        public static clsUser CurrentUser  ;
+        public static string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVDL";
+        public static string keyPathForDelete = @"SOFTWARE\DVDL";
+        public static string valueUserame = "username";
+        public static string valuePassword = "password";
 
 
         public static bool RememberUsernameAndPassword(string Username, string Password)
@@ -80,5 +85,66 @@ namespace DVDL.Global_Classes
                 return false;
             }
         }
+
+        public static bool WriteRegistryValue(string valueData )
+        {
+            try
+            {
+                // Write the value to the Registry
+                Registry.SetValue(keyPath, valueUserame, valueData, RegistryValueKind.String);
+                Registry.SetValue(keyPath, valuePassword, valueData, RegistryValueKind.String);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool ReadRegistryValue(ref string username, ref string password)
+        {
+            try
+            {
+                // Read the value from the Registry
+                username = Registry.GetValue(keyPath, valueUserame, null) as string;
+                password = Registry.GetValue(keyPath, valuePassword, null) as string;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteRegistryValue(string valueName)
+        {
+            try
+            {
+                // Open the registry key in read/write mode with explicit registry view
+                using (RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
+                {
+                    using (RegistryKey key = baseKey.OpenSubKey(keyPathForDelete, true))
+                    {
+                        if (key != null)
+                        {
+                            // Delete the specified value
+                            key.DeleteValue(valueUserame);
+                            key.DeleteValue(valuePassword);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }
