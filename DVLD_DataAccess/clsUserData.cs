@@ -10,7 +10,7 @@ namespace DVLD_DataAccess
 {
     public class clsUserData
     {
-        public static bool GetUserInfoByID(int UserID, ref int PersonID, ref string Username, ref string Password,ref bool IsActive)
+        public static bool GetUserInfoByID(int UserID, ref int PersonID, ref string Username, ref string Password,ref bool IsActive, ref int permissions)
         {
 
         
@@ -40,6 +40,7 @@ namespace DVLD_DataAccess
                     Username = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    permissions = (int)reader["Permission"];
 
 
 
@@ -65,7 +66,7 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static bool GetUserInfoPersonID(ref int UserID, int PersonID, ref string Username, ref string Password, ref bool IsActive)
+        public static bool GetUserInfoPersonID(ref int UserID, int PersonID, ref string Username, ref string Password, ref bool IsActive, ref int permissions)
         {
 
 
@@ -95,6 +96,7 @@ namespace DVLD_DataAccess
                     Username = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    permissions = (int)reader["Permission"];
 
 
 
@@ -120,7 +122,7 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static bool GetUserInfoByUserName(ref int UserID, ref int PersonID, string Username, ref string Password,ref bool IsActive)
+        public static bool GetUserInfoByUserName(ref int UserID, ref int PersonID, string Username, ref string Password,ref bool IsActive, ref int permissions)
         {
 
         
@@ -148,6 +150,7 @@ namespace DVLD_DataAccess
                     PersonID = (int)reader["PersonID"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    permissions = (int)reader["Permission"];
 
 
 
@@ -173,7 +176,7 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static bool GetUserInfoByUserNameAndPassword(ref int UserID, ref int PersonID, string Username, string Password, ref bool IsActive)
+        public static bool GetUserInfoByUserNameAndPassword(ref int UserID, ref int PersonID, string Username, string Password, ref bool IsActive, ref int permissions)
         {
 
 
@@ -201,6 +204,7 @@ namespace DVLD_DataAccess
                     UserID = (int)reader["UserID"];
                     PersonID = (int)reader["PersonID"];
                     IsActive = (bool)reader["IsActive"];
+                    permissions = (int)reader["Permission"];
 
 
 
@@ -411,15 +415,15 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static int AddNewUser(int PersonId, string Username , string Password, bool IsActive)
+        public static int AddNewUser(int PersonId, string Username , string Password, bool IsActive, int permissions)
         {
             //this function will return the new person id if succeeded and -1 if not.
             int UserID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Users (PersonID, UserName, Password,IsActive)
-                             VALUES (@PersonID, @UserName, @Password,@IsActive);
+            string query = @"INSERT INTO Users (PersonID, UserName, Password,IsActive,Permission)
+                             VALUES (@PersonID, @UserName, @Password,@IsActive,@permission);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -428,6 +432,7 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@UserName", Username);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@permission", IsActive);
 
            try
             {
@@ -454,7 +459,7 @@ namespace DVLD_DataAccess
 
             return UserID;
         }
-        public static bool UpdateUser(int UserID,int PersonID, string Username, string Password, bool IsActive)
+        public static bool UpdateUser(int UserID,int PersonID, string Username, string Password, bool IsActive, int Permissions)
         {
 
             int rowsAffected = 0;
@@ -464,7 +469,8 @@ namespace DVLD_DataAccess
                             set PersonID = @PersonID,
                                 UserName = @UserName,
                                 Password = @Password,
-                                IsActive = @IsActive
+                                IsActive = @IsActive,
+                                Permission = @permission
                                 where UserID = @UserID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -473,6 +479,7 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@UserName", Username);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@permission", Permissions);
             command.Parameters.AddWithValue("UserID", UserID);
 
 

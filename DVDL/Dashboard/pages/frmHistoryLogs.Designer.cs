@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.dgvHistoryLogs = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.renewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryLogs)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMainTitle
@@ -87,12 +91,28 @@
             // 
             this.dgvHistoryLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistoryLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryLogs.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvHistoryLogs.Location = new System.Drawing.Point(59, 115);
             this.dgvHistoryLogs.Name = "dgvHistoryLogs";
             this.dgvHistoryLogs.RowHeadersWidth = 51;
             this.dgvHistoryLogs.RowTemplate.Height = 26;
             this.dgvHistoryLogs.Size = new System.Drawing.Size(1107, 570);
             this.dgvHistoryLogs.TabIndex = 19;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.renewLicenseToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            // 
+            // renewLicenseToolStripMenuItem
+            // 
+            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
+            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.renewLicenseToolStripMenuItem.Text = "Show User Info";
+            this.renewLicenseToolStripMenuItem.Click += new System.EventHandler(this.renewLicenseToolStripMenuItem_Click);
             // 
             // frmHistoryLogs
             // 
@@ -112,6 +132,7 @@
             this.Text = "frmHistoryLogs";
             this.Load += new System.EventHandler(this.frmHistoryLogs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryLogs)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +146,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.DataGridView dgvHistoryLogs;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem renewLicenseToolStripMenuItem;
     }
 }

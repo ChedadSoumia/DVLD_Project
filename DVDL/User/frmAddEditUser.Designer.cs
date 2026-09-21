@@ -49,11 +49,18 @@
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbAll = new System.Windows.Forms.CheckBox();
+            this.cbListofUsers = new System.Windows.Forms.CheckBox();
+            this.cbListOfLocalApplication = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tcUserInfo.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcUserInfo
@@ -100,6 +107,8 @@
             // 
             // tpLoginInfo
             // 
+            this.tpLoginInfo.Controls.Add(this.label2);
+            this.tpLoginInfo.Controls.Add(this.tableLayoutPanel2);
             this.tpLoginInfo.Controls.Add(this.tableLayoutPanel1);
             this.tpLoginInfo.Location = new System.Drawing.Point(4, 25);
             this.tpLoginInfo.Name = "tpLoginInfo";
@@ -124,21 +133,21 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmPasssword, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.chkbIsActive, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(141, 125);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(31, 44);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(487, 236);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPassword.Location = new System.Drawing.Point(194, 121);
+            this.txtPassword.Location = new System.Drawing.Point(194, 101);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 33);
@@ -149,7 +158,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Location = new System.Drawing.Point(3, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 0;
@@ -160,7 +169,7 @@
             // 
             this.lblUserID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(194, 20);
+            this.lblUserID.Location = new System.Drawing.Point(194, 15);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(39, 17);
             this.lblUserID.TabIndex = 1;
@@ -170,7 +179,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 77);
+            this.label3.Location = new System.Drawing.Point(3, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 0;
@@ -180,7 +189,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 129);
+            this.label4.Location = new System.Drawing.Point(3, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 0;
@@ -190,7 +199,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 176);
+            this.label5.Location = new System.Drawing.Point(3, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 0;
@@ -199,7 +208,7 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUsername.Location = new System.Drawing.Point(194, 69);
+            this.txtUsername.Location = new System.Drawing.Point(194, 54);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(216, 33);
@@ -209,7 +218,7 @@
             // txtConfirmPasssword
             // 
             this.txtConfirmPasssword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtConfirmPasssword.Location = new System.Drawing.Point(194, 168);
+            this.txtConfirmPasssword.Location = new System.Drawing.Point(194, 148);
             this.txtConfirmPasssword.Multiline = true;
             this.txtConfirmPasssword.Name = "txtConfirmPasssword";
             this.txtConfirmPasssword.Size = new System.Drawing.Size(216, 33);
@@ -219,7 +228,7 @@
             // chkbIsActive
             // 
             this.chkbIsActive.AutoSize = true;
-            this.chkbIsActive.Location = new System.Drawing.Point(194, 210);
+            this.chkbIsActive.Location = new System.Drawing.Point(194, 191);
             this.chkbIsActive.Name = "chkbIsActive";
             this.chkbIsActive.Size = new System.Drawing.Size(81, 21);
             this.chkbIsActive.TabIndex = 4;
@@ -269,6 +278,84 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.checkBox1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cbAll, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cbListofUsers, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cbListOfLocalApplication, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(551, 98);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 15;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(278, 413);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(559, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Permissions";
+            // 
+            // cbAll
+            // 
+            this.cbAll.AutoSize = true;
+            this.cbAll.Location = new System.Drawing.Point(3, 3);
+            this.cbAll.Name = "cbAll";
+            this.cbAll.Size = new System.Drawing.Size(42, 21);
+            this.cbAll.TabIndex = 9;
+            this.cbAll.Text = "All";
+            this.cbAll.UseVisualStyleBackColor = true;
+            // 
+            // cbListofUsers
+            // 
+            this.cbListofUsers.AutoSize = true;
+            this.cbListofUsers.Location = new System.Drawing.Point(3, 30);
+            this.cbListofUsers.Name = "cbListofUsers";
+            this.cbListofUsers.Size = new System.Drawing.Size(103, 21);
+            this.cbListofUsers.TabIndex = 9;
+            this.cbListofUsers.Text = "List of Users";
+            this.cbListofUsers.UseVisualStyleBackColor = true;
+            // 
+            // cbListOfLocalApplication
+            // 
+            this.cbListOfLocalApplication.AutoSize = true;
+            this.cbListOfLocalApplication.Location = new System.Drawing.Point(3, 57);
+            this.cbListOfLocalApplication.Name = "cbListOfLocalApplication";
+            this.cbListOfLocalApplication.Size = new System.Drawing.Size(262, 21);
+            this.cbListOfLocalApplication.TabIndex = 9;
+            this.cbListOfLocalApplication.Text = "List Of Local Driving license Application";
+            this.cbListOfLocalApplication.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 84);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 21);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "All";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmAddEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -289,9 +376,12 @@
             this.tcUserInfo.ResumeLayout(false);
             this.tpPersonInfo.ResumeLayout(false);
             this.tpLoginInfo.ResumeLayout(false);
+            this.tpLoginInfo.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +409,11 @@
         private System.Windows.Forms.TextBox txtConfirmPasssword;
         private System.Windows.Forms.CheckBox chkbIsActive;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbAll;
+        private System.Windows.Forms.CheckBox cbListofUsers;
+        private System.Windows.Forms.CheckBox cbListOfLocalApplication;
     }
 }

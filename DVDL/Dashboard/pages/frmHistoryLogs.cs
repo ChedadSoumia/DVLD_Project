@@ -1,4 +1,5 @@
 ﻿using DVDL.Global_Classes;
+using DVDL.User;
 using DVDL_business;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace DVDL.Dashboard.pages
             dgvHistoryLogs.DataSource = clsSettings.LoginUsersHistory();
             lblRecordsCount.Text = dgvHistoryLogs.Rows.Count.ToString();
 
+        }
+
+        private void renewLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserInfo userInfo = new frmUserInfo((int)dgvHistoryLogs.CurrentRow.Cells[2].Value);
+            userInfo.ShowDialog();
         }
     }
 }

@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.dgvExpiredLicensesList = new System.Windows.Forms.DataGridView();
-            this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredLicensesList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,7 @@
             this.dgvExpiredLicensesList.AllowUserToAddRows = false;
             this.dgvExpiredLicensesList.AllowUserToDeleteRows = false;
             this.dgvExpiredLicensesList.AllowUserToOrderColumns = true;
+            this.dgvExpiredLicensesList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExpiredLicensesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExpiredLicensesList.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvExpiredLicensesList.Location = new System.Drawing.Point(37, 76);
@@ -64,6 +65,29 @@
             this.dgvExpiredLicensesList.RowTemplate.Height = 26;
             this.dgvExpiredLicensesList.Size = new System.Drawing.Size(862, 344);
             this.dgvExpiredLicensesList.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reToolStripMenuItem,
+            this.renewLicenseToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 52);
+            // 
+            // reToolStripMenuItem
+            // 
+            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
+            this.reToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.reToolStripMenuItem.Text = "Show Person Info";
+            this.reToolStripMenuItem.Click += new System.EventHandler(this.reToolStripMenuItem_Click);
+            // 
+            // renewLicenseToolStripMenuItem
+            // 
+            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
+            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.renewLicenseToolStripMenuItem.Text = "Renew License";
+            this.renewLicenseToolStripMenuItem.Click += new System.EventHandler(this.renewLicenseToolStripMenuItem_Click);
             // 
             // lblRecordsCount
             // 
@@ -90,29 +114,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(911, 10);
             this.panel2.TabIndex = 25;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reToolStripMenuItem,
-            this.renewLicenseToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 52);
-            // 
-            // reToolStripMenuItem
-            // 
-            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
-            this.reToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.reToolStripMenuItem.Text = "Show Person Info";
-            this.reToolStripMenuItem.Click += new System.EventHandler(this.reToolStripMenuItem_Click);
-            // 
-            // renewLicenseToolStripMenuItem
-            // 
-            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
-            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.renewLicenseToolStripMenuItem.Text = "Renew License";
-            this.renewLicenseToolStripMenuItem.Click += new System.EventHandler(this.renewLicenseToolStripMenuItem_Click);
             // 
             // frmExpiredLicenses
             // 

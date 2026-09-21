@@ -20,14 +20,17 @@ namespace DVDL.Dashboard.pages
         private void _LoadDesign()
         {
             clsDesign.MainLabelTitleDesign(lblMainTitle);
+            clsDesign.DataGridViewDesign(dgvExpiredLicensesList);
         }
         public frmExpiredLicenses()
         {
             InitializeComponent();
+
         }
 
         private void frmExpiredLicenses_Load(object sender, EventArgs e)
         {
+            _LoadDesign();
             _ExpiredLicensesList = clsDashboard.ExpiredLicensesList();
             dgvExpiredLicensesList.DataSource = _ExpiredLicensesList;
             lblRecordsCount.Text = dgvExpiredLicensesList.Rows.Count.ToString();
