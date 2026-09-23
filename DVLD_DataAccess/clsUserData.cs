@@ -432,7 +432,7 @@ namespace DVLD_DataAccess
             command.Parameters.AddWithValue("@UserName", Username);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
-            command.Parameters.AddWithValue("@permission", IsActive);
+            command.Parameters.AddWithValue("@permission", permissions);
 
            try
             {

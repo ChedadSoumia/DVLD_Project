@@ -259,7 +259,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmPasssword, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.chkbIsActive, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 98);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 98);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));

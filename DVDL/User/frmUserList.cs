@@ -231,6 +231,24 @@ namespace DVDL.User
                 dgvAllUsers.Columns[4].HeaderText = "Is Active";
                 dgvAllUsers.Columns[4].Width = 120;
             }
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.AddUser))
+            {
+                btnAddUser.Enabled = false;
+               
+
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.ChangePassword))
+            {
+                changePasswordToolStripMenuItem.Enabled = false;
+            }
+            if (btnAddUser.Enabled == false)
+            {
+                addNewUserToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }

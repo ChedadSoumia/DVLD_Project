@@ -27,7 +27,7 @@ namespace DVDL_business
             ReplacementLicense = 32,
             ReleaseDetainedLicense = 64,
 
-            All = AddUser | ChangePassword | Dashboard | LocalLicense | LocalLicense | InternationalLicense| ReplacementLicense | ReleaseDetainedLicense
+            All = AddUser | ChangePassword | Dashboard | LocalLicense | InternationalLicense| ReplacementLicense | ReleaseDetainedLicense
         }
 
         public enPermissions Permissions = enPermissions.None;

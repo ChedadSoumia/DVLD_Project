@@ -26,6 +26,8 @@ namespace DVDL.User
 
         enMode _Mode = enMode.AddNew;
 
+        private bool _IsUpdatingPermissions = false;
+
         private void _LoadDesign()
         {
             clsDesign.MainLabelTitleDesign(lblMainTitle);
@@ -284,7 +286,15 @@ namespace DVDL.User
 
         private void cbAll_CheckedChanged(object sender, EventArgs e)
         {
-            _User.Permissions = cbAll.Checked ? clsUser.enPermissions.All : clsUser.enPermissions.None;
+            if (_IsUpdatingPermissions)
+                return;
+
+            _IsUpdatingPermissions = true;
+
+            _User.Permissions = cbAll.Checked
+                ? clsUser.enPermissions.All
+                : clsUser.enPermissions.None;
+
             cbAddUser.Checked = cbAll.Checked;
             cbChangePassword.Checked = cbAll.Checked;
             cbDashboard.Checked = cbAll.Checked;
@@ -293,8 +303,12 @@ namespace DVDL.User
             cbReplacementLicense.Checked = cbAll.Checked;
             cbReleaseDetainedLicense.Checked = cbAll.Checked;
 
+            _IsUpdatingPermissions = false;
+
         }
-        void AddPermission(ref clsUser.enPermissions permission, string permissionTag)
+
+     
+        void AddPermission( string permissionTag)
         {
             if(Enum.IsDefined(typeof(clsUser.enPermissions), permissionTag))
             {
@@ -302,7 +316,7 @@ namespace DVDL.User
                 _User.Permissions |= p;
             }
         }
-        void DeletePermission(ref clsUser.enPermissions permission, string permissionTag)
+        void DeletePermission(string permissionTag)
         {
             if(Enum.IsDefined(typeof(clsUser.enPermissions), permissionTag))
             {
@@ -310,17 +324,36 @@ namespace DVDL.User
                 _User.Permissions &= ~p;
             }
         }
+        private void CheckIfAllPermissionsChecked()
+        {
+            _IsUpdatingPermissions = true;
+
+            cbAll.Checked =
+                cbAddUser.Checked &&
+                cbChangePassword.Checked &&
+                cbDashboard.Checked &&
+                cbListOfLocalApplication.Checked &&
+                cbInternationalAppliaction.Checked &&
+                cbReplacementLicense.Checked &&
+                cbReleaseDetainedLicense.Checked;
+
+            _IsUpdatingPermissions = false;
+        }
         private void CheckedPermission(object sender, EventArgs e)
         {
-           CheckBox cb = sender as CheckBox;
+            if (_IsUpdatingPermissions)
+                return;
+
+            CheckBox cb = sender as CheckBox;
             if (cb.Checked)
             {
-                AddPermission(ref _User.Permissions, cb.Tag.ToString().Trim());
+                AddPermission(cb.Tag.ToString().Trim());
             }
             else
             {
-                DeletePermission(ref _User.Permissions, cb.Tag.ToString().Trim());
+                DeletePermission(cb.Tag.ToString().Trim());
             }
+            CheckIfAllPermissionsChecked();
         }
     }
 }

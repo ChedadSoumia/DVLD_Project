@@ -38,6 +38,42 @@ namespace DVDL
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.Dashboard))
+            {
+                btnDashboard.Visible = false;
+            }
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.LocalLicense))
+            {
+                localDrivingLicenseApplicationsToolStripMenuItem.Enabled = false;
+                localLicenseToolStripMenuItem.Enabled = false;
+            }
+           
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.InternationalLicense))
+            {
+                internationalLicenseApplicationsToolStripMenuItem.Enabled = false;
+                internationalLiccenseToolStripMenuItem.Enabled = false;
+            }
+            if(internationalLiccenseToolStripMenuItem.Enabled == false && localLicenseToolStripMenuItem.Enabled == false)
+            {
+                newDrivingLicenseToolStripMenuItem.Enabled = false;
+            }
+            if (localDrivingLicenseApplicationsToolStripMenuItem.Enabled == false && internationalLicenseApplicationsToolStripMenuItem.Enabled == false)
+            {
+                manageApplicationsToolStripMenuItem.Enabled = false;
+            }
+
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.ReplacementLicense))
+            {
+                replacementForLostOrDamagedLicenseToolStripMenuItem.Enabled = false;
+                
+            }
+            if (!clsGlobal.CurrentUser.Permissions.HasFlag(clsUser.enPermissions.ReleaseDetainedLicense))
+            {
+                releaseDetainedDrivingLicenseToolStripMenuItem.Enabled = false;
+                releaseDetainLicenseToolStripMenuItem.Enabled = false;
+                manageDetainLicensesToolStripMenuItem.Enabled = false;
+
+            }
 
         }
 
