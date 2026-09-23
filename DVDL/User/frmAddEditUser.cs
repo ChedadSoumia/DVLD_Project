@@ -121,6 +121,24 @@ namespace DVDL.User
 
         }
 
+        private void _LoadPermissionDate()
+        {
+            if (_User.Permissions == clsUser.enPermissions.All)
+            {
+                cbAll.Checked = true;
+                cbAll_CheckedChanged(this, null);
+                return;
+            }
+            
+            cbAddUser.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.AddUser);
+            cbChangePassword.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.ChangePassword);
+            cbDashboard.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.Dashboard);
+            cbListOfLocalApplication.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.LocalLicense);
+            cbInternationalAppliaction.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.InternationalLicense);
+            cbReplacementLicense.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.ReplacementLicense);
+            cbReleaseDetainedLicense.Checked = _User.Permissions.HasFlag(clsUser.enPermissions.ReleaseDetainedLicense);
+        }
+
         private void _LoadData()
         {
             _User = clsUser.Find(_UserID);
@@ -138,7 +156,7 @@ namespace DVDL.User
             txtPassword.Text = _User.Password;
             txtConfirmPasssword.Text = _User.Password;
             chkbIsActive.Checked = _User.IsActive;
-            
+            _LoadPermissionDate();
 
         }
 
@@ -262,6 +280,47 @@ namespace DVDL.User
         private void frmAddEditUser_Activated(object sender, EventArgs e)
         {
             ctrlPersonCardWithFilter1.FilterFocus();
+        }
+
+        private void cbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            _User.Permissions = cbAll.Checked ? clsUser.enPermissions.All : clsUser.enPermissions.None;
+            cbAddUser.Checked = cbAll.Checked;
+            cbChangePassword.Checked = cbAll.Checked;
+            cbDashboard.Checked = cbAll.Checked;
+            cbListOfLocalApplication.Checked = cbAll.Checked;
+            cbInternationalAppliaction.Checked = cbAll.Checked;
+            cbReplacementLicense.Checked = cbAll.Checked;
+            cbReleaseDetainedLicense.Checked = cbAll.Checked;
+
+        }
+        void AddPermission(ref clsUser.enPermissions permission, string permissionTag)
+        {
+            if(Enum.IsDefined(typeof(clsUser.enPermissions), permissionTag))
+            {
+                Enum.TryParse(permissionTag, out clsUser.enPermissions p);
+                _User.Permissions |= p;
+            }
+        }
+        void DeletePermission(ref clsUser.enPermissions permission, string permissionTag)
+        {
+            if(Enum.IsDefined(typeof(clsUser.enPermissions), permissionTag))
+            {
+                Enum.TryParse(permissionTag, out clsUser.enPermissions p);
+                _User.Permissions &= ~p;
+            }
+        }
+        private void CheckedPermission(object sender, EventArgs e)
+        {
+           CheckBox cb = sender as CheckBox;
+            if (cb.Checked)
+            {
+                AddPermission(ref _User.Permissions, cb.Tag.ToString().Trim());
+            }
+            else
+            {
+                DeletePermission(ref _User.Permissions, cb.Tag.ToString().Trim());
+            }
         }
     }
 }

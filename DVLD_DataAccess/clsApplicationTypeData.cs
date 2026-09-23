@@ -57,6 +57,7 @@ namespace DVLD_DataAccess
                 else
                 {
                     // The record was not found
+                    
                     isFound = false;
                 }
 
@@ -64,7 +65,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsEventLog.LogError($"Application Type with ID {ApplicationTypeID} not found. Or There is syntax error in Columns",ex);
 
                 isFound = false;
             }

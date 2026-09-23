@@ -14,6 +14,7 @@ namespace DVDL_business
 {
     public class clsUser
     {
+        [Flags]
         public enum enPermissions
         {
             None = 0,
@@ -26,10 +27,10 @@ namespace DVDL_business
             ReplacementLicense = 32,
             ReleaseDetainedLicense = 64,
 
-            All = -1
+            All = AddUser | ChangePassword | Dashboard | LocalLicense | LocalLicense | InternationalLicense| ReplacementLicense | ReleaseDetainedLicense
         }
 
-        enPermissions Permissions = enPermissions.None;
+        public enPermissions Permissions = enPermissions.None;
 
         public enum _enMode {AddNew = 0, Update =1};
         public _enMode _Mode = _enMode.AddNew;
