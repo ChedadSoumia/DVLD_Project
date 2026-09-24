@@ -87,7 +87,7 @@ namespace DVDL.User
             }
             ;
 
-            if (txtCurrentPassword.Text.Trim() != _User.Password)
+            if (!clsGlobal.CurrentUser.VerifyPassword(txtCurrentPassword.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtCurrentPassword, "Current password is wrong!");
@@ -140,8 +140,7 @@ namespace DVDL.User
                 return;
 
             }
-            _User.Password = txtNewPassword.Text;
-            if (_User.ChangePassword())
+            if (_User.ChangePassword(txtNewPassword.Text))
             {
                 MessageBox.Show("Password Changed Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 

@@ -145,7 +145,7 @@ namespace DVDL.Application.International_Driving_License_Applicaiton
             
                 lblApplicationID.Text = internationalDrivingLicenseApplicaiton.ApplicationID.ToString();
                 lblInternationalLicenseID.Text = internationalDrivingLicenseApplicaiton.InternationalLicenseID.ToString();
-            _SelectedInternationalLicenseID = internationalDrivingLicenseApplicaiton.InternationalLicenseID;
+                _SelectedInternationalLicenseID = internationalDrivingLicenseApplicaiton.InternationalLicenseID;
 
                 lblAppInfo.Enabled = true;
                 btnSave.Enabled = false;

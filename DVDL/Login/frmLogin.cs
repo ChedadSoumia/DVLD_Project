@@ -42,41 +42,49 @@ namespace DVDL.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsUser User = clsUser.FindByUsernameAndPassword(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+            clsUser User = clsUser.Find(txtUsername.Text.Trim());
 
             if (User != null) {
-
-                if (ckbRememberMe.Checked)
+                if (User.VerifyPassword(txtPassword.Text))
                 {
-                    clsGlobal.valueUserame = "username";
-                    clsGlobal.valuePassword = "password";
-                    clsGlobal.WriteRegistryValue(txtUsername.Text.Trim());
-                    clsGlobal.WriteRegistryValue(txtPassword.Text.Trim());
-                    User.LoginHistoryID = clsSettings.AddLoginHistory(User.UserID, true);
+                    if (ckbRememberMe.Checked)
+                    {
+                        //clsGlobal.valueUserame = "username";
+                        //clsGlobal.valuePassword = "password";
+                        //clsGlobal.WriteRegistryValue(txtUsername.Text.Trim());
+                        //clsGlobal.WriteRegistryValue(txtPassword.Text.Trim());
+                        User.LoginHistoryID = clsSettings.AddLoginHistory(User.UserID, true);
+                    }
+                    else
+                    {
+                        clsGlobal.RememberUsernameAndPassword("", "");
+                    }
+
+                    if (!User.IsActive)
+                    {
+                        txtUsername.Focus();
+                        MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    clsGlobal.CurrentUser = User;
+                    clsSettings.AddLoginHistory(clsGlobal.CurrentUser.UserID, false);
+                    this.Hide();
+                    frmMain frm = new frmMain(this);
+                    frm.ShowDialog();
                 }
                 else
                 {
-                    clsGlobal.RememberUsernameAndPassword("","");
-                }
-
-                if (!User.IsActive)
-                {
-                    txtUsername.Focus();
-                    MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    txtPassword.Focus();
+                    MessageBox.Show("Invalid Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
-                clsGlobal.CurrentUser = User;
-                this.Hide();
-                frmMain frm = new frmMain(this);
-                frm.ShowDialog();
 
             }
             else
             {
                 txtUsername.Focus();
-                MessageBox.Show("Invalid Username/Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clsSettings.AddLoginHistory(User.UserID, false);
+                MessageBox.Show("Invalid Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

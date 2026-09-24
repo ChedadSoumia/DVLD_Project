@@ -155,8 +155,6 @@ namespace DVDL.User
             ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
            lblUserID.Text = _User.UserID.ToString();
             txtUsername.Text = _User.UserName;
-            txtPassword.Text = _User.Password;
-            txtConfirmPasssword.Text = _User.Password;
             chkbIsActive.Checked = _User.IsActive;
             _LoadPermissionDate();
 
@@ -187,10 +185,9 @@ namespace DVDL.User
 
             _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
             _User.UserName = txtUsername.Text;
-            _User.Password = txtPassword.Text;
             _User.IsActive = chkbIsActive.Checked;
 
-            if (_User.Save())
+            if (_User.Save(txtPassword.Text))
             {
                 lblUserID.Text = _User.UserID.ToString();
                 _Mode = enMode.Update;
