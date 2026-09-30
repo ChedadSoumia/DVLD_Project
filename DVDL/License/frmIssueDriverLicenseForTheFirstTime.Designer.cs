@@ -41,14 +41,14 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 650);
+            this.panel2.Location = new System.Drawing.Point(0, 584);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(724, 10);
+            this.panel2.Size = new System.Drawing.Size(684, 10);
             this.panel2.TabIndex = 20;
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(106, 484);
+            this.txtNotes.Location = new System.Drawing.Point(80, 410);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(588, 82);
@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(43, 487);
+            this.label2.Location = new System.Drawing.Point(17, 413);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 27;
@@ -66,7 +66,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(461, 583);
+            this.btnClose.Location = new System.Drawing.Point(435, 526);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 38);
             this.btnClose.TabIndex = 26;
@@ -76,7 +76,7 @@
             // 
             // btnIssue
             // 
-            this.btnIssue.Location = new System.Drawing.Point(569, 583);
+            this.btnIssue.Location = new System.Drawing.Point(543, 526);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(125, 38);
             this.btnIssue.TabIndex = 25;
@@ -87,7 +87,7 @@
             // ctrlDrivingLicenseApplicationInfo1
             // 
             this.ctrlDrivingLicenseApplicationInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(-10, -14);
+            this.ctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(12, 12);
             this.ctrlDrivingLicenseApplicationInfo1.Name = "ctrlDrivingLicenseApplicationInfo1";
             this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(714, 492);
             this.ctrlDrivingLicenseApplicationInfo1.TabIndex = 21;
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(724, 660);
+            this.ClientSize = new System.Drawing.Size(684, 594);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);

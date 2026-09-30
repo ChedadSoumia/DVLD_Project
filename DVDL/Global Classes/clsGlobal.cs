@@ -17,6 +17,7 @@ namespace DVDL.Global_Classes
         public static string keyPathForDelete = @"SOFTWARE\DVDL";
         public static string valueUserame = "username";
         public static string valuePassword = "password";
+        public static string key = "2765324901236663";
 
 
         public static bool RememberUsernameAndPassword(string Username, string Password)
@@ -86,13 +87,14 @@ namespace DVDL.Global_Classes
             }
         }
 
-        public static bool WriteRegistryValue(string valueData )
+        public static bool WriteRegistryValue(string valueDataUsernam, string valueDataPassword)
         {
             try
             {
                 // Write the value to the Registry
-                Registry.SetValue(keyPath, valueUserame, valueData, RegistryValueKind.String);
-                Registry.SetValue(keyPath, valuePassword, valueData, RegistryValueKind.String);
+                string EncryptPassword = clsSecurity.Encrypt(valueDataPassword,key);
+                Registry.SetValue(keyPath, valueUserame, valueDataUsernam, RegistryValueKind.String);
+                Registry.SetValue(keyPath, valuePassword, EncryptPassword, RegistryValueKind.String);
                 return true;
             }
             catch (Exception ex)
@@ -107,7 +109,8 @@ namespace DVDL.Global_Classes
             {
                 // Read the value from the Registry
                 username = Registry.GetValue(keyPath, valueUserame, null) as string;
-                password = Registry.GetValue(keyPath, valuePassword, null) as string;
+                string EncryptePassword = Registry.GetValue(keyPath, valuePassword, null) as string;
+                password = clsSecurity.Decrypt(EncryptePassword, key);
                 return true;
             }
             catch (Exception ex)
@@ -116,7 +119,7 @@ namespace DVDL.Global_Classes
             }
         }
 
-        public static bool DeleteRegistryValue(string valueName)
+        public static bool DeleteRegistryValue()
         {
             try
             {

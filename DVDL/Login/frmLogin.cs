@@ -51,13 +51,13 @@ namespace DVDL.Login
                     {
                         //clsGlobal.valueUserame = "username";
                         //clsGlobal.valuePassword = "password";
-                        //clsGlobal.WriteRegistryValue(txtUsername.Text.Trim());
+                        clsGlobal.WriteRegistryValue(txtUsername.Text.Trim(), txtPassword.Text.Trim());
                         //clsGlobal.WriteRegistryValue(txtPassword.Text.Trim());
                         User.LoginHistoryID = clsSettings.AddLoginHistory(User.UserID, true);
                     }
                     else
                     {
-                        clsGlobal.RememberUsernameAndPassword("", "");
+                        clsGlobal.DeleteRegistryValue();
                     }
 
                     if (!User.IsActive)
@@ -120,5 +120,7 @@ namespace DVDL.Login
         {
             this.Close();
         }
+
+        
     }
 }
